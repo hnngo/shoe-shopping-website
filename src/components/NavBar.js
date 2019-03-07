@@ -7,6 +7,7 @@ export default class NavBar extends Component {
 
     this.state = {
       showPopup: false,
+      enterPopup: false,
     }
   }
 
@@ -14,21 +15,24 @@ export default class NavBar extends Component {
     this.setState({ showPopup: true });
   }
 
-  handleMouseOut() {
-    this.setState({ showPopup: false });
+  handleTimeOutMouseOut() {
+    setTimeout(() => {
+      if (this.state.enterPopup === false) {
+        this.setState({ showPopup: false });
+      }
+    }, 200);
   }
 
   showPopup() {
     if (this.state.showPopup) {
-      return (
-        <PopupNavBar
-          animatedStyle="fadeIn"
-          onMouseEnter={() => this.handleMouseEnter()}
-          onMouseOut={() => this.handleMouseOut()}
-        />
-      );
+        return (
+          <PopupNavBar
+            onMouseEnter={() => this.setState({ enterPopup: true })}
+            onMouseOut={() => this.setState({ enterPopup: false, showPopup: false })}
+          />
+        )
     } else {
-      
+
     }
   }
 
@@ -50,10 +54,9 @@ export default class NavBar extends Component {
                 </li>
                 <li className="nav-item">
                   <a
-                    className="py-0"
-                    onMouseEnter={() => this.handleMouseEnter()}
-                    onMouseOut={() => this.handleMouseOut()}
                     className="nav-link"
+                    onMouseEnter={() => this.handleMouseEnter()}
+                    onMouseOut={() => this.handleTimeOutMouseOut()}
                     href="/shoes"
                   >
                     Shoes
@@ -62,7 +65,7 @@ export default class NavBar extends Component {
                 <li className="nav-item">
                   <a
                     onMouseEnter={() => this.handleMouseEnter()}
-                    onMouseOut={() => this.handleMouseOut()}
+                    onMouseOut={() => this.handleTimeOutMouseOut()}
                     className="nav-link"
                     href="/accessories"
                   >
@@ -72,7 +75,7 @@ export default class NavBar extends Component {
                 <li className="nav-item">
                   <a
                     onMouseEnter={() => this.handleMouseEnter()}
-                    onMouseOut={() => this.handleMouseOut()}
+                    onMouseOut={() => this.handleTimeOutMouseOut()}
                     className="nav-link"
                     href="/brands"
                   >
