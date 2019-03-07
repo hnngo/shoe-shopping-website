@@ -1,0 +1,8 @@
+{
+  "navbar": {
+    "shoes": {
+      "byBrand": ["Nike", "Adidas", "Vans", "Dr Martain", "New Balance"],
+      "byStyle": ["Sneaker", "Boots", "Chelsea Boots", "Sandal"]
+    }
+  }
+}

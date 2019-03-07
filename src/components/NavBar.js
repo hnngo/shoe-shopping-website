@@ -14,6 +14,10 @@ export default class NavBar extends Component {
   }
 
   handleMouseEnter(e) {
+    if (window.innerWidth < 768) {
+      return
+    }
+
     // Show popup and save the current cursor pointing
     this.setState({ 
       showPopup: true,
@@ -22,19 +26,27 @@ export default class NavBar extends Component {
   }
 
   handleTimeOutMouseOut() {
+    if (window.innerWidth < 768) {
+      return
+    }
+    
     // When mouse out, immediately set previous target
     this.setState({ prevTarget: this.state.curTarget });
 
     // Check if mouse is moved to the popup or switch to next target
     setTimeout(() => {
       if ((this.state.enterPopup === false) && (this.state.prevTarget === this.state.curTarget)) {
-        this.setState({ showPopup: false });
+        this.setState({ 
+          showPopup: false,
+          curTarget: undefined,
+          prevTarget: undefined
+        });
       }
-    }, 200);
+    }, 300);
   }
 
   showPopup() {
-    if (this.state.showPopup) {
+    if (this.state.showPopup && (window.innerWidth >= 768)) {
       return (
         <PopupNavBar
           onMouseEnter={() => this.setState({ enterPopup: true })}
@@ -108,4 +120,3 @@ export default class NavBar extends Component {
 
 //TODO: Color change
 //TODO: Style change when clicking
-//TODO: Small device not show the border bottom-line

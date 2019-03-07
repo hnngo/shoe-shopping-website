@@ -1,8 +1,17 @@
 .popup-nav-container {
   position: relative;
   top: 57px;
-  width: 100vw;
+  /* width: 100vw; */
   background-color: #dcdde1;
-  margin-top: 10px;
   /* visibility: hidden; */
 }
+
+.popup-nav {
+  /* padding-top: 5px; */
+  padding-bottom: 5px;
+}
+
+.popup-title {
+  font-family: 'Montserrat', sans-serif;
+}
+
