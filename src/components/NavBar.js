@@ -8,16 +8,26 @@ export default class NavBar extends Component {
     this.state = {
       showPopup: false,
       enterPopup: false,
+      curTarget: undefined,
+      prevTarget: undefined
     }
   }
 
-  handleMouseEnter() {
-    this.setState({ showPopup: true });
+  handleMouseEnter(e) {
+    // Show popup and save the current cursor pointing
+    this.setState({ 
+      showPopup: true,
+      curTarget: e.target.innerHTML.toLowerCase()
+    });
   }
 
   handleTimeOutMouseOut() {
+    // When mouse out, immediately set previous target
+    this.setState({ prevTarget: this.state.curTarget });
+
+    // Check if mouse is moved to the popup or switch to next target
     setTimeout(() => {
-      if (this.state.enterPopup === false) {
+      if ((this.state.enterPopup === false) && (this.state.prevTarget === this.state.curTarget)) {
         this.setState({ showPopup: false });
       }
     }, 200);
@@ -25,14 +35,13 @@ export default class NavBar extends Component {
 
   showPopup() {
     if (this.state.showPopup) {
-        return (
-          <PopupNavBar
-            onMouseEnter={() => this.setState({ enterPopup: true })}
-            onMouseOut={() => this.setState({ enterPopup: false, showPopup: false })}
-          />
-        )
-    } else {
-
+      return (
+        <PopupNavBar
+          onMouseEnter={() => this.setState({ enterPopup: true })}
+          onMouseOut={() => this.setState({ enterPopup: false, showPopup: false })}
+          popupType={this.state.curTarget}
+        />
+      );
     }
   }
 
@@ -55,7 +64,7 @@ export default class NavBar extends Component {
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    onMouseEnter={() => this.handleMouseEnter()}
+                    onMouseEnter={(e) => this.handleMouseEnter(e)}
                     onMouseOut={() => this.handleTimeOutMouseOut()}
                     href="/shoes"
                   >
@@ -64,7 +73,7 @@ export default class NavBar extends Component {
                 </li>
                 <li className="nav-item">
                   <a
-                    onMouseEnter={() => this.handleMouseEnter()}
+                    onMouseEnter={(e) => this.handleMouseEnter(e)}
                     onMouseOut={() => this.handleTimeOutMouseOut()}
                     className="nav-link"
                     href="/accessories"
@@ -74,7 +83,7 @@ export default class NavBar extends Component {
                 </li>
                 <li className="nav-item">
                   <a
-                    onMouseEnter={() => this.handleMouseEnter()}
+                    onMouseEnter={(e) => this.handleMouseEnter(e)}
                     onMouseOut={() => this.handleTimeOutMouseOut()}
                     className="nav-link"
                     href="/brands"
@@ -82,19 +91,6 @@ export default class NavBar extends Component {
                     Brands
                   </a>
                 </li>
-                {/* <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown</a>
-                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
-                    <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li> 
-                <li className="nav-item">
-                  <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-                </li>*/}
               </ul>
               <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "220px" }} />
@@ -113,4 +109,3 @@ export default class NavBar extends Component {
 //TODO: Color change
 //TODO: Style change when clicking
 //TODO: Small device not show the border bottom-line
-//TODO: Popup problem
