@@ -10,15 +10,15 @@ export default class PopupNavBar extends Component {
           <div className="col1 col-lg-3">
             <h2 className="popup-title text-right">SHOES</h2> 
           </div>
-          <div className="col2 col-lg-2 col-md-4 border-left border-secondary">
+          <div className="col-lg-2 col-md-3 border-left border-secondary">
             <h4>By Brands</h4>
             {this.renderList(data.navbar.shoes.byBrand)}
           </div>
-          <div className="col3 col-lg-2 col-md-4 border-left border-secondary">
+          <div className="col-lg-2 col-md-3 border-left border-secondary">
             <h4>By Style</h4>
             {this.renderList(data.navbar.shoes.byStyle)}
           </div>
-          <div className="col4 col-lg-5 col-md-4 border-left border-secondary">
+          <div className="col-lg-5 col-md-6 border-left border-secondary">
             <h1>Image</h1>
           </div>
         </div>
@@ -28,40 +28,17 @@ export default class PopupNavBar extends Component {
 
   renderPopupAccessories() {
     return (
-      <div className="container-fluid popup-nav">
+      <div className="container-fluid py-3 popup-nav">
         <div className="row">
           <div className="col1 col-lg-3">
             <h2 className="popup-title text-right">ACCESSORIES</h2> 
           </div>
-          <div className="col2 col-lg-3 col-md-4">
-            <h1>2</h1>
+          <div className="col-lg-2 col-md-3 border-left border-secondary">
+            <h4>By Type</h4>
+            {this.renderList(data.navbar.accessories.byType)}
           </div>
-          <div className="col3 col-lg-3 col-md-4">
-            <h1>3</h1>
-          </div>
-          <div className="col4 col-lg-3 col-md-4">
-            <h1>4</h1>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  renderPopupBrands() {
-    return (
-      <div className="container-fluid popup-nav">
-        <div className="row">
-          <div className="col1 col-lg-3">
-            <h2 className="popup-title text-right">BRANDS</h2> 
-          </div>
-          <div className="col2 col-lg-3 col-md-4">
-            <h1>2</h1>
-          </div>
-          <div className="col3 col-lg-3 col-md-4">
-            <h1>3</h1>
-          </div>
-          <div className="col4 col-lg-3 col-md-4">
-            <h1>4</h1>
+          <div className="col-lg-7 col-md-6 border-left border-secondary">
+            <h1>Image</h1>
           </div>
         </div>
       </div>
@@ -80,8 +57,6 @@ export default class PopupNavBar extends Component {
       res = this.renderPopupShoe();
     } else if (type === "accessories") {
       res = this.renderPopupAccessories();
-    } else if (type === "brands") {
-      res = this.renderPopupBrands();
     } else {
       res = <div />;
     }

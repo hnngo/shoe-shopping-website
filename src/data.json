@@ -3,6 +3,9 @@
     "shoes": {
       "byBrand": ["Nike", "Adidas", "Vans", "Dr Martain", "New Balance"],
       "byStyle": ["Sneaker", "Boots", "Chelsea Boots", "Sandal"]
+    },
+    "accessories": {
+      "byType": ["Bags", "Belts", "Gloves", "Sun Glasses", "Purses"]
     }
   }
 }

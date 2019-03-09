@@ -93,7 +93,7 @@ export default class NavBar extends Component {
                     Accessories
                   </a>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a
                     onMouseEnter={(e) => this.handleMouseEnter(e)}
                     onMouseOut={() => this.handleTimeOutMouseOut()}
@@ -102,7 +102,7 @@ export default class NavBar extends Component {
                   >
                     Brands
                   </a>
-                </li>
+                </li> */}
               </ul>
               <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "220px" }} />
