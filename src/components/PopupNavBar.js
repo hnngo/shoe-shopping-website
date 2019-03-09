@@ -51,19 +51,6 @@ export default class PopupNavBar extends Component {
     });
   }
 
-  renderPopup(type) {
-    let res = undefined;
-    if (type === "shoes") {
-      res = this.renderPopupShoe();
-    } else if (type === "accessories") {
-      res = this.renderPopupAccessories();
-    } else {
-      res = <div />;
-    }
-
-    return res;
-  }
-
   render() {
     return (
       <div
@@ -71,7 +58,7 @@ export default class PopupNavBar extends Component {
         onMouseLeave={this.props.onMouseOut}
         className={`popup-nav-container animated fast ${this.props.animatedStyle} ${this.props.delayTime}`}
       >
-        {this.renderPopup(this.props.popupType)}
+        {this.props.popupType === "shoes" ? this.renderPopupShoe() : this.renderPopupAccessories()}
       </div>
     );
   }

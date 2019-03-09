@@ -60,7 +60,7 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
+        <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm">
           <div className="container">
             {/* Logo Brand */}
             <a className="navbar-brand" href="/home">LOGO</a>
