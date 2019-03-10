@@ -37,6 +37,10 @@ No media query for `xs` since this is the default in Bootstrap */
   .text-quote {
     text-align: center;
   }
+
+  .col-form-label {
+    display: none;
+  }
 }
 
 @media (min-width: 576px) {

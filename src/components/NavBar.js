@@ -105,7 +105,7 @@ export default class NavBar extends Component {
                 </li> */}
               </ul>
               <form className="form-inline my-2 my-lg-0">
-                <input className="form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "220px" }} />
+                <input className="nav-search form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "220px" }} />
                 <button className="btn my-2 my-sm-0"><i className="fas fa-shopping-cart"></i></button>
                 <button className="btn my-2 my-sm-0"><i className="fas fa-user"></i></button>
               </form>
