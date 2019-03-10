@@ -3,6 +3,7 @@ import './styles/App.css';
 import './styles/MediaQueries.css';
 import NavBar from './components/NavBar';
 import LandingPage from './components/landing_page/LandingPage';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div>
         <NavBar />
         <LandingPage />
+        <Footer />
       </div>
     );
   }

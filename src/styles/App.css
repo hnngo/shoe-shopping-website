@@ -147,3 +147,10 @@ html, body {
   border-radius: 50%;
   border: 1px solid white;
 }
+
+/* ------- FOOTER --------*/
+.footer-container {
+  width: 100vw;
+  margin-top: 80px;
+  /* background-color: rgba(0, 0, 0, 0.5) */
+}
