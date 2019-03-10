@@ -1,7 +1,8 @@
 .popup-nav-container {
-  position: relative;
+  position: absolute;
   top: 57px;
-  /* width: 100vw; */
+  z-index: 100;
+  width: 100vw;
   background-color: #dcdde1;
   /* visibility: hidden; */
 }

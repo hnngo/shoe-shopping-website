@@ -27,3 +27,41 @@
 .navbar-nav li:active {
   border-bottom: 2px solid black;
 }
+
+
+/* -------- LANDING PICTURE ------- */
+.landing-picture-container {
+  position: relative;
+  top: 57px;
+}
+
+.landing-picture-container {
+  position: relative;
+  text-align: center;
+}
+
+.landing-picture-container img {
+  filter: brightness(40%);
+  object-fit: cover;
+
+  width: 100vw;
+  height: 500px;
+}
+
+.landing-picture-text {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.landing-picture-text h2 {
+  font-size: 34px;
+  font-style: italic;
+}
+
+.landing-picture-text p {
+  font-size: 18px;
+}

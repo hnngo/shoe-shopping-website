@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import NavBar from './components/NavBar';
 import './styles/App.css';
 import './styles/MediaQueries.css';
+import NavBar from './components/NavBar';
+import LandingPicture from './components/landing_page/LandingPicture';
 
 class App extends Component {
   render() {
     return (
       <div>
         <NavBar />
+        <LandingPicture />
       </div>
     );
   }

@@ -1,4 +1,7 @@
 {
+  "imgURL" :{
+    "landingWallpaper": "https://lh3.googleusercontent.com/w3_u7Mykws2kvoXkkASW_PWujALkZfOChQ0r8E9aIb8LhwRcQ2NTJOg36-X5MnHjZppiARqL4OKoay2Ap2pV6Uo_u1BXhOFNgkkPJXadgdeYGrJDAL2s_Uk7vDZdNEynSskOX7NWC_syW8lhI8hdXbVA-b02rp93UWEUosqiABtf1TJbRSZatxA-7rdiVmb-LjsUEwYoI8RcD3VosmnuvturXr0yJgWv05dWSJIg8uhJQuSPUKxk4eCpvIIWJ1AlZCoMagA6chGOFHXQVt3kOeIU-MkIIHwOPa4Y-yE5ISTmwdcF7tse3GwKtYJEYbQrJEKsW7q4vXdUOQAZUGLREUhFUedGHa12aj6J4WvIlYSePvos582gAoi3afJjQTOhc0kOt8W3y9UcwtkR5kp9OscTESL_EaoPGt9l7exvCVovd2VNqazNm6R9w0rjyrNBL0ZKWZXk9B5uWDdWrWOqbNsZX8UdhxCHGVZC1g_aQAAGUNMbmkCgvXJx_IMJVWyDSel8wx1wkDgUkY6fR0Kz4N5_Sab_tNUGWz4lxysudIlVg5_m0PM9n8wm1IMvvf2MXgfp87hJW1kFnTLB9s5mwfvgr8vnTlqU9pMJbs7hSpqoaK4jTNEmBAU1wcP2-89G5Z9xm2dr_yWM77Nnq6ig37MQlGuj5zcLtvWATCiAKt0KjJkAZVYQ10MgF2InN7JRHqrKkptesywtQoKhE5yEFuyI=w1676-h944-no"
+  },
   "navbar": {
     "shoes": {
       "byBrand": ["Nike", "Adidas", "Vans", "Dr Martain", "New Balance"],

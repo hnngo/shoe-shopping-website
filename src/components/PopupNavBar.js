@@ -64,4 +64,4 @@ export default class PopupNavBar extends Component {
   }
 }
 
-//TODO: CLean up code with resuable component
+//TODO: Dim other part of website when active popup navbar
