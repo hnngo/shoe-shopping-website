@@ -21,7 +21,7 @@ export default class LandingSample extends Component {
             <p className="landing-picture-text landing-sample-text open-sans">ACCESSORIES</p>
           </div>
           <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated slideInRight">
-            <img src={data.imgURL.landingPage.landingSampleBoots} className="landing-image-simple" alt="landing-sample-shoes" />
+            <img src={data.imgURL.landingPage.landingSampleBoots} className="landing-image-simple" alt="landing-sample-boots" />
             <p className="landing-picture-text landing-sample-text open-sans">BOOTS</p>
           </div>
         </div>
@@ -32,3 +32,4 @@ export default class LandingSample extends Component {
 
 //TODO: Add hover sample effect
 //TODO: Add button to direct them to shop
+//TODO: Click to direct to another detail page

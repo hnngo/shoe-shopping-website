@@ -31,6 +31,30 @@
       "landingSampleShoes": "https://lh3.googleusercontent.com/40UJdj44nGXG3egP0E-OY248AZw5K9sRl3YwUptq9uhe7EnX1IodQDNF4X0Hocqw-U1HMjD7ktLOiTXHtpsnMHQJ_r5qtzq2lzaH3OjPRXcsi79nKpif0zoe72KKpLhLDctUPYrRf9QKWbEv-4Kc72wlCi7uDG6sPW987uQU3hB3kms7mcSPI3X7Jy_WO9jEIOF26u48GXzOatiCNAUWqw_JVX1oPLrt1NjyqkB0uhuCwQDx11YikepwGVvxgExBMtxFfPuHzxDRil76LI0DzJ4W1tE2Z8FdTUAccUCKN9wmPTXCEiPE1froU7X30X0VinroaEsk6VVgnbbF_Se-bnRsK07BxvY394-SvYfiHyeAYycB6zOn1fKw2TErBQP6CKsm0oMXO4UBFRLRBK_JgtUNYQHN5Ll_6vBz4rL67OsExE9Sy60ljeU_Sg9j5abrHHSzC8R46BhsfA-gqH7Z73ew0q7W6E1yOv9SoY4uD0Wq9vxH2EayElzUqjf4vcPPIEtH71kGSmcGZ7Q2vykq_8g70394aI_f_ER_FckqdU9ohM2p7tMOtejL4_ukwbffWabri6dGBLe4qt6USYDlpCAtOJyfn88v0YCLcEaTBTF3d2LYoNfbNrqnu9dt7U315pXqlL_9guyChmBa2ZI_X96icuyeW4w=w1680-h1050-no",
       "landingSampleAccessories": "https://lh3.googleusercontent.com/VmPgx9n1J_SJ2U8KKR-b7iEDW8ThtXFNF5KYvvvaXsEpnsWoima7OqVq6xYrTxeDuz09Bn4k8g1dZfe_HFCRbpn5FNLneg4107ndaM_GwsjY3GPoRguJSEIZoOyfE_BN261RwYVSXqoKGpGvQTKmSQsmvXAQX3SI3fyu_V01-6fiCEorIk7gUHvwwa_yLa0VlpZUd5JtzwdlAmr-FkEXr867WIrb8OhcpkVvwHKoA4z7DA1t-Vv_UPS4RLSFKqYFhX8A5fD06ewvEaToFZAkE7rCRUpmZ1TZSAH_7rff7lixDEoduHCGYGwUbLfGGvc-4fkewvPbbXLHtI-G4tZ-K7KQjP-vG5OGi-iSRfA6SJtirtO1Fsifq0i3QT475dqFQlYdLedTn9IXwHlB2OOBIpfpki62m-ivssp89ld2LoH-csFcuiusrc6hg5uB2TT1DmyOMI0uW957gyi2b-chCuFizjI1Tx2mUfV0f1UGzKKTARiADnkPbsjD9xC8tuI_il03hwX8tebCjZfmvuGDqVR5ewWCe2ro-4ai48M_yARoUYTTMVkqIWOaxWu1yEi3j0N3aBdFEWBdqFhAVLv7ldST5vpFysyTA2aDjW8vuWCBBoPLhOkyOW_28uVqW4c0viUD-rGRUyw5BkMzYBOE5BBZGMbO2Sc=w1024-h709-no",
       "landingSampleBoots": "https://lh3.googleusercontent.com/KoLkUug3g3_WUtuRAmlWdZed6D7RUAasxHrpu5E90j20T0R0Rb6wZTbKNZKdYzoAGkDxT0uaufiBythme1Pxy43YydFrty-dnx6jwjZEGfRYAVA0AUKivp2vxSrzDxZgDUBIHLOuQqRmgq-wvpYaCms97FY57ntWbEminpn8b3owNbI2bhfdvn8t2-quVgcOi3RPU47LMSDg8Ps7z7q10ND4pJkkhLNL3_pTwW9knqMozRgUBwer2QI-liCaDjSXhYafaoKDxzXYnOBOXKLkkYhw96k0PUWiQiTVXZC_rEElhinnt9KMqsWVN1_OkcRVwgUqU3U6ZSNprw7YpiVA82HFCZnUSdAQ5AJxaeiIlOpKDDUjvpJ3J-A2HMyWN4YvtST-e1GiJTABadyDbD0DRbp4x13pOTBDJu2oO9ql4BepHWA270kvqyPzHLPSSZ4-wCxxRmQxSiO-Q4w697KwshnDv_xle9z5H7Wl2SuI856EjLJfqRJkIbrS2RtnVpuHxd9NdtkZUDjUYMrCm9U0uiDUPqOVbEF2BlRgH6v4ASefk_5gkxDAkczqP-JRFC-PMEoladjjRYTjjQ4FtwN3jaAbRJR7SJszW_0AwZgLgvmItHxDunZzN0XVcz4UcK4G0piGd7XUhtNe0x2EbOUmVnmmtfGWx4U=w750-h421-no"
+    },
+    "nikeShoes": {
+      "shoe1": {
+        "name": "Nike Air Jordan Retro 9",
+        "description": "The Air Jordan 9 Retro offers durable comfort as it pays tribute to the iconic AJ 9. It features a Japanese-inspired design and a multi-language outsole that spells out Jordan's personality traits.",
+        "price": 269,
+        "imgURL": "https://lh3.googleusercontent.com/bg2UeQ-Gvv2CWrNFf69ycoEbbg023-7MPBgGa7VfopCG2bEJwSeOM9c57EwE8MO2-8SzgSM6UptH_y-BiFJyjd9cGKzPfGThFtgOrO8XBbJlAJ0I27vinGMuo9MFi6BAki4hs68m8g2GVWlXI2tesoKpBllc-GW7IWOSzrSkTYgP0rix0kpQASnBdZDiwIhyP9xm4Xq_xcu56PIGWi2c3C4ftJXB0l4kYJFpHzGUPXnVHBrCc5hOM0fKFn-rN-58DEnXh6UULd4139r74ZON1_8A8grpJXXHeAufYetbC5oCokEGRrAygEdNeewBduu1Lee73zTmxIDyLDYexFa--3Kf9FhYE2QcasK5PLDxrOpOxSYSJyRuoQ9NEcy5nhva0RtdBmNVrxYDiIRMWCXtNIuUp3_jg02f1Wdk19NYHQ0bMICjybvh8PQ7hVx_L3BlOKTnZYkMe8AtpKJbQfufLvTrR5f8mQRnHEtznwVsZ3o4CdF8d4ooGD1kSeAg99aoH6XKS_nl480y7qdXrwwqMNHgyFo_B6p9pqqoS0uUhcbqBh0pEhK5nOeqskxsbeS-h60eLXnwYKape4ZI2woALbvwj4MSkE-DsVy3GfJ-QKawL_8bqrZysLVxIhpFayMec0yd9k3chaAvCkG98agMG51p4bwCAzI=w529-h301-no"
+      }
+    },
+    "adidasShoes": {
+      "shoe1": {
+        "name": "Solar Glide Shoes",
+        "description": "",
+        "price": 200,
+        "imgURL": "https://lh3.googleusercontent.com/sF6emByU3z2EVLTz9b_brZ1Y1MfNJCnFAtaP1k6BVB0iCQM65A1WFQwOL5JLDHnSrjWkDOtrjBZG41Rm8kMbYOZSjc5HQF8yols6hOyftA4SbW4Zthw_g6DQQvmv9tgoChW69VqDxUGhwji_rDQbapl6r7NXUQKyHHU0csRXomjs4Ugt3ClYyTbPvnuyXVZzCxYgstYvPLjfcKp7VZoi3n3kvgO37Z0PjZCB0u8O7Rdu6fPr1MHqB5T2cQ7r1tCAZLR28nhiQju0-kT9Clv-_iY15pTJ4d90wzEIJM-XScW2iTAaOjG5T9zXcBDNsFoyNl_mxHiJJyY-709GmeyL_G4_S4R-rKIw0lifHchVe9UylLsNvvNveTuKEFwny02-aoJY86BaV63NqBMCyoqqTfg0vMaXEbRg1VSIyuFaLGxb3t781zvIs3PofgAnPylgaMSNKw7UnoIYCQ_f5vc0N-t1JA8Zv1rP9AiRqEHQgDj6tFnD_sDfVu2Cn5pmNRXsDllBLftMDPvp3m32z5P3663YGtJDaSPN2pVJwrVmjx6o19dze-41Rp0eDiY1H8wZ-vCutYQSFopjELnb37PA4yofEOtiyTMyjwMUh3Ng6ablWlQVpRF7NifJm9hibEy7kfDh4X8s_SwUwWDGbJQ9u8Xbs3bAs54=s840-no"
+      }
+    },
+    "vansShoes": {
+      "shoe1": {
+        "name": "Vans Classic Slip On",
+        "description": "",
+        "price": 120,
+        "imgURL": "https://lh3.googleusercontent.com/BnsocuYHIMhT5wIjskYWERJD03CVHA6cHS39Ko9ymMdd2iSzHb8UYiUL6MrYJU8raC9yKgzCqovZcmiVuX7-oOAF67N7lRGK1vMC55ghuT4fymMVayEUDtiNeSlSUXax7aorJ-hLP_uV44MCXL6Lk9ke8rxTKYnHQWm5xkybJ6JfgnBI4JTPSbZPoLGhsoZQmJYqjRXsUWyghAQ5MPv9AcKP7msHkCAVC7N8fY6xQtyzZtOi4jhRCWEHfJiV2PD6RQJSdKWic42iPTrp1MDWtWXYUoLwoHHYyNycFU_HdudPVtYJtSjbC8TZi7pcwp2mhiwiDZK7u-Pp58ChQmP9tsrfJa3-_klPlRwB8yfm851MjPnnMpdshjfNvjDrdftqxpajpaNOCY8AK2QL3zkgOAFREQGa7bkzoFHNe3DqihNNn2NQME-qhyTD8ikzOdX9ElrnWmG2U3XTBrLVp6SHWxaYutehnXRqgJ6Yzn9BBfrLgmQIEuywQRylWzVtp_MfrJursdbirqD3k-pH1hzjZVROcp9QZOrFodS8iT-TuGMOKRK1He1ZQHne4HQZlBpG6exOM6D3yvCp_faiyGlxc5I-Ve8kql6z87MjGO98UyQz2gfYqQUj6zG1JsxTUsz2nui2hejpdpCP0aVk0IItkq8UewIe-Po=s900-no"
+      }
     }
   }
 }

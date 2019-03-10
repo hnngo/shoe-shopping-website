@@ -20,6 +20,12 @@ No media query for `xs` since this is the default in Bootstrap */
   .landing-slogan p {
     font-size: 14px;
   }
+
+  .sample-products {
+    object-fit: cover;
+    width: 100%;
+    height: 220px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -36,8 +42,15 @@ No media query for `xs` since this is the default in Bootstrap */
     width: 100%;
     height: 280px
   }
+
   .shop-now-btn {
     margin-right: 10px;
+  }
+
+  .sample-products {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
   }
 }
 
@@ -46,6 +59,12 @@ No media query for `xs` since this is the default in Bootstrap */
   /* Hide the first column */
   .col1 {
     display: none;
+  }
+
+  .sample-products {
+    object-fit: cover;
+    width: 100%;
+    height: 130px;
   }
 }
 
