@@ -14,7 +14,7 @@ No media query for `xs` since this is the default in Bootstrap */
     filter: brightness(75%);
     object-fit: cover;
     width: 100%;
-    height: 200px
+    height: 280px
   }
 }
 
@@ -40,13 +40,21 @@ No media query for `xs` since this is the default in Bootstrap */
     filter: brightness(40%);
     object-fit: cover;
     width: 100vw;
-    height: 550px;
+    height: 580px;
   }
 
   .landing-image-simple {
     filter: brightness(75%);
     object-fit: cover;
     width: 100%;
-    height: 300px
+    height: 400px
+  }
+
+  .landing-slogan h3 {
+    font-size: 46px;
+  }
+
+  .landing-slogan p {
+    font-size: 22px;
   }
 }

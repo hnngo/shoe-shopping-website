@@ -5,6 +5,7 @@
   FONT MAP:
     font-family: 'Open Sans', sans-serif;
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Lobster', cursive;
 */
 
 * {
@@ -72,20 +73,30 @@
 }
 
 .landing-picture-text h2 {
-  font-size: 34px;
+  font-size: 40px;
   font-style: italic;
 }
 
 .landing-picture-text p {
-  font-size: 18px;
+  font-size: 20px;
+}
+
+/* ------- LANDING SLOGAN --------*/
+.landing-slogan h3 {
+  font-size: 36px;
+  font-family: 'Lobster', cursive;
+}
+
+.landing-slogan p {
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* ------- LANDING SAMPLE --------*/
 .landing-image-simple {
-  filter: brightness(75%);
+  filter: brightness(75%), grayscale(50%);
   object-fit: cover;
   width: 100%;
-  height: 200px
+  height: 200px;
 }
 
 .sample-col {
