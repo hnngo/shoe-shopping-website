@@ -5,9 +5,9 @@ const shoeData = data.imgURL;
 
 export default class LandingSampleProducts extends Component {
   renderProduct(...arrProduct) {
-    return arrProduct.map((item) => {
+    return arrProduct.map((item, i) => {
       return (
-        <div className="col-md-4 col-sm-12">
+        <div className="col-md-4 col-sm-12" key={i}>
           <img src={item.imgURL} className="sample-products img-fluid" alt={item.name.toLowerCase().replace(" ","-")} />
           <p className="monteserrat bold mb-0 mt-1">{item.name}</p>
           <p className="open-sans">{item.price}$</p>

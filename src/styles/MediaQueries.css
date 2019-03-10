@@ -11,7 +11,7 @@ No media query for `xs` since this is the default in Bootstrap */
   }
   
   .landing-picture-text h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
   .landing-picture-text p {
     font-size: 14px;
@@ -32,6 +32,10 @@ No media query for `xs` since this is the default in Bootstrap */
     object-fit: cover;
     width: 80%;
     height: 220px;
+  }
+
+  .text-quote {
+    text-align: center;
   }
 }
 
@@ -57,7 +61,11 @@ No media query for `xs` since this is the default in Bootstrap */
   .sample-products {
     object-fit: cover;
     width: 100%;
-    height: 300px;
+    height: 380px;
+  }
+  
+  .text-quote {
+    text-align: left;
   }
 }
 
