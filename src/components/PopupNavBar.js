@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/PopupNavBar.css';
 import data from '../data.json';
 
 export default class PopupNavBar extends Component {

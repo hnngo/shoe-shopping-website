@@ -3,7 +3,19 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  .landing-wallpaper {
+    filter: brightness(40%);
+    object-fit: cover;
+    width: 100vw;
+    height: 450px;
+  }
 
+  .landing-image-simple {
+    filter: brightness(75%);
+    object-fit: cover;
+    width: 100%;
+    height: 200px
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -20,13 +32,21 @@ No media query for `xs` since this is the default in Bootstrap */
   .col1 {
     display: inline;
   }
-  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* Hide the first column */
-  .col1 {
-    display: inline;
+  .landing-wallpaper {
+    filter: brightness(40%);
+    object-fit: cover;
+    width: 100vw;
+    height: 550px;
+  }
+
+  .landing-image-simple {
+    filter: brightness(75%);
+    object-fit: cover;
+    width: 100%;
+    height: 300px
   }
 }
