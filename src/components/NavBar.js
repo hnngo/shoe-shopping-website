@@ -120,3 +120,4 @@ export default class NavBar extends Component {
 
 //TODO: Color change
 //TODO: Style change when clicking
+//TODO: Transparent on top, and white navbar when scrolling down

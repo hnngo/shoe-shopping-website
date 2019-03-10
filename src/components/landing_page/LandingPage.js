@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LandingPicture from './LandingPicture';
 import LandingSample from './LandingSample';
 import LandingSampleProducts from './LandingSampleProducts';
+import LandingFeedback from './LandingFeedback';
 
 export default class LandingPage extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class LandingPage extends Component {
         <LandingPicture />
         <LandingSample />
         <LandingSampleProducts />
+        <LandingFeedback />
       </div>
     );
   }

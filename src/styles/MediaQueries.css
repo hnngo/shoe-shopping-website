@@ -3,6 +3,13 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
+  .landing-wallpaper {
+    filter: brightness(40%);
+    object-fit: cover;
+    width: 100vw;
+    height: 300px;
+  }
+  
   .landing-picture-text h2 {
     font-size: 24px;
   }
@@ -23,7 +30,7 @@ No media query for `xs` since this is the default in Bootstrap */
 
   .sample-products {
     object-fit: cover;
-    width: 100%;
+    width: 80%;
     height: 220px;
   }
 }
@@ -64,7 +71,7 @@ No media query for `xs` since this is the default in Bootstrap */
   .sample-products {
     object-fit: cover;
     width: 100%;
-    height: 130px;
+    height: 160px;
   }
 }
 
@@ -98,5 +105,17 @@ No media query for `xs` since this is the default in Bootstrap */
 
   .landing-slogan p {
     font-size: 22px;
+  }
+
+  .landing-sample-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 46px;
+    text-shadow: 1px 1px 2px black;
+  }
+
+  .sample-products {
+    object-fit: cover;
+    width: 100%;
+    height: 260px;
   }
 }

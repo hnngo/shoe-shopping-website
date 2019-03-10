@@ -4,45 +4,45 @@ import data from '../../data.json';
 const shoeData = data.imgURL;
 
 export default class LandingSampleProducts extends Component {
+  renderProduct(...arrProduct) {
+    return arrProduct.map((item) => {
+      return (
+        <div className="col-md-4 col-sm-12">
+          <img src={item.imgURL} className="sample-products img-fluid" alt={item.name.toLowerCase().replace(" ","-")} />
+          <p className="monteserrat bold mb-0 mt-1">{item.name}</p>
+          <p className="open-sans">{item.price}$</p>
+        </div>
+      );
+    })
+  }
+
   render() {
     return (
       <div className="container my-5">
         <div>
           <h2 className="sample-header lobster mb-4">Sneakers</h2>
           <div className="row">
-            <div className="col-md-4 col-sm-12">
-              <img src={shoeData.nikeShoes.shoe1.imgURL} className="sample-products img-fluid" alt="nike-shoe-air-retro-9" />
-              <p className="monteserrat bold mb-0 mt-1">{shoeData.nikeShoes.shoe1.name}</p>
-              <p className="open-sans">{shoeData.nikeShoes.shoe1.price}$</p>
-            </div>
-            <div className="col-md-4 col-sm-12">
-              <img src={shoeData.adidasShoes.shoe1.imgURL} className="sample-products img-fluid" alt="nike-shoe-air-retro-9" />
-              <p className="monteserrat bold mb-0">{shoeData.adidasShoes.shoe1.name}</p>
-              <p className="open-sans">{shoeData.adidasShoes.shoe1.price}$</p>
-            </div>
-            <div className="col-md-4 col-sm-12">
-              <img src={shoeData.vansShoes.shoe1.imgURL} className="sample-products img-fluid" alt="nike-shoe-air-retro-9" />
-              <p className="monteserrat bolds mb-0">{shoeData.vansShoes.shoe1.name}</p>
-              <p className="open-sans">{shoeData.vansShoes.shoe1.price}$</p>
-            </div>
+            {this.renderProduct(
+              shoeData.nikeShoes.shoe1, shoeData.adidasShoes.shoe1, shoeData.vansShoes.shoe1
+            )}
           </div>
         </div>
         <div>
-          <h2 className="lobster">Chelsea Boots</h2>
+          <h2 className="sample-header lobster mb-4">Chelsea Boots</h2>
           <div className="row">
-            <div className="col-md-4 col-sm-4 col-xs-12">1</div>
-            <div className="col-md-4 col-sm-4 col-xs-12">2</div>
-            <div className="col-md-4 col-sm-4 col-xs-12">3</div>
+            {this.renderProduct(
+              shoeData.drmartens.boot1, shoeData.drmartens.boot2, shoeData.drmartens.boot3
+            )}
           </div>
         </div>
-        <div>
+        {/* <div>
           <h2 className="lobster">Belts</h2>
           <div className="row">
             <div className="col-md-4 col-sm-4 col-xs-12">1</div>
             <div className="col-md-4 col-sm-4 col-xs-12">2</div>
             <div className="col-md-4 col-sm-4 col-xs-12">3</div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -50,3 +50,4 @@ export default class LandingSampleProducts extends Component {
 
 //TODO: Star preview on each products
 //TODO: Clean up code with reusable components
+//TODO: Finding shoe with white background
