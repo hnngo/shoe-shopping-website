@@ -7,7 +7,7 @@ export default class PopupNavBar extends Component {
       <div className="container-fluid py-3 popup-nav">
         <div className="row">
           <div className="col1 col-lg-3">
-            <h2 className="popup-title text-right">SHOES</h2> 
+            <h2 className="monteserrat text-right">SHOES</h2> 
           </div>
           <div className="col-lg-2 col-md-3 border-left border-secondary">
             <h4>By Brands</h4>
@@ -30,7 +30,7 @@ export default class PopupNavBar extends Component {
       <div className="container-fluid py-3 popup-nav">
         <div className="row">
           <div className="col1 col-lg-3">
-            <h2 className="popup-title text-right">ACCESSORIES</h2> 
+            <h2 className="monteserrat text-right">ACCESSORIES</h2> 
           </div>
           <div className="col-lg-2 col-md-3 border-left border-secondary">
             <h4>By Type</h4>

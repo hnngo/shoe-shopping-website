@@ -18,6 +18,18 @@
   font-size: 13px;
 }
 
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.monteserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+}
+
 /* --------- NAV BAR --------- */
 .navbar-nav li:visited,
 .navbar-nav li:link {
@@ -45,10 +57,6 @@
   padding-bottom: 5px;
 }
 
-.popup-title {
-  font-family: 'Montserrat', sans-serif;
-}
-
 /* -------- LANDING PICTURE ------- */
 .landing-picture-container {
   position: relative;
@@ -64,7 +72,6 @@
 }
 
 .landing-picture-text {
-  font-family: 'Open Sans', sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -84,11 +91,6 @@
 /* ------- LANDING SLOGAN --------*/
 .landing-slogan h3 {
   font-size: 36px;
-  font-family: 'Lobster', cursive;
-}
-
-.landing-slogan p {
-  font-family: 'Open Sans', sans-serif;
 }
 
 /* ------- LANDING SAMPLE --------*/

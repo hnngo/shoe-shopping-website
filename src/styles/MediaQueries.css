@@ -2,6 +2,26 @@
 No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575px) {
+  .landing-picture-text h2 {
+    font-size: 24px;
+  }
+  .landing-picture-text p {
+    font-size: 14px;
+  }
+  .shop-now-btn {
+    margin-right: 0;
+  }
+
+  .landing-slogan h3 {
+    font-size: 30px;
+  }
+
+  .landing-slogan p {
+    font-size: 14px;
+  }
+}
+
 @media (min-width: 576px) {
   .landing-wallpaper {
     filter: brightness(40%);
@@ -15,6 +35,9 @@ No media query for `xs` since this is the default in Bootstrap */
     object-fit: cover;
     width: 100%;
     height: 280px
+  }
+  .shop-now-btn {
+    margin-right: 10px;
   }
 }
 
