@@ -3,7 +3,7 @@ import React from 'react';
 export default () => {
   return (
     <div className="feedback-container img-fluid my-4 py-3">
-      <div className="container">
+      <div className="container w-75 py-4">
         <div className="row my-3">
           <div className="col-sm-3">
             <img src={`https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`} className="feedback-avatar img-fluid" alt="user-1" />
