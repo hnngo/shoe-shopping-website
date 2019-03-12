@@ -33,3 +33,4 @@ export default class LandingSample extends Component {
 //TODO: Add hover sample effect
 //TODO: Add button to direct them to shop
 //TODO: Click to direct to another detail page
+//TODO: Add sample products for accessories

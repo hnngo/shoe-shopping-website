@@ -64,3 +64,4 @@ export default class PopupNavBar extends Component {
 }
 
 //TODO: Dim other part of website when active popup navbar
+//TODO: Random pick up 1 or more products to show on popup nav bar

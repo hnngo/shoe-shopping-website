@@ -73,7 +73,6 @@ html, body {
 .landing-picture-container {
   position: relative;
   top: 57px;
-  text-align: center;
 }
 
 .landing-wallpaper {
@@ -156,8 +155,19 @@ html, body {
 }
 
 /* ------- LOGIN MODAL --------*/
-
 .login-modal {
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ------- SHOES PAGE --------*/
+.shoes-heading-container {
+  letter-spacing: 2px;
+}
+
+.shoes-heading-picture {
+  filter: brightness(25%);
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
 }

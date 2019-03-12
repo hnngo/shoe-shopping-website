@@ -47,3 +47,4 @@ export default class LandingContactForm extends Component {
 
 //TODO: Submit button small when large screen
 //TODO: Adding sending email to input email
+//TODO: Submit button stop reloading page

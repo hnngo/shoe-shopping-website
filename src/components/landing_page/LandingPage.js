@@ -8,7 +8,7 @@ import LandingContactForm from './LandingContactForm';
 export default class LandingPage extends Component {
   render() {
     return (
-      <div className="landing-picture-container">
+      <div className="text-center">
         <LandingPicture />
         <LandingSample />
         <LandingSampleProducts />
