@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ShoesHeader from './ShoesHeader.js';
 import ShoesFilter from './ShoesFilter.js';
+import ShoesProduct from './ShoesProducts.js';
 
 export default class ShoesPage extends Component {
   render() {
@@ -8,6 +9,7 @@ export default class ShoesPage extends Component {
       <div>
         <ShoesHeader />
         <ShoesFilter />
+        <ShoesProduct />
       </div>
     );
   }
