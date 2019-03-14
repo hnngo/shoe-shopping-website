@@ -18,6 +18,8 @@ export default class ShoesProduct extends Component {
         return (
           <div className="col-lg-4 col-sm-4 col-xs-12 my-2" key={d+i}>
             <img src={d[k].imgURL} className="shoes-product-img" alt="landing-sample-shoes" />
+            <a href="/" className="shoes-products-title monteserrat mb-1 bold">{d[k].name.toUpperCase()}</a>
+            <p>{d[k].price}$S</p>
           </div>
         );
       });

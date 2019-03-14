@@ -48,6 +48,18 @@ No media query for `xs` since this is the default in Bootstrap */
     width: 70%;
     height: 200px;
   }
+
+  .shoes-products-title:active,
+  .shoes-products-title:link {
+    text-decoration: none;
+    color: black;
+  }
+
+  .shoes-products-title:visited,
+  .shoes-products-title:hover {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 @media (min-width: 576px) {
@@ -82,6 +94,11 @@ No media query for `xs` since this is the default in Bootstrap */
   .shoes-filter-bubbles:hover {
     background-color: #404040;
     color: white;
+  }
+
+  .shoes-products-title:hover {
+    text-decoration: none;
+    color: black;
   }
 }
 

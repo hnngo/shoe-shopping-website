@@ -5,8 +5,7 @@
         "Nike",
         "Adidas",
         "Vans",
-        "Dr Martain",
-        "New Balances"
+        "Dr Martens"
       ],
       "byStyle": [
         "Sneaker",
@@ -38,7 +37,31 @@
         "name": "Nike Air Jordan Retro 9",
         "description": "The Air Jordan 9 Retro offers durable comfort as it pays tribute to the iconic AJ 9. It features a Japanese-inspired design and a multi-language outsole that spells out Jordan's personality traits.",
         "price": 269,
-        "imgURL": "https://lh3.googleusercontent.com/Gt2-O_oxyPSltAulVzX7WLGzJdrDtxZXbwMFvTAqmnu0pA1_RCX33-qLxhi79efC7SzqIVn2zkmBLsbl3v-XZHrNV-ZoFDnKpIqelJ7nfGG73BsnnS6rbgIQ1FfFO5zDoPUyW5nyzu00ScX-1RjefA1pyFy_nKpeEF_BDYZLv-bn9_UyRT-E2l-o-RS8oO-wcozvjbrjTgypDNyaCwGvcXlM8vJJj9-qX0gpFOAEVO562qyOuC7iPfLzNevEf3Mxi8LVqTJSBM94qtxCzdge-nw7YFxDZr5NT1iNyE9IPR0Lcwyy0H1BTm256We1S0TO6v4Fir59ytSmtgWra5XoU5vh5vO8RXp3BrDnnhKgUK_nFk-tSnm39OlTjEtUptfPOYSEHpgXP-vD9nwOOOrpoLgDbNObyPzZ6_aaNxPbc4RxirmTdqkoYxJ6V5C8ofnaYe5K9WAW9kptIP8VX-h5U5iOGmMRj1G1qkaW17WCdJ8o_SUm5Ib0WjfRtUVaW6fuhKMqTeGffdU4ma6u5QZLVFmMrP8zzqbZRZhyl8wbWE2bjG0M9UDDarffPM904mKyytvwNUpe5w7K-pNhy9rEiPfKbIa-E3PhDj5vYH_DsMykmqVI2EUN-AX_Fr7YW7FhuYrVU1mEoo99hWFsmLlyk9Mayh0l8y4=w1638-h1238-no"
+        "imgURL": "https://lh3.googleusercontent.com/Yh9ED6W9Q7IVEQXWpyxsz_m4KZ8kg0RLE95Ae3fXB7_hZYXezGMNEZva_RtlETl_mqnIt-QZSVC6CorlzrmkVn4Qm_DEzxW6-yvjjei7glo5eDeWny2b25YA_w3vG3nQHk7PKetgCYPgIcU8BaJtYejn6Kq2Usw4NjobRs7CFOyPyWJ_PJjIr30r_iqaLbH3ZoqpMwHlvPtsNTToyOCmFq9Wtd_ViADEbkPK-K4p_L1dJGffM4FyFFuiK7ZccxtMGy7C9wnlaS6BS3N9IIhEaABo7smtHRE-BqjZteg3EBFIMwWkWiRj-hVrC0Bh38SsDjOOHa4gGvEPDbqezsnmICosE-HrWwzRqhOkmqYcoW_l6_GVXAIw5Q0fhnj6v2-c47xf5UBtuWd0bc9LyACaiEx_JHUp5S9gOMHV9Svr1UuesB5vO6afun87PkxFaHSrNxnsRyAK8qtlmp0OgK3gd58MBR7tkuIMG2GAzXwu3c0S9fRLTIVyjLR2hETXEE6qX0LpiayscC1HWFQcRBG4uHAK-F6AasTYlOLepfZK3wuSUutETWZ7z1rJ48MftusNGXivU_54_VuhFH06_p3AXVL7Mh6_K-XNbsxUN5qC-yqriPe8RwWDIyCMile6nzlTxsvYZ3ryIvfTDhGVxIWF3X_LGnuhNCQ=w2082-h1590-no"
+      },
+      "shoe2": {
+        "name": "Nike Epic Flyknit 2",
+        "description": "The Nike Epic React Flyknit 2 takes a step up from its predecessor with smooth, lightweight performance and a bold look. An updated Flyknit upper contours to your foot with a minimal, supportive design. Underfoot, durable Nike React technology defies the odds by being both soft and responsive, for comfort that lasts as long as you can run",
+        "price": 229,
+        "imgURL": "https://lh3.googleusercontent.com/WPyO9jBd8gVSKKtvGtnSJC3BPyWVPfU2bLjikteiSFfuuTnClr2cCenJH6cMDp9dUkl9WZSOWEvtUmWTFUZ5k2pzqEWkkF2Nt2pUdrCnqw4xP_Uk0SA5XG6s_0cA4AOkcqY1S3LqSwIkxoEnRXxDXYiKEDI9jXSo7iUenaEq-7Hz-KE1js5fr3hfu2VsebOitAzF3MGCR5SbCyA6sBv9wkIvFbwANNLcRWCGy5bC8DwgPokTzC8By6ZvtP3_O9-geYF8frHvQqOSlX2dr4goGBDKOPy3hITGa30pN2prEoK810lCoxYoWH3dpwlwMs-9gEm-Srf6tJvtnoxd823kJmeCTvp7-YbpC_nvBCia3R3QjB_RGLXiVp6Qda7b2OVzYH4V1vGY0KbBzaWpDBmvsc_1NRftmHt2Bfs_MqH6Sj93sXmxP7YkfjTpvHNF_rAFVlhsCOcYBd0ReyjEBy8QeNoDM2cp51vYXShDAOdR0iXoA4cJqX8FKhKFcqi8mRK3HuRd0xstlf2ETEeE9C7BZ8U35q_JjUWs8z2LoRuXOXSLTQeg58pF3Yj4AyjUhIMWFxMaAqGW1l_33CXOO2yT827ITlLx4fn6xazfzjwvEgiHbxk3amij9Dgsi233ojxt-kGl0WsVhxARAmG_1XIe2AZJBnXgsXE=w1834-h1360-no"
+      },
+      "shoe3": {
+        "name": "Nike Air Max 270",
+        "description": "The Nike Air Max 270 Men's Shoe is inspired by two icons of big Air: the Air Max 180 and Air Max 93. It features Nike’s biggest heel Air unit yet for a super-soft ride that feels as impossible as it looks.",
+        "price": 229,
+        "imgURL": "https://lh3.googleusercontent.com/pENwM3EpkC4XUaj71CiPa4aJjZpbvropvtXKHUET5GULI_O7M1PtG2fNSBYyQ8XmNTajcssWVydmMALoHnrgsLgOZAnt9baO0TBD6EB59PQo8vdfHgb1UKEzPKfazt6F3bKD0qXfTYbioHOchybpFQ4-1upLnK3QyWcfWstWcfQcFyKs6Loc87QhD2t2IEJz-fGKHSUT-UbIkPLowxufNZ9VhiR2oYQzfoZ0cRLhjF5cDC850Prm8fNumx3KHlF4F3hTDAVMTAGbB4_Vokz3OXIM5BI9BXK5ZT6AZeymWoJw2Lh2n0cDUcVfrb2yol32lOAl8tq7DgZPGhOpxfMdZDLaAnRdCzSkRGHbq27s9Tkqszaf9zV0mfUUSh2sWO0uQGEaYpZ4bathrISlp0OWxcS8qOawpwwvMsi1OyszqdbNi1uRSVOpfyGfou9N1QIylqbM2qA8oo1f3AhfwiK0YYXM6-et7-o2-Knra1FyuimNyRULrBZlykJa2vPdlPnWbNxYMsWHD7TN1NMW2ixl1nWlqd78xOx3nK2R_JktMxCdtQwfbPeRfeFcKksovkN4HaC3NxvJ3f2U3A3YWx3LXro6rS54T39W4HfV7DC_TO_mMifSvfls1RaL4H-hssUY57azH6UOrYQGmGW2fNerfn_z8rb9eis=w2082-h1568-no"
+      },
+      "shoe4": {
+        "name": "Nike Air Jordan 6 Retro",
+        "description": "Originally released the year MJ won his first professional championship, the Air Jordan 6 Retro Men's Shoe features a sculpted midsole for cushioned stability, with abstract overlays designed to celebrate Jordan heritage.",
+        "price": 269,
+        "imgURL": "https://lh3.googleusercontent.com/1IE64voE2Ow2-kIS2lia060HsL65TbLH6T7Clx09F6vBUf6t7qkLRTbJO-fZT8bHL7lqNJowjv-9raKj5saD8QSSQJRf77FRhieOozYZ0zR8Yz636NoeQTv-p6voSJb7BPNvNyWWIMdVljlPjDXVVcz_MyLwDD9DYMzwyh0vt_rLe2tAYpNdew3G8Vh5T2SVbxmVFGFsS4QLDspdFVuzcVPf2f_oru2c_CCELgd2AaP-ad6ApazAfATVN-ladHGobyAuN6J6kbgCP17ZQN8P8rSs_Lh2I7NFvZXuzOwbBiadu7WJLVjhrZBSnxkUOJD_0ne4hkccz85YWkX-5YE8S-g0P48aQgFpQnVni9bILr3UTzYXpWT6mitTpmAwxZEY7NqRf2a9W5LbYN5_qOacX0G5qpnlkQdgO-dkNvncBegH-XA6mIfLPbGgUt9XiSsaWaPpM73Q2wikJ-GcDfQcCV0XpDewGYlPmo3g0dOmawfyIPZ8hurn6dUWMKTxQM-DWlFuU0cfZzHoXf6G3w05LE2RpNx80ALfnBRxxJql3BnALhbpY8KxtQ1P7wF1Fhbqq2eQK6CQNUlnrkDg2ear6g_QZ-KISxEl0YCXOWRvanaSru01yJ4HlsKX-BGn4qZKcaSfxP8VnScQ03u6Pukw9Ttkbkrw_zo=w2082-h1590-no"
+      },
+      "shoe5": {
+        "name": "Air Jordan XXXIII",
+        "description": "The Air Jordan XXXIII rewrites the story of an iconic basketball shoe. Its revolutionary closure system secures you for flight, while new FlightSpeed technology is tuned for optimal energy return.",
+        "price": 279,
+        "imgURL": "https://lh3.googleusercontent.com/AnsnYk87kxD0CzL4c1CELNmGL1hSUxgWSVqVtOCE7brJxykVV5CZ33LwZTT5Sb3gcmZN2ChYV_NGSivBmtN2lDJl9Df_lHB_qLifH2Th0A9ylhC2zUA4l2bZID6UBV6xI9CgEyBAUKKp_fx_1lxH08iBtxNpmWMxQBkeXabhodr7cL7oU4j1Z1GGbQ4CnaL0yYnpu1hJ-tLCFjNhFpeS2nbObTrcbwHuwAJap2CZqz6ZjbFqs2n-G4tILcVedY7WDBngCId0bfecql5PL0z46WmrUJVy67UD_jEaEZPGPRGBjSbVammiMCNPCDwpcghZyo2cSP9Jds3qafHlQJVslcj8AuWrXsyur41Q7GTvyMoRVqCFFmp8_EWFtxziogxrQUwIRDJrVI-lxxctMuFO6xZc-73cXK8kuoD4Mymr3-PB4Pd_LCQAShk0-whN1UiLCUigRQlAU-dQFrHJlTzzbQBeMnJffEaCjeno0jvM972UWfmKGiKWLzAgs4D0_1PslJbSvwLvUKS2yDhwO-8yuG0O54wftQBddM2Rko91j_XYgMIfjIzr1uWAjuIJyl7sUOMjOPSXAwLK_INetu4TsBixE-NxfrJHnZKAi-X1LpM4DnxtUVgqsBiwVYzMwOathvl9BKdAm2CTHO4PkXFSpUQIBdKl-g8=w2082-h1590-no"
       }
     },
     "adidasShoes": {
@@ -47,14 +70,50 @@
         "description": "",
         "price": 200,
         "imgURL": "https://lh3.googleusercontent.com/sF6emByU3z2EVLTz9b_brZ1Y1MfNJCnFAtaP1k6BVB0iCQM65A1WFQwOL5JLDHnSrjWkDOtrjBZG41Rm8kMbYOZSjc5HQF8yols6hOyftA4SbW4Zthw_g6DQQvmv9tgoChW69VqDxUGhwji_rDQbapl6r7NXUQKyHHU0csRXomjs4Ugt3ClYyTbPvnuyXVZzCxYgstYvPLjfcKp7VZoi3n3kvgO37Z0PjZCB0u8O7Rdu6fPr1MHqB5T2cQ7r1tCAZLR28nhiQju0-kT9Clv-_iY15pTJ4d90wzEIJM-XScW2iTAaOjG5T9zXcBDNsFoyNl_mxHiJJyY-709GmeyL_G4_S4R-rKIw0lifHchVe9UylLsNvvNveTuKEFwny02-aoJY86BaV63NqBMCyoqqTfg0vMaXEbRg1VSIyuFaLGxb3t781zvIs3PofgAnPylgaMSNKw7UnoIYCQ_f5vc0N-t1JA8Zv1rP9AiRqEHQgDj6tFnD_sDfVu2Cn5pmNRXsDllBLftMDPvp3m32z5P3663YGtJDaSPN2pVJwrVmjx6o19dze-41Rp0eDiY1H8wZ-vCutYQSFopjELnb37PA4yofEOtiyTMyjwMUh3Ng6ablWlQVpRF7NifJm9hibEy7kfDh4X8s_SwUwWDGbJQ9u8Xbs3bAs54=s840-no"
+      },
+      "shoe2": {
+        "name": "POD-S3.1",
+        "description": "",
+        "price": 200,
+        "imgURL": "https://lh3.googleusercontent.com/UrBoZKEIsIQbEH9WW_CKDwdU4OjAhyT6jNv99fXY6aiReo9rYACp20WSx9vBO8k40FDU7V-hdKOq1VUThtHhHVZmHtN4aePGO9aUX_jM_fQ1PUmx0shxmDr7BBmcLkGvT9n6eqRoD58CJM_mkM28eMKOec1HngzHpCyeapqcHz2yKdy-BLfoym_0fX5eqlwoR3xkwlZcjgmHsCJJge3EugCSnyjS6Bu18rW6CuEVP9v9DJyre6PPK070VGGtIFxyGCA5xuoS5_TJvixxNprp7sawFw2Cx47aSooHYfEy_kXhf8QVUI_P04xeCtwF8fEoGTCbeh4jIVkUi3gtgmqESZiGVaDQDEa3zH5P9K4JtmGJb-abswcY1Mdot6OrCqnu3KKwPVP6ji7sy_RMXbjDJzuVQe92_YJsUVw-pSlDV9E4vlgv_uIP4_RIBhNUU13ePfNQVuXyJhZ_zLUjpPZx4zUvqFIAC2A-DtjHGS7j1OldMhSdP_9-LemdEE3WmYQUNvVbpgszeMgfhMQ3aTfPmg7odWFar4HB-aE1f-LTBjRtLBCNi9iPcNdhUJ4MwGsLLaN9pWwM2OBjmZTwOHrMhwKhzA_q2TYVtJsHTYVAZVO8FTv4SFhxpoSIRPizZxDCvijN__pNR32xf4DX2O3Kn17w5H3z2JI=w1562-h1266-no"
+      },
+      "shoe3": {
+        "name": "98 X CRAZY BYW",
+        "description": "",
+        "price": 250,
+        "imgURL": "https://lh3.googleusercontent.com/3aR3mt-3_v50cafVBqMvMMtgyjimkNB4KwfFG2QaL4J20bJpuX5jT_gzYVbGiVDPzTeZlqlr2OQT02vmx2KHPLBFWaNjKta71YeZXhB7tfJ_4NW6Mcnd63Sri4qaUK68XN0bcJcv46emDKKxhPUXEm2aSuVv93At87RqERI28yV-_XYHDTgb0hlhewClC0Z3_0aIzODzjZEc8qQv7mthLKTln9Sf74rrhkkfrngj1EZK_4Y49u_gmeSLfM1G_o_pS3pJe-7fh6OmbYO0F1mhl108cRNQAJGqEuKGHGBO-AIKpoggrzAuu-gTEEBizIRyQ_VHyAJpzt9nUojtWPla8rRYQRjhG2TgygJ9gKYRASEHGEe1Dq7wgTAChSXkFU0tIaz0iHAis6l86ZZ82lsMYFgrEcU0kBknJLPk9SNIXLJwwmOTe8Pd9harpJKUtciF8G1t6K45ZVsGD7R4EZs1PJ3rhOrXrXHdlKe8wU5tVEGZDqMeUmu4QGLIKYu6pqjoPBkZvkOO7-2DdmG-BH7IUKgK6CTE1zapp3LLShmWnzmysnRRWGBOPP2XZQdTEoG6oPOkjHG6AWVWWad8xP0f-k2xdx7sbYawA6NcPmdLH_qedK4Pi3Ddce3IWwaN0QheFm_EWSwC1U839dv1CLGSWphP-yoMI_c=w1562-h1266-no"
+      },
+      "shoe4": {
+        "name": "RS REPLICANT OZWEEGO",
+        "description": "",
+        "price": 650,
+        "imgURL": "https://lh3.googleusercontent.com/UVWBC23s2exG8gqpHabcJ3F4cMiYVBCWo9PXNaK5RC_E8YW8KBl6aJKG4CZU8ks199Ewt5bHZjZI5JyxVoxElDllgvv2-9dyN98l2MwMiRqOXlKK4l1yEVj2p7MyKQkuOUhFiqa4Qx8ijjIBwks8Ea3eoZVr09bG2xhGwPI7fEyuxzahk5sQr55FBmjfXSjK-2m27C3bP9hP5DssVAIsby_F5lsKo3sa_komCasbEYkg0XIe_8ByW8oTik0GivxdqZPnUoKgP1dGy3eOKb5gQUEvEgfVmVDQ9nsHmWsGZRal0yOhihJ6vff7iRIjeept0BlQ0uf0Bwqkh-R3cwBfAdbxYRrASZYXgG8q-sKK4SM1wUj16ICzGO8W9kYLbUFlAPAqCdxnVjY7qaxYIq4b5DMANMeeALfLBY7AhweoB1LcBwU5K0kJwKdsfGjYHVqE39MiI2coh0Ic0bz9rB9LYuPTOEv4o_yWNdPb_6v4-FVvCzDIMciSWzkoAuYAEuXY_Y6Ql8dQoYb_bDAP3R-yfvcD1bYfh5hXJFwuSeOwZ7g9gJi87GWUvC-v8ImB19qNd4P6jG1b1Rycjnm2fbBO_PUsqa13M8gXGOsqt-mjwDzXw18tRvFl6krJkjyw_st-OkjpjsvNGxKNhe2TRzCjytOyFUcidwQ=w1562-h1266-no"
+      },
+      "shoe5": {
+        "name": "PHARRELL WILLIAMS SOLARHU NMD",
+        "description": "",
+        "price": 380,
+        "imgURL": "https://lh3.googleusercontent.com/gfxhxPgpv9yqtoPoKRjDCiVlZqFjmCwvS4UKWk29Y8WXT3iyewFwdG_BN2aV07IQWtXCo8avOwS8BKrC47nB4_NQ7-CbLojaMRxIDLN_qvn3-A5UJW5CQol3BOYn3l36KreU2LCtINuWGUMSnOG0eq5m60Du6o744fdse59EV4buB1o1aaR8wy9A0-xaWdB70S_-MGCMey_ke4LfhP8c0c1cdz_ShhNM0xFlYbfZLN60XzP14XjvmLbCpy8PV3yxCSCIBlk21xahb4QIn8P0NuSQNyFx0J8ro5cRfQMDFPnN4Bcygx_pdizkxu00b8q_iGoydeOwNmXYXpSY19UxHFW-BaACSf-WCytfgT2NeAMITLE_KR1akV1Ssj7AlCztuvpg2ZF843BEsvPKTmpbQrGpBhOVyuk-Q2JSSIX8TcbZ2c5nWHLbFnYv8H4Hojx-Qhgk0uQA3fQCS7-Z5QBerX6zXsZQozdDlTFGGwLJD3uuCWs0BrVQEDpzzTJzHdrpEVZIXbva86Lh72G8VrCfjgCrs9HfAj1AlJ2Z9xrl1CB_QqDegVEbAcG64AfmFl2LGcZxseYSawaPsF0a9cXXHHt0y9QTiZcwg68OaGph409oobS4_-pyT0Trf2TCsqnX_SGkimz6Ed4FO2WpoBFzIvCeDPGKq70=w1562-h1266-no"
       }
     },
     "vansShoes": {
       "shoe1": {
-        "name": "Vans Classic Slip On",
+        "name": "CHECKERBOARD SLIP-ON",
         "description": "",
-        "price": 120,
-        "imgURL": "https://lh3.googleusercontent.com/BnsocuYHIMhT5wIjskYWERJD03CVHA6cHS39Ko9ymMdd2iSzHb8UYiUL6MrYJU8raC9yKgzCqovZcmiVuX7-oOAF67N7lRGK1vMC55ghuT4fymMVayEUDtiNeSlSUXax7aorJ-hLP_uV44MCXL6Lk9ke8rxTKYnHQWm5xkybJ6JfgnBI4JTPSbZPoLGhsoZQmJYqjRXsUWyghAQ5MPv9AcKP7msHkCAVC7N8fY6xQtyzZtOi4jhRCWEHfJiV2PD6RQJSdKWic42iPTrp1MDWtWXYUoLwoHHYyNycFU_HdudPVtYJtSjbC8TZi7pcwp2mhiwiDZK7u-Pp58ChQmP9tsrfJa3-_klPlRwB8yfm851MjPnnMpdshjfNvjDrdftqxpajpaNOCY8AK2QL3zkgOAFREQGa7bkzoFHNe3DqihNNn2NQME-qhyTD8ikzOdX9ElrnWmG2U3XTBrLVp6SHWxaYutehnXRqgJ6Yzn9BBfrLgmQIEuywQRylWzVtp_MfrJursdbirqD3k-pH1hzjZVROcp9QZOrFodS8iT-TuGMOKRK1He1ZQHne4HQZlBpG6exOM6D3yvCp_faiyGlxc5I-Ve8kql6z87MjGO98UyQz2gfYqQUj6zG1JsxTUsz2nui2hejpdpCP0aVk0IItkq8UewIe-Po=s900-no"
+        "price": 80,
+        "imgURL": "https://lh3.googleusercontent.com/2eDIHAgJ_LBPoitRf-j85aiidBUK00-VdEUg4Gs2idADxYh9JPoOZBC_e15EKFpPF6CvQWjjQ1tI3YjpG5HhJFf0LRV-HPd41XRTDEprmbX7OZuQjqQf4t0slmohsIKjntiEF42NyCsTX37c7iIdR4bq5UPdtsDZ5Ix-AivngXcS3ZyMaAWvGLO_rKd7zpEpssaN60IL6SCLpVAWCaPCw0s0M_ViWaIzXVrCDPz20Zi3X5vC-1-UHFzV6JMWhJhfPeSBQ-hKE7KmdbTQ6I9DneoccWToAMI2WamH9SUUSAxIym72-6I2V2OdKljKcektAoqUUSPogUgQf5Kf3fMr_33p0etoRTf03LYrhOPA3xp5RsAzEBooqU6gTY37QtF8TZF6RmB0gj1uJpwqnLDTe1gNjk42DBmeB8sYnxbyZ85xAgidZiiz-vgj84KiJq4FWcPpKQHPXiRvGgaKVDdl3w-B6wlH9AFx7hfC7QwMIYMSjWBcxub7HMuCwPu40BMD-Nl8NhHx8eIaV2cVxwdIYM1mXOjTGM0PT3yY2l6RHE5OFzbrSMW1kiglP-U9jd2xSFnzKjn6ak9vSPUGLVfVm7veZl_kj2rPfOven1DgSKN0D7eR1xJx3Is5aelpJfUDzMDO9j-7s10mNwqvl5Aplh9DajU3vVc=s1020-no"
+      },
+      "shoe2": {
+        "name": "SLIP-ON",
+        "description": "",
+        "price": 80,
+        "imgURL": "https://lh3.googleusercontent.com/LyATrep6A-uaXoJBUCnuNh2OKRm52mfCsbk0CGMnjSjwXRJal2K4MecQhrrNJuGQEspxL7p9zcwV3I4otty8FiY69NXwXZXRtR8HyioJQBEnYE8zRTGzllX9AnJv1XPOXL7v2FsX4y3VtCiQXGx-Z6DdFasXy2CrVcS1fnZzBgpQAl4ew14-9LAay6tfD_lBpVbtwYg8am6dRVlMKgBbD2COpMpsAbm1odIoDgbgKxC2lAD3DfOHtyYcEmOo_VmixIIwQGcVBVkoAsqIIpH4hlo3asQvWXjxa59fESluj9DUaQX5DdShbrqiqU26GbgcO7V_TNXA9ThGx6oBLwQlvz9koZSi60EFq-trftT3_LAkFe04i0gLrALDkJS3_5OPNsSF7hz9pN97--ot0CdrEwqi1WVLrlLNn7GRNnrrVZsmzzgix3N5diAwvNMj1T9dDwV0z2zuxcm27f6QVFzmFl39Tn1rnt1SaKir59oFBwoyCBxau_G2lIiGMoKSb4TN-ckORBL3b1EzF1r087qVCjLdZXD7EjGNmxMZkPAGhrKXV1V1r1r38IPc1PMxDNe1KePCyWJ7HCHrplhO1K4kgcHKXWDCPSuonXws4-Ectlv-jpmYqL5zTfLXNkTpp0fRmPs4nnWCJZnUvDjUPVwm-hp5qR-q81s=s1020-no"
+      },
+      "shoe3": {
+        "name": "CANVAS SK8-HI",
+        "description": "",
+        "price": 100,
+        "imgURL": "https://lh3.googleusercontent.com/jr96ZW3yYqXbjs_MI8z5rK3FYYHvSNhkoxQa_6HGA0wSjRh9xgfP6FPqohxCWF9USa2r-Oy5TEvC6r_WHpUsHx2v-nueRZu2qpQv1EPK33P5WdYWxhyk0y50ocXFabao9RfUCe2M0CkFs20VmVypfPmcIdbhJMYVXL26PuhThUREYj7wJByReCVFUH-FNcym-putp3tgM_r3tgHwp20cKPm8-jYcspNh9s8PtTA-Mo3RPWiA5ofhmnbgs8Y6CdI6DCEWmpHh2-yhTLwS2Fpt1WS8bjsbtibUtJ8Cse0Sr-uhDv7b_PBKH5RIPKaOnAlvLgw47NSa2CO5MgiIBBAnv9cTmvPNdf-euMosdG8deBYkiyzlJ6T6hOe3MzkWHx1A_P2HEKdfVZ_PR3LWV0cWRuT4xEzBKtE__4TEQQ13wS9sxBg6glkdF62tqdQB4I8fHne3QF8ql9EEJ83mLbI86Qu0uCukvtbfVYIBLMP1mcFaGge7hZn6cYCQY_m8xDjNJjGvwC-KvI685rSv7izkKCVkTVhm9qDCH7plv64gE3PIRGozEm_Vo0vh558tCs92rinXtI_aweyvZ5jTwmZGCy7xdJ4-cBWEFHuakuwxaqs4524rcvzqfXwVfIYv21uu2duofgD-O7nIRjLBIKsbrQQ-PW9jJ_4=s1020-no"
       }
     },
     "drmartens": {
@@ -75,6 +134,12 @@
         "description": "When our design team unearths a unique pair of original Doc's in a Japanese second-hand store — and are immediately inspired to bring back the style — you know you're in for some serious style. This is the result: a 1461 serving up sophisticated details like striking yet functional ghillie lacing and serrated gimping.",
         "price": 290,
         "imgURL": "https://lh3.googleusercontent.com/eSAJoQzwS1KBRR5_dpB-6BSJDX_LpbAxzplidaiHQ-INrp49XIZ4CSHKsnVJmmNpT-hVfiTg_3X-a90ZNQ1wWk8YR9LVmTDxx-VLNkilHwi4nJpc6O0zfIarMhOdOR7-C2sqeRHz_BrYbBQ9daMTonc1WMpgtqyB27R8mY_slQn_vGobnC6u6LAaQP8IowKer9QVN0Xw5HubkVZHMMH8XWwfECs6VfipwJqESF0yM0qwaveeiZq3S8BrFqFqsVnbIl9iCvVsfw22Cuqf0OrDYd9YUjCymiEaYjPyhIg3miNKhLZTYeK4c61eRfU8_flFJQBzAlhG_KWkKtjngIoX676NkXDv7CQ90M5YaI9ttQWtQjXmF3bVxCrAomST_EghAupySdzqrbieBqDznlXiNzwD1C4veQBhcXDwfR05iGaBAroSUnxRiKG249ogkLnZ0d493YD_NBfCuHCPv1K-RYjddbEsYHHVip1xicn4hWow8Y4mmKzbyess_Z5BMxavnq9XeoSownJvL3ZaLFvMG5GcDSl1V13ZtM20iflHwfaJmT0ec0M31TnAeX3NhTtx6ulrvdGRcqwCxyyPhl7KZww_Br5aktK-VoDxV5ufjrlFQKyCeAZBhwn-7BfIGHHMmK_jcgtLCkZOPc_EzSW6WtQJ4Kasz4U=w1000-h840-no"
+      },
+      "boot4": {
+        "name": "1460 RICK GRIFFIN EYE",
+        "description": "The 1460 is the original Dr. Martens boot — and in this collection, the boot's iconic DNA sits alongside the work of Rick Griffin, the legendary California artist and 60s-era psychedelic poster designer. This boot features his famous flying eyeball, an instantly recognizable motif often found in his promotional band posters.",
+        "price": 300,
+        "imgURL": "https://lh3.googleusercontent.com/gMWykuICu8jZqFhcOLg8B6X5K0IPM6_iCAaJfFe6gO98VTV3gWhIUcb0O0NStHoFoXJImsmKiGCgZYJ0WlL8gI3Mu172MlLP1eZuCiGGKsj7fIIMRghetVI1mber_UGOhZKI09KuPF7mg3xn5yuH4HrepU4FAkrCa3-xG2bRyF9hFeNEgEwKGgpNxY6_-v8MqL-hMND-pLumax6faIxFrFzarqsAS_CmkuUvjTh89bvY8wg7RRKwdCXo-XQUqhixt4zYtNnmmGia2qMaKclRmNxPcc02-bspLS15CZ01GFt32fUoRGh2e_qANalAcFIZYM9WjPDG2QExzG45ZCqyuOZDZ8gN-ddTPYDa-3Yvz0jiGJKFDQgDt1GOicJovCaPZU80ZMqWC0ea2PC0lImvVBxnGRPGl2FwZ4GO-3WsOXhyPenkjcPKIeTUZxvOvz1bySSRgSCiBlh-aPw_oePU14oCr0Ce39GkgYdaj09njUSoDvvmXYAS-vYfCcSJp9HEeNpp8qzlANlBQvmGHXhDL7egLCHJiQimmTUZF83XTPjuCJd3zpUuKl21ClPCwtDA8yU088tZaAB-kFcMm3c8faANnsisrwZYBJ3qKLafQMJltte9Lvk7ICeSj7iWeOuxANUf-Ec9WxmYVx7zgn-JB7jpTH79dqg=w1000-h840-no"
       }
     },
     "shoesPage": {

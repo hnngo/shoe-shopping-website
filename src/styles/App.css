@@ -230,3 +230,8 @@ html, body {
   height: 150px;
   transition: 1s;
 }
+
+.shoes-products-title {
+  text-decoration: none;
+  color: black;
+}
