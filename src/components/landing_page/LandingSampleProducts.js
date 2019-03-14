@@ -23,7 +23,7 @@ export default class LandingSampleProducts extends Component {
           <h2 className="sample-header lobster mb-4">Sneakers</h2>
           <div className="row">
             {this.renderProduct(
-              shoeData.nikeShoes.shoe1, shoeData.adidasShoes.shoe1, shoeData.vansShoes.shoe1
+              shoeData.nikeShoes.shoe1, shoeData.nikeShoes.shoe2, shoeData.vansShoes.shoe1
             )}
           </div>
         </div>

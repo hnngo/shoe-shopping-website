@@ -92,7 +92,7 @@ No media query for `xs` since this is the default in Bootstrap */
   }
 
   .shoes-filter-bubbles:hover {
-    background-color: #404040;
+    background-color: #acacac;
     color: white;
   }
 
@@ -114,14 +114,17 @@ No media query for `xs` since this is the default in Bootstrap */
     width: 100%;
     height: 160px;
   }
-
+/* 
   .shoes-filter-bubbles:hover {
-    border-radius: 20px;
-    border-color: #404040;
-    padding: 0.5px 12px;
-    margin-bottom: 10px;
-    background-color: #404040;
+    background-color: #acacac;
     color: white;
+  } */
+
+  .shoes-product-img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 165px;
   }
 }
 
@@ -136,7 +139,7 @@ No media query for `xs` since this is the default in Bootstrap */
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
-    height: 220px;
+    height: 190px;
   }
 }
 
@@ -174,12 +177,5 @@ No media query for `xs` since this is the default in Bootstrap */
     object-fit: cover;
     width: 100%;
     height: 260px;
-  }
-
-  .shoes-product-img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    height: 300px;
   }
 }

@@ -16,13 +16,13 @@ export default class LandingSample extends Component {
             <img src={data.imgURL.landingPage.landingSampleShoes} className="landing-image-simple" alt="landing-sample-shoes" />
             <p className="landing-picture-text landing-sample-text open-sans">SNEAKERS</p>
           </div>
-          <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated slideInUp slow">
-            <img src={data.imgURL.landingPage.landingSampleAccessories} className="landing-image-simple" alt="landing-sample-accessories" />
-            <p className="landing-picture-text landing-sample-text open-sans">ACCESSORIES</p>
-          </div>
-          <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated slideInRight slow">
+          <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated  slideInUp slow">
             <img src={data.imgURL.landingPage.landingSampleBoots} className="landing-image-simple" alt="landing-sample-boots" />
             <p className="landing-picture-text landing-sample-text open-sans">BOOTS</p>
+          </div>
+          <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated slideInRight slow">
+            <img src={data.imgURL.landingPage.landingSampleAccessories} className="landing-image-simple" alt="landing-sample-accessories" />
+            <p className="landing-picture-text landing-sample-text open-sans">ACCESSORIES</p>
           </div>
         </div>
       </div>

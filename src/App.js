@@ -4,7 +4,8 @@ import './styles/App.css';
 import './styles/MediaQueries.css';
 import NavBar from './components/NavBar';
 import LandingPage from './components/landing_page/LandingPage';
-import ShoesPage from './components/shoes_page/ShoesPage';
+import ShoesPage from './components/ShoesPage';
+import AccessoriesPage from './components/AccessoriesPage';
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/shoes" component={ShoesPage} />
+              <Route exact path="/accessories" component={AccessoriesPage} />
             </Switch>
           </div>
           <Footer />

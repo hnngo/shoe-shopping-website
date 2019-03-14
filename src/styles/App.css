@@ -206,13 +206,13 @@ html, body {
 }
 
 .shoes-filter-bubbles {
-  border: 2px solid;
+  border: 2px solid #acacac;
   border-radius: 20px;
-  padding: 0.5px 12px;
+  padding: 0.5px 14px;
   background: transparent;
   margin-bottom: 8px;
   transition: 0.5s;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .shoes-filter-bubbles:focus {

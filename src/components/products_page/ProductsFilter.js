@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import data from '../../data.json';
 
-export default class ShoesFilter extends Component {
+export default class ProductsFilter extends Component {
   handleClick(e) {
     e.preventDefault();
   }
@@ -12,7 +12,7 @@ export default class ShoesFilter extends Component {
         return (
           <li key={i} className="mx-1 d-inline-block">
             <button className="shoes-filter-bubbles" onClick={(e) => this.handleClick(e)}>
-              {d}
+              {d.toUpperCase()}
             </button>
           </li>
         );
