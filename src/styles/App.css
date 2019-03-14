@@ -177,12 +177,12 @@ html, body {
 }
 
 /* ------- SHOES PAGE --------*/
-.shoes-heading-container {
+.products-heading-container {
   position: relative;
   letter-spacing: 2px;
 }
 
-.shoes-heading-picture {
+.products-heading-picture {
   -webkit-filter: brightness(25%);
           filter: brightness(25%);
   -o-object-fit: cover;
@@ -191,7 +191,7 @@ html, body {
   height: 200px;
 }
 
-.shoes-picture-text {
+.products-picture-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -200,12 +200,12 @@ html, body {
           transform: translate(-50%, -50%);
 }
 
-.shoes-filter-list {
+.products-filter-list {
   list-style: none;
   margin: 0 auto;
 }
 
-.shoes-filter-bubbles {
+.products-filter-bubbles {
   border: 2px solid #acacac;
   border-radius: 20px;
   padding: 0.5px 14px;
@@ -215,15 +215,15 @@ html, body {
   font-size: 13px;
 }
 
-.shoes-filter-bubbles:focus {
+.products-filter-bubbles:focus {
   outline: none !important;
 }
 
-.filter-container {
+.products-filter-container {
   background-color: #E8E9E9
 }
 
-.shoes-product-img {
+.products-product-img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -231,7 +231,7 @@ html, body {
   transition: 1s;
 }
 
-.shoes-products-title {
+.products-products-title {
   text-decoration: none;
   color: black;
 }

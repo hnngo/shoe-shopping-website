@@ -42,21 +42,21 @@ No media query for `xs` since this is the default in Bootstrap */
     display: none;
   }
 
-  .shoes-product-img {
+  .products-product-img {
     -o-object-fit: cover;
        object-fit: cover;
     width: 70%;
     height: 200px;
   }
 
-  .shoes-products-title:active,
-  .shoes-products-title:link {
+  .products-products-title:active,
+  .products-products-title:link {
     text-decoration: none;
     color: black;
   }
 
-  .shoes-products-title:visited,
-  .shoes-products-title:hover {
+  .products-products-title:visited,
+  .products-products-title:hover {
     text-decoration: none;
     color: black;
   }
@@ -91,12 +91,12 @@ No media query for `xs` since this is the default in Bootstrap */
     text-align: left;
   }
 
-  .shoes-filter-bubbles:hover {
+  .products-filter-bubbles:hover {
     background-color: #acacac;
     color: white;
   }
 
-  .shoes-products-title:hover {
+  .products-products-title:hover {
     text-decoration: none;
     color: black;
   }
@@ -115,12 +115,12 @@ No media query for `xs` since this is the default in Bootstrap */
     height: 160px;
   }
 /* 
-  .shoes-filter-bubbles:hover {
+  .products-filter-bubbles:hover {
     background-color: #acacac;
     color: white;
   } */
 
-  .shoes-product-img {
+  .products-product-img {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
@@ -135,7 +135,7 @@ No media query for `xs` since this is the default in Bootstrap */
     display: inline;
   }
 
-  .shoes-product-img {
+  .products-product-img {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
