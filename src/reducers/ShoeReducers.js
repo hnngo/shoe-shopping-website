@@ -1,13 +1,17 @@
 import {
   INPUT_EMAIL,
   INPUT_PASSWORD,
-  INPUT_CONFIRM_PASSWORD
+  INPUT_CONFIRM_PASSWORD,
+  AUTH_WAITING_FOR_SIGNIN,
+  AUTH_SUCCESSFULLY
 } from '../constants';
 
 const INITIAL_STATE = {
   inputEmail: "",
   inputPassword: "",
-  inputConfirmPassword: ""
+  inputConfirmPassword: "",
+  isSigningIn: false,
+  isSignInSuccessfully: undefined,
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -19,6 +23,10 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, inputPassword: action.payload };
     case INPUT_CONFIRM_PASSWORD:
       return { ...state, inputConfirmPassword: action.payload };
+    case AUTH_WAITING_FOR_SIGNIN:
+      return { ...state, isSigningIn: true };
+    case AUTH_SUCCESSFULLY:
+      return { ...state, isSignInSuccessfully: true }
     default:
       return state;
   }

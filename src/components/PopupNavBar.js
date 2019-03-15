@@ -46,7 +46,9 @@ export default class PopupNavBar extends Component {
 
   renderList(list) {
     return list.map((d, i) => {
-      return <li key={i}><a href="#">{d}</a></li>;
+      let path = "/" + d.toLowerCase();
+
+      return <li key={i}><a href={path}>{d}</a></li>;
     });
   }
 

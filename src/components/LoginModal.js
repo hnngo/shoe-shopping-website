@@ -89,7 +89,7 @@ class LoginModal extends Component {
           <div className="modal-content login-modal">
             <div className="modal-header">
               <h5 className="modal-title open-sans">Login</h5>
-              <button type="button" data-dismiss="modal" className="btn"><i className="fas fa-times"></i></button>
+              <button type="button" className="btn" data-dismiss="modal" id="close-login-btn"><i className="fas fa-times"></i></button>
             </div>
             <div className="modal-body">
               <form>
@@ -98,6 +98,7 @@ class LoginModal extends Component {
                     type="email"
                     className="form-control rounded-pill text-center"
                     placeholder="username@example.com"
+                    disabled={this.props.isSigningIn}
                     value={this.props.inputEmail}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_EMAIL)}
                   />
@@ -107,6 +108,7 @@ class LoginModal extends Component {
                     type="password"
                     className="form-control rounded-pill text-center"
                     placeholder="password"
+                    disabled={this.props.isSigningIn}
                     value={this.props.inputPassword}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_PASSWORD)}
                   />
@@ -134,10 +136,17 @@ class LoginModal extends Component {
 }
 
 const mapStateToProps = ({ ShoeReducers }) => {
+  // Close login modal
+  if (ShoeReducers.isSignInSuccessfully) {
+    document.querySelector("#close-login-btn").click();
+  }
+
+  // Return state to props
   return {
     inputEmail: ShoeReducers.inputEmail,
     inputPassword: ShoeReducers.inputPassword,
-    inputConfirmPassword: ShoeReducers.inputConfirmPassword
+    inputConfirmPassword: ShoeReducers.inputConfirmPassword,
+    isSigningIn: ShoeReducers.isSigningIn
   }
 }
 
@@ -145,3 +154,5 @@ export default connect(mapStateToProps, {
   authStoreLoginInformation,
   authLoginWithEmailAndPassword
 })(LoginModal)
+
+//TODO: After login succesfully change the button sign into name or show the personal information
