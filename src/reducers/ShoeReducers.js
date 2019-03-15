@@ -25,7 +25,7 @@ export default (state = INITIAL_STATE, action) => {
       const isValidinputEmail = validateEmail(action.payload)
       return { ...state, inputEmail: action.payload, isValidinputEmail };
     case INPUT_PASSWORD:
-      const isValidinputPassword = action.payload.length > 0;
+      const isValidinputPassword = action.payload.length > 5;
       return { ...state, inputPassword: action.payload, isValidinputPassword };
     case INPUT_CONFIRM_PASSWORD:
       const isValidinputConfirmPassword = state.inputPassword === action.payload;

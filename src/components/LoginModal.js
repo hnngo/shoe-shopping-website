@@ -36,10 +36,16 @@ class LoginModal extends Component {
   }
 
   handleClickSignIn() {
-    this.props.authLoginWithEmailAndPassword(this.props.inputEmail, this.props.inputPassword);
+    const {
+      inputEmail,
+      inputPassword,
+      authLoginWithEmailAndPassword
+    } = this.props;
+
+    authLoginWithEmailAndPassword(inputEmail, inputPassword);
   }
 
-  renderSignUp() {
+  renderSignUpInput() {
     if (this.state.showConfirm) {
       return (
         <div className="form-group animated fadeInDown fast">
@@ -62,7 +68,9 @@ class LoginModal extends Component {
       return (
         <button
           type="button"
-          className="btn btn-primary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"
+          id="signInBtn"
+          disabled={true}
+          className="btn btn-secondary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"
           onClick={() => this.handleClickSignIn()}
         >
           Sign In
@@ -76,6 +84,7 @@ class LoginModal extends Component {
       return (
         <button
           type="button"
+          id="backToSignInBtn"
           className="btn btn-primary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"
           onClick={() => this.setState({ showConfirm: false, signingUp: false })}
         >
@@ -96,6 +105,12 @@ class LoginModal extends Component {
   }
 
   render() {
+    const {
+      inputEmail,
+      inputPassword,
+      isSigningIn
+    } = this.props;
+
     return (
       <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-sm" role="document">
@@ -113,8 +128,8 @@ class LoginModal extends Component {
                     autoComplete="off"
                     className="form-control rounded-pill text-center simple-input"
                     placeholder="username@example.com"
-                    disabled={this.props.isSigningIn}
-                    value={this.props.inputEmail}
+                    disabled={isSigningIn}
+                    value={inputEmail}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_EMAIL)}
                   />
                 </div>
@@ -125,23 +140,24 @@ class LoginModal extends Component {
                     autoComplete="off"
                     className="form-control rounded-pill text-center simple-input"
                     placeholder="password"
-                    disabled={this.props.isSigningIn}
-                    value={this.props.inputPassword}
+                    disabled={isSigningIn}
+                    value={inputPassword}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_PASSWORD)}
                   />
                 </div>
-                {this.renderSignUp()}
+                {this.renderSignUpInput()}
                 <div className="modal-footer text-center d-block">
                   {this.renderNotification()}
                   <Dots
                     size={31}
                     color={"#313131"}
-                    animating={this.props.isSigningIn}
+                    animating={isSigningIn}
                     className="my-3"
                   />
                   {this.renderSignIn()}
                   <button
                     type="button"
+                    id="signUpBtn"
                     className="btn btn-primary w-100 rounded-pill mx-0 my-2"
                     onClick={() => this.handleClickSignUp()}
                   >
@@ -176,6 +192,30 @@ const mapStateToProps = ({ ShoeReducers }) => {
     }
   });
 
+  // Check if signin and signup btn clickable
+  const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
+  const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
+  
+  const $signInUpBtn = new Map();
+  $signInUpBtn.set(document.querySelector("#signInBtn"), signInCondition);
+  $signInUpBtn.set(document.querySelector("#signUpBtn"), signUpCondition);
+
+  for (let [key, val] of $signInUpBtn) {
+    console.log("a")
+    if (key) {
+      if (val) {
+        key.removeAttribute("disabled", false);
+        key.classList.remove("btn-secondary");
+        key.classList.add("btn-primary");
+      } else {
+        console.log(val)
+        key.setAttribute("disabled", true);
+        key.classList.remove("btn-primary");
+        key.classList.add("btn-secondary");
+      }
+    }
+  };
+
   // Close login modal after successfully sign in
   if (ShoeReducers.isSignInSuccessfully) {
     document.querySelector("#close-login-btn").click();
@@ -187,7 +227,10 @@ const mapStateToProps = ({ ShoeReducers }) => {
     inputPassword: ShoeReducers.inputPassword,
     inputConfirmPassword: ShoeReducers.inputConfirmPassword,
     isSigningIn: ShoeReducers.isSigningIn,
-    isSignInSuccessfully: ShoeReducers.isSignInSuccessfully
+    isSignInSuccessfully: ShoeReducers.isSignInSuccessfully,
+    isValidinputEmail: ShoeReducers.isValidinputEmail,
+    isValidinputPassword: ShoeReducers.isValidinputPassword,
+    isValidinputConfirmPassword: ShoeReducers.isValidinputConfirmPassword
   }
 }
 

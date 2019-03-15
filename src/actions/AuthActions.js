@@ -14,7 +14,7 @@ export const authStoreLoginInformation = (input, type) => {
 }
 
 export const authLoginWithEmailAndPassword = (email, password) => {
-  return async (dispatch) => {
+  return (dispatch) => {
     // Dispatch action signing in to prevent inputing and show activity indicator
     dispatch({ type: AUTH_WAITING_FOR_SIGNIN });
 
