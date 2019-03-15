@@ -145,7 +145,8 @@
     "shoesPage": {
       "pano": {
         "imgURL": "https://lh3.googleusercontent.com/HTpX6XJNpH-nEAChkkghEIXkew_EsdEpjbUmzCQKA-ZHWqgktiucLxCtM9vtsUQlb8naDGRBh-B5J-BE5tKdTs21OkJIiWEi4vUtJaqOo3j5b5G9oOohFNzqpA4bJRK6aHdg5d5eIh-n2g5pve1pXXvyj-mlu8luueUWROV7CHjivO_KX-G_HIqgi2B8H9imK8hW5KRuheKxK_YMlT0bbxrQ15SHKK6EX_0Lt8S7nDLk5bN9uKUIk5QL9hLE80sfotW_ITBlFvDZuNfnCNdi6WBbDWIMNn9rAKbvZvc1k7LmrdU-u7lxWflB0JhYPsAyznhlY-GIDvDG_fBXGa3rdFHftpDG-NZ10eKEbq6g2-VVHW_LcbzU9gxcy7dLV5f54DqxzTlfadwW2Lj4jJbmRBr66invxxbsxsSAkemow2goysKi1XgwZN38KLmGNukLJFJw6e3ENHfLzX0Qs7k4pjy8LdyhT2Dp5bjrNGzYh41j7f_2v4TeeB9OtBj2I7iByiZ0kxLqpoKe0-amFbcqlkVlT2B8awrdEK4HhLsGeQTHL116uR9FqQyLkfx0lS53PPaqZojrOxIAWQgCUSKxAQOnIGG_5MeYnxd4Rf8Z6sNLAT_efhTzLNYgGZvdd1HwR06zuRaVlztDxlB9hIR7PUTFsS-mJ2w=w1280-h397-no"
-      }
+      },
+      "headerSentence": "Our feet carry the weight of our body throughout the day and that’s why you should choose quality shoes"
     },
     "gloves": {
       "glove1": {
@@ -212,19 +213,22 @@
         "name": "Heron Preston",
         "description": "These sunglasses are crafted from hand-polished cellulose acetate and feature scratch-resistant lenses that block 100% of UVA and UVB rays.",
         "price": 95,
-        "imgURL": "https://lh3.googleusercontent.com/BKsNAqFJlSMJdZnKBgmsDfjh-4FcOPykezAQmki4CDT56o4Gql5LQtXRKszAYwa_hjzxNUzH57sD6Z4aKbLY3yZ4WetkanQtrQyEDAfCeiJgZWCxt7vayWYBVKgXzPybL7y0QS8a6lBN-nxc_QUssb0gFfmtuog25MiFm9-rRbRdU79tQhz6LOKSIowVtZSPFDhicTeil4xnvCg9hQqEcsNV1etxN9Dp79--3vYCs1Snze5HdfTN7SfX-NdshtnRoCjCdNP3PS33jg3LpE-NSFsNhef_nW3F_qMUkxTO1o-YhlPg5DA7PyJuJgiS9kaXEht1-eD6-afUiw4DaOVWlmAAGzrH1Z0P4zjO67UTUf1YmmXKYrZuXaeMTFLSTrMSsejwVmRxEubFqMubhNAZBBDVWCpN4EVosLi3aInFrhYmVeQeYICohr8XR40W1owl9OiDK2jkc5_evqOsxqBHVqUlMskUVo3l8KDf32JkenusxXlEb-EJKVSY4yey2ca-1ejC-cYBE6Il9tcPRf4jkhVmKniDvjpXoy7atgv6NxbW3a1PYrhJ0BPSXtftUYXG0lLHMx94WXQSDEoDR4M12sDQ_bHtrvc35Pi0XiJZJRo599rZwkW1Lm09sQVNRRGq7vUI-7Zdu3rGfa8AYcqUM_scNfwZcF4=w1242-h621-no"
+        "imgURL": "https://lh3.googleusercontent.com/b5u8Srwl26ElEP7-jQjtiXaelM6scEjRmHfAqH7PO5DizTFiHoN5Xjh11siOgA_5YaTrv9lF97wvBPkgpgQ59l0RzkPvMOVaQGvckBA0c2XzVgK76UYs5x-aqXUthP8sB8XbRyYuks7fLcxiuk6_1DlnFrZ8cLuIV7Zqrnx6SlTUkikEW3de7CwDb1gXG4kzcqCA8PQlvyxaXY_TeqXtjeQLtL1DLiPDtGAuWnsNKG5G2VEcqPHTwm8FQwBdVqtiyatoe0SD17Qr3ClmHFcQ85EFw4HZcm2mEY-tob8ZvJoxNdZ-GonPTkOgghlXAA50YKcltGpy0J6-KmQHVJE0RnCwAXO5ykFFGKkklwHKWSAUq4tFXDaUIkDQCXMmGmMTDDzfsdDOuBPZGbwngxG2Bt1HzRvHDFgyVe4kwr2yGUsMjYvrTsCqLF5c8sZuZP9k_C6pXHUd1Eg5iTvfckUy19uOHSgQS8vhu1p2nbhmUC77AURx1SGgmCiTfU34SJZ1nsgnWk2GSvucnsLyFpRuKupr8ftuwEROKX3owrdylrdtD2Z8RTI22FSZFYnQYOxP6kNMnHkcTzPZ7VcoeieawS9Y-CgtJAW_uOa4Z6ROfOQKLe115PpCmANScgm1XFEFc5D5uOb3L84Xess7acoQREw-TZjJwIs=w410-h306-no",
+        "tag": "sunglass"
       },
       "sunglass2": {
         "name": "Harris",
         "description": "Harris is as classic as it comes. Inspired by midcentury sunglass shapes and fine-tunes to perfection, it's a frame with could-be-from-any-decade allure.",
         "price": 120,
-        "imgURL": "https://lh3.googleusercontent.com/LEyr0g5JPLJ61ZIuym-nwZ5FsuZHaApoZH5CqASbxGAC29UrVbNUc5xhU60aSKESTzVtWtF_JTvH2EN5jgzn65blnYGxKxq9fqcAJ4vGpu4TJT-Id_2_pGZv_UBjVNXO6KRTS-B_m5zHm2EO3pdflDDOv3Zz-4LQ3z40UFxIH6WKESxTgxvV4elRd7ZLV6CDYyjf8zq7dJnycRWXgNbKZ2iYCJkGmnIx9K5nYBaN03KSXMS-AX59KiWmOs1_BpTM7t6BGhKQUkVOznABqT23sB4nORNmubveGPxxaIt936ZytjRNryuEflXfNaNgo2OREAy85DcmA_np_7awyyPzXZgcAxGsd6LbFocWiO4z9gJmNr_U8rY_fTnlQNKJdlxQoOWxZi3gZcZv1o9qZctYYctTSc4EH3eBhXfDNXufFa44QdJZVicv4-SBYjjxJI6MAthDUkE8G7zUSNPj5lrYGbnloLP1ibvjDyOpYuZTY5_1DxhrcKxGmAYDAy23X7vxA0DVcSklnHY5iQ7ngrpGEepzTnjiTkfIw_HY-eUAWJZOtmmU3DP8Coc3umhmxE7hFxSZuah_1xdLmd9m9ZTmfF4GUfVezXug58Yb84_IXHqtDqXLvshtoPF5XRGYTJ5X27vKphSBxt6JhP6ZNWCUglvTWewmhhA=w1242-h621-no"
+        "imgURL": "https://lh3.googleusercontent.com/F_fMXaUZc7ELIK4g5d0ypytd1yYf09U5gRZUKzC-b_At8GveijDJ9rXCR8mNL8EhOicz7liQ0V6eU5zEcbQ7BvkvNlQBXZXnDm8W_sIwh4Max8IHz2NX5Eeb8OsfGJy4TOOp4ob35J4JrP13F6pmbZPjbyIRI8o4vwVbBLqZ0nyMgWvX5vJZE_9QiTRIYQk963hMvIxgI19T1XnTObB2B4yYZWT7QX2AfFjf8-1kRcz-Sp7ibNK5Vf7CAuqONqBUYpUz8Tzk4-a3T2FRAbYjl8aQMAHH06NG6YPHLH-cjqlayYtD62EYJwyvlM644pgPkMflX_NTC3ffjxg9VPmQNNc_sa9D4CBMBwmVK8OWYSykgbT8cKAG4Wcoqqo2p7Sjn8B3xkoSmrhgad4k9i0Pf5wABfpB0DUFO-p5PToE1EWC0nxExW6Wbv-MHRxXo8Wta8EFZsp0xphG1nWfYp9ByuTo-SuIFFUHxRIwFLAeTzJrKjf43asS2CYdGY5I_Na42DjKCYUv5xj8U4YL7iHgC_x1SC5Kj3xKzGLtW59brYpGCVdkIQDJpYaIbLYeSpkRIeUrx8vhAYEWZCzqj8a63OsKQ6LR0ZLOdeztHM1NgZ62cYh1_QS5vqn6jsmRzfjirF155sC1f6oTtbRh1poCCALkvndoJqg=w1045-h782-no",
+        "tag": "sunglass"
       },
       "sunglass3": {
         "name": "Fisher",
         "description": "All of Fisher's sleek, stainless steel goodness (end pieces, brow bar, the whole shebang) has been slightly scaled up for a wider fit.",
         "price": 145,
-        "imgURL": "https://lh3.googleusercontent.com/4swBAWg2LLNtSlf1KN3gwMQcwiQnQ8RxOalM0uW8FFb2ARcxAO1fLJZFLeO4HvfUlh8FxgDNu-E52W0j_xf5XG6tde2Y5GDyP4tvOPVR0cMss2uohtJkPtmCAXNU-47W-S_A5hNzNXjpC6MsyCMYCmJKPg-liQvS3alc36-KovTXzqNT8lkgaDc6wlqML5qkOvrNakUAvSNBlLkRRBsQutizHfNFTELfdZ3npqMrifKJOEvIWq2oZsLjovAcmSS8mRrH-rmqeAXzBBoYEtuu-MQSSfTTKjDtoGaUwUE2LTrzgAIIeLXXJidpuMXjp0ohDONhZTkSyFwM5W2qyRP_fFFa5FYpzLR52zLzPiMnLKOc9Qf-2beas_Z2kPMyEzfGku3d7tr1qvgV00kGfbnj0jSIBzSOd805ThFuwF06wlM2_VMMhSoSxXd7SWrzgbfoVpKtdnK8XwiU-0poP6ZKjBfCHb8bhc446OuTKe88eWhGbFu9xKEYd_EVJIugzuyy1stADAdG-RSTTNlfNzVN2_cfaAHIHOkwNOS6hOUnj0IqN18x1MwTg-FHh7ILSGrUVW9sFIoZ9V7LutuqkUMF7heTqJ9krXLXRwuiA1C8NBwJczqrpCoMeEferMWvXDYqD4L1i4nzLmw9rx36G-b3pQ5Q7yndoyw=w1242-h621-no"
+        "imgURL": "https://lh3.googleusercontent.com/REa5trZLL5zZA2S26wAYoS5aw9wJcmB8d_fRxUk7zR-3l0dofbjb2t5PIgkHqjqAFOAhlqL2023JWx3mpjwGwzCidhA4M5fCnQee7TM-VYJikw_kwqkpraZJ_3NkHpSR5FyyNSyER1dEp5aqu6VtGXpIxeUrDA38CMEGep7Ajm_nwtdHzYqPmarNBz4NPIV3xpHzzTESTU-tqLk3psfrs4gDqLq15OSsXHMJECUVKB5sPMr0LDSQseFOVSuQOsjY9vkGCr9to1AFRf8IVZCQkszFDj-SnQA9p10e5yNg1pg8EY8_Q-cOOA3TbTZ4HCwyy3iTz8VW1FooiNkxZ1lTZLcCoAfu8omFxDpbrCJxFtShi8JwgF2lSWn8C2E9cKxVyGqN0_f71us_OgN9r0KI451J8J72eOHSwM2esyKmg0oFbnbtbYA6OY-7QGdD1aLwyiaLAilQOckag9DYm2IRaywEoZv1rEqskXrlId92vdyMz-bOllBFQbtLipmZxSmV0rn2PU2HzmDcLspaiOeDDNmRDzMq2PdxcxViUH2NsWa45IuzZ4H0znkvsfGb1zGnxiltgG1PQC-FbSnqbgHHoWPq2N1r12KSU0ZdoAsXOL0woS33XQ4oMYRbn07Y-IT_4d63b8JHZgC4mcPTbZXPQ3GROSp6aes=w1045-h782-no",
+        "tag": "sunglass"
       }
     },
     "purses": {
@@ -246,6 +250,12 @@
         "price": 175,
         "imgURL": "https://lh3.googleusercontent.com/dcNGW9cJW9UeIG1U0YM_OockL6-QwWEebv6t7UdT37CGMHvek95U3kiYa36922zf-O6NzoiTmJrIxp8hNztaug167-yTsmBUVV5eKdwYklqvrMstwRWtAMwFM05zFQM3iv7mbGBJarC8FYtVQ-_POLAr7zi1ANgVrmUabGRBVmkruvd5YuDMTr1WKokihXuTenATSGfEILblbg_td6KqXEFGmZkgfeFUgnUUwJi4ym-Fn5AzUJaX5BhjglCtZTdF0NbUQITBS5IxL9_IFsW4mygC8Yhg48hZQLZU-kJeHYtbz8e3HbQOF2V5tSmspwnxcZZpbuy2YqXn-JF3hNNRBGzqYmS6PkL1BFFfeHPw9iR4Cu31-PEd6ehfzAEulokoFBqBzvIVEf2BiS8QIoqdpgeZa7Dzmpl1hsT768HLviFhWENBoV33vrKicPNfdXBT9eKAzvI3g-UnetYwx2Zf3PV808KL9j1TlWG21F-0MOX-x0YWUvrxivMkQmEH2jwEVRY6PjXNb-KVkJz5DBMo1pRU0l4Ml1E6iW2AaBcwrpdUaDVMOGljL1bfA6eYqN7K-a9nw8MLycHusp8ZcCFTc_LjY8kzayuyax209r-e7w4y5Dp1nJKdhcDO683SZWFKbASjiJeOevYqS9_ZG_G2-nSkLDIQ-Wg=w1101-h874-no"
       }
+    },
+    "accessoriesPage": {
+      "pano": {
+        "imgURL": "https://lh3.googleusercontent.com/0zTWoOdEokOVFDSp8kGGgCA2YkoPrCJQ9o2WxgJZX8LukWCP8nhwNpxyIwaVXNNbD7lVDsLcJJN0SmQktIZpoKHwjPQ8F0fvvkxei9pLf6EU-8Ucgp9Tbbm1BwYK9_6dR8DY3zyHS46-WKOEtwbillgfF0_VvkPkYxNJ5c7d4BULamfQCa5YcAHfHCxZAViZZeNvqS5VfbT9gz_ZHxw2JNqKZ4OEsjW2TmPTN4M2bvI9s-n62JOry2fY1EYNvXtdP8x4CVaGt6mu24eHAsDH9kxX2OK0RJj3Y7qkAp1iPIfdqUjFxC_0W4YohrbpZ6L57xd0bs_R_YTQhK31Pol5TuoD9ried6leO1nwYpL5ux-2La94G2WPv72xYTU16Tmca3ZspOkIGHzh88BSiFUvkDyBTIWtQm_8I_kwXl6HfTF8-bx4nnuLiEKjzbgYzFVj5e75Hnd-sCUt7OZ7stMX_AAWVnRx_JdVhrJWIEBpphmoCfrdaBRjYCIPCqufK7eAF-b-Po59yCMxqPr8FPo3ZvAngKYF3-oe79dC5DfA9BwL6OK1E9lz1Y4ITb7EzBeUuSMnielWf9VYxW8T1C4jfNr3M8N42q0cx5GDzb2FnjBeY3Gh4fcTRJksHRHucb615NP2QlbaEv0Qh4rhCXJDS5yhq8H3NFc=w958-h504-no"
+      },
+      "headerSentence": "Some of these items you may not wear often, but there will be an occasion, as a grown man, when you will need them and you’ll be thankful that you thought far enough ahead to take care of them before it’s too late and you’re scrambling at the last minute"
     }
   }
 }
