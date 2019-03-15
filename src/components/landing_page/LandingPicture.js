@@ -19,3 +19,5 @@ export default class LandingPicture extends Component {
     );
   }
 };
+
+//TODO: Fix middle text 50% 50% div: relative, inside position absolute

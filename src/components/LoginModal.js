@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  authStoreLoginInformation,
+  authLoginWithEmailAndPassword,
+} from '../actions';
+import {
+  INPUT_EMAIL,
+  INPUT_PASSWORD,
+  INPUT_CONFIRM_PASSWORD
+} from '../constants';
 
-export default class LoginModal extends Component {
+class LoginModal extends Component {
   constructor(props) {
     super(props);
 
@@ -8,6 +18,10 @@ export default class LoginModal extends Component {
       showConfirm: false,
       signingUp: false,
     };
+  }
+
+  handleInputAuth(input, type) {
+    this.props.authStoreLoginInformation(input, type);
   }
 
   handleClickSignUp() {
@@ -20,14 +34,21 @@ export default class LoginModal extends Component {
   }
 
   handleClickSignIn() {
-    console.log("TODO: On click sign in")
+    console.log(this.props.inputEmail, this.props.inputPassword);
+    this.props.authLoginWithEmailAndPassword(this.props.inputEmail, this.props.inputPassword);
   }
 
   renderSignUp() {
     if (this.state.showConfirm) {
       return (
         <div className="form-group animated fadeInDown fast">
-          <input type="password" className="form-control rounded-pill text-center" placeholder="confirm password" />
+          <input
+            type="password"
+            className="form-control rounded-pill text-center" 
+            placeholder="confirm password"
+            value={this.props.inputConfirmPassword}
+            onChange={(input) => this.handleInputAuth(input.target.value, INPUT_CONFIRM_PASSWORD)}
+          />
         </div>
       );
     }
@@ -69,17 +90,26 @@ export default class LoginModal extends Component {
             <div className="modal-header">
               <h5 className="modal-title open-sans">Login</h5>
               <button type="button" data-dismiss="modal" className="btn"><i className="fas fa-times"></i></button>
-              {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button> */}
             </div>
             <div className="modal-body">
               <form>
                 <div className="form-group">
-                  <input type="email" className="form-control rounded-pill text-center" placeholder="username@example.com" />
+                  <input
+                    type="email"
+                    className="form-control rounded-pill text-center"
+                    placeholder="username@example.com"
+                    value={this.props.inputEmail}
+                    onChange={(input) => this.handleInputAuth(input.target.value, INPUT_EMAIL)}
+                  />
                 </div>
                 <div className="form-group">
-                  <input type="password" className="form-control rounded-pill text-center" placeholder="password" />
+                  <input
+                    type="password"
+                    className="form-control rounded-pill text-center"
+                    placeholder="password"
+                    value={this.props.inputPassword}
+                    onChange={(input) => this.handleInputAuth(input.target.value, INPUT_PASSWORD)}
+                  />
                 </div>
                 {this.renderSignUp()}
               </form>
@@ -102,3 +132,16 @@ export default class LoginModal extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ ShoeReducers }) => {
+  return {
+    inputEmail: ShoeReducers.inputEmail,
+    inputPassword: ShoeReducers.inputPassword,
+    inputConfirmPassword: ShoeReducers.inputConfirmPassword
+  }
+}
+
+export default connect(mapStateToProps, {
+  authStoreLoginInformation,
+  authLoginWithEmailAndPassword
+})(LoginModal)
