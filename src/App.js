@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import './styles/App.css';
 import './styles/MediaQueries.css';
 import NavBar from './components/NavBar';
@@ -7,12 +12,32 @@ import LandingPage from './components/landing_page/LandingPage';
 import ShoesPage from './components/ShoesPage';
 import AccessoriesPage from './components/AccessoriesPage';
 import Footer from './components/Footer';
+import rootReducer from './reducers';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    // Initial Firebase
+    const config = {
+      apiKey: "AIzaSyBfaCTrLiHxQ6bv2MS6yXRvq5MxlQafwAs",
+      authDomain: "shoes-shopping-website.firebaseapp.com",
+      databaseURL: "https://shoes-shopping-website.firebaseio.com",
+      projectId: "shoes-shopping-website",
+      storageBucket: "shoes-shopping-website.appspot.com",
+      messagingSenderId: "1007532335331"
+    };
+
+    firebase.initializeApp(config);
+  }
+
   render() {
+    // Initial store for redux, which no initial state and apply middleware Redux Thunk
+    const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
+
     return (
       <BrowserRouter>
-        <div>
+        <Provider store={store}>
           <NavBar />
           <div className="landing-picture-container">
             <Switch>
@@ -22,7 +47,7 @@ class App extends Component {
             </Switch>
           </div>
           <Footer />
-        </div>
+        </Provider>
       </BrowserRouter>
     );
   }
