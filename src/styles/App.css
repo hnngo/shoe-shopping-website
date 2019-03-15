@@ -40,6 +40,13 @@ html, body {
   font-family: 'Lobster', cursive;
 }
 
+.simple-input {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 /* --------- NAV BAR --------- */
 .nav-search::-webkit-input-placeholder {
   font-size: 13px;
@@ -79,6 +86,7 @@ html, body {
   padding-bottom: 5px;
 }
 
+/* --------- LOGIN --------- */
 .login-notification-text {
   font-size: 14px;
   color: red;
@@ -226,6 +234,7 @@ html, body {
   padding: 0.5px 14px;
   background: transparent;
   margin-bottom: 8px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 13px;
 }
@@ -237,6 +246,7 @@ html, body {
 .products-product-img {
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: 1s;
   transition: 1s;
 }
 

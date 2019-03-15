@@ -45,7 +45,9 @@ class LoginModal extends Component {
         <div className="form-group animated fadeInDown fast">
           <input
             type="password"
-            className="form-control rounded-pill text-center" 
+            id="inputConfirmPassword"
+            autoComplete="off"
+            className="form-control rounded-pill text-center simple-input"
             placeholder="confirm password"
             value={this.props.inputConfirmPassword}
             onChange={(input) => this.handleInputAuth(input.target.value, INPUT_CONFIRM_PASSWORD)}
@@ -72,7 +74,7 @@ class LoginModal extends Component {
   renderBackToSignIn() {
     if (this.state.showConfirm) {
       return (
-        <button 
+        <button
           type="button"
           className="btn btn-primary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"
           onClick={() => this.setState({ showConfirm: false, signingUp: false })}
@@ -107,7 +109,9 @@ class LoginModal extends Component {
                 <div className="form-group">
                   <input
                     type="email"
-                    className="form-control rounded-pill text-center"
+                    id="inputEmail"
+                    autoComplete="off"
+                    className="form-control rounded-pill text-center simple-input"
                     placeholder="username@example.com"
                     disabled={this.props.isSigningIn}
                     value={this.props.inputEmail}
@@ -117,7 +121,9 @@ class LoginModal extends Component {
                 <div className="form-group">
                   <input
                     type="password"
-                    className="form-control rounded-pill text-center"
+                    id="inputPassword"
+                    autoComplete="off"
+                    className="form-control rounded-pill text-center simple-input"
                     placeholder="password"
                     disabled={this.props.isSigningIn}
                     value={this.props.inputPassword}
@@ -127,7 +133,7 @@ class LoginModal extends Component {
                 {this.renderSignUp()}
                 <div className="modal-footer text-center d-block">
                   {this.renderNotification()}
-                  <Dots 
+                  <Dots
                     size={31}
                     color={"#313131"}
                     animating={this.props.isSigningIn}
@@ -153,7 +159,24 @@ class LoginModal extends Component {
 }
 
 const mapStateToProps = ({ ShoeReducers }) => {
-  // Close login modal
+  // Add validation for email, pwd and confirm pwd
+  const checkValidateItems = ["inputEmail", "inputPassword", "inputConfirmPassword"]
+
+  checkValidateItems.forEach((item) => {
+    let selectItem = document.querySelector('#' + item);
+    if (selectItem !== null) {
+      selectItem.classList.remove("is-valid", "is-invalid");
+      if (ShoeReducers["isValid" + item] === true) {
+        selectItem.classList.remove("is-invalid");
+        selectItem.classList.add("is-valid");
+      } else if (ShoeReducers["isValid" + item] === false) {
+        selectItem.classList.remove("is-valid");
+        selectItem.classList.add("is-invalid");
+      }
+    }
+  });
+
+  // Close login modal after successfully sign in
   if (ShoeReducers.isSignInSuccessfully) {
     document.querySelector("#close-login-btn").click();
   }
@@ -174,3 +197,5 @@ export default connect(mapStateToProps, {
 })(LoginModal)
 
 //TODO: After login succesfully change the button sign into name or show the personal information
+//TODO: When fail login first, reopen the modal wont show again notification
+//TODO: Remove outline default of bootstrap

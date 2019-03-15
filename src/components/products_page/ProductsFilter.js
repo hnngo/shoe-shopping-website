@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import data from '../../data.json';
 
 export default class ProductsFilter extends Component {
   handleClick(e) {

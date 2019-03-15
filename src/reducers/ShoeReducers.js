@@ -11,6 +11,9 @@ const INITIAL_STATE = {
   inputEmail: "",
   inputPassword: "",
   inputConfirmPassword: "",
+  isValidinputEmail: undefined,
+  isValidinputPassword: undefined,
+  isValidinputConfirmPassword: undefined,
   isSigningIn: false,
   isSignInSuccessfully: undefined,
 }
@@ -19,11 +22,14 @@ export default (state = INITIAL_STATE, action) => {
   console.log(action);
   switch (action.type) {
     case INPUT_EMAIL:
-      return { ...state, inputEmail: action.payload };
+      const isValidinputEmail = validateEmail(action.payload)
+      return { ...state, inputEmail: action.payload, isValidinputEmail };
     case INPUT_PASSWORD:
-      return { ...state, inputPassword: action.payload };
+      const isValidinputPassword = action.payload.length > 0;
+      return { ...state, inputPassword: action.payload, isValidinputPassword };
     case INPUT_CONFIRM_PASSWORD:
-      return { ...state, inputConfirmPassword: action.payload };
+      const isValidinputConfirmPassword = state.inputPassword === action.payload;
+      return { ...state, inputConfirmPassword: action.payload, isValidinputConfirmPassword };
     case AUTH_WAITING_FOR_SIGNIN:
       return { ...state, isSigningIn: true,  isSignInSuccessfully: undefined };
     case AUTH_SUCCESSFULLY:
@@ -34,3 +40,11 @@ export default (state = INITIAL_STATE, action) => {
       return state;
   }
 }
+
+function validateEmail(email) {
+  var re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  return re.test(String(email).toLowerCase());
+}
+
+//TODO: Remove info when login successfully
