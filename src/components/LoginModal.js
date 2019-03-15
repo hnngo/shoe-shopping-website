@@ -9,6 +9,8 @@ import {
   INPUT_PASSWORD,
   INPUT_CONFIRM_PASSWORD
 } from '../constants';
+import Dots from 'react-activity/lib/Dots';
+import 'react-activity/lib/Dots/Dots.css';
 
 class LoginModal extends Component {
   constructor(props) {
@@ -34,7 +36,6 @@ class LoginModal extends Component {
   }
 
   handleClickSignIn() {
-    console.log(this.props.inputEmail, this.props.inputPassword);
     this.props.authLoginWithEmailAndPassword(this.props.inputEmail, this.props.inputPassword);
   }
 
@@ -82,6 +83,16 @@ class LoginModal extends Component {
     }
   }
 
+  renderNotification() {
+    if (this.props.isSignInSuccessfully === false) {
+      return (
+        <div className="text-center animated shake fast">
+          <p className="login-notification-text">Unsuccesful attempt to sign in</p>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
@@ -114,19 +125,25 @@ class LoginModal extends Component {
                   />
                 </div>
                 {this.renderSignUp()}
+                <div className="modal-footer text-center d-block">
+                  {this.renderNotification()}
+                  <Dots 
+                    size={31}
+                    color={"#313131"}
+                    animating={this.props.isSigningIn}
+                    className="my-3"
+                  />
+                  {this.renderSignIn()}
+                  <button
+                    type="button"
+                    className="btn btn-primary w-100 rounded-pill mx-0 my-2"
+                    onClick={() => this.handleClickSignUp()}
+                  >
+                    Sign Up
+                  </button>
+                  {this.renderBackToSignIn()}
+                </div>
               </form>
-
-              <div className="modal-footer text-center d-block">
-                {this.renderSignIn()}
-                <button
-                  type="button"
-                  className="btn btn-primary w-100 rounded-pill mx-0 my-2"
-                  onClick={() => this.handleClickSignUp()}
-                >
-                  Sign Up
-                </button>
-                {this.renderBackToSignIn()}
-              </div>
             </div>
           </div>
         </div>
@@ -146,7 +163,8 @@ const mapStateToProps = ({ ShoeReducers }) => {
     inputEmail: ShoeReducers.inputEmail,
     inputPassword: ShoeReducers.inputPassword,
     inputConfirmPassword: ShoeReducers.inputConfirmPassword,
-    isSigningIn: ShoeReducers.isSigningIn
+    isSigningIn: ShoeReducers.isSigningIn,
+    isSignInSuccessfully: ShoeReducers.isSignInSuccessfully
   }
 }
 

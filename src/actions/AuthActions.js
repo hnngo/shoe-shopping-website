@@ -2,7 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import {
   AUTH_WAITING_FOR_SIGNIN,
-  AUTH_SUCCESSFULLY
+  AUTH_SUCCESSFULLY,
+  AUTH_UNSUCCESSFULLY
 } from '../constants';
 
 export const authStoreLoginInformation = (input, type) => {
@@ -13,7 +14,7 @@ export const authStoreLoginInformation = (input, type) => {
 }
 
 export const authLoginWithEmailAndPassword = (email, password) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     // Dispatch action signing in to prevent inputing and show activity indicator
     dispatch({ type: AUTH_WAITING_FOR_SIGNIN });
 
@@ -26,7 +27,9 @@ export const authLoginWithEmailAndPassword = (email, password) => {
         })
       }).catch((e) => {
         // Handle error login
-        console.log("Error login")
+        dispatch({
+          type: AUTH_UNSUCCESSFULLY
+        })
       })
   }
 }

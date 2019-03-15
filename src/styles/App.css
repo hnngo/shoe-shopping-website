@@ -79,6 +79,13 @@ html, body {
   padding-bottom: 5px;
 }
 
+.login-notification-text {
+  font-size: 14px;
+  color: red;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+}
+
 /* -------- LANDING PICTURE ------- */
 .landing-picture-container {
   position: relative;
