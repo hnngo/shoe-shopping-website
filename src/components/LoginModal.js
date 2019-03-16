@@ -21,6 +21,12 @@ class LoginModal extends Component {
       showConfirm: false,
       signingUp: false,
     };
+
+    // Close login modal and reset if no successful attempt to login
+    const $closeLoginModalBtn = document.querySelector("#close-login-btn");
+    if ($closeLoginModalBtn && !this.props.isSignInSuccessfully) {
+      $closeLoginModalBtn.onclick = () => this.props.authResetLoginInformation();
+    }
   }
 
   handleInputAuth(input, type) {
@@ -42,7 +48,7 @@ class LoginModal extends Component {
       inputPassword,
       authLoginWithEmailAndPassword
     } = this.props;
-    console.log("A");
+
     authLoginWithEmailAndPassword(inputEmail, inputPassword);
   }
 
@@ -59,24 +65,73 @@ class LoginModal extends Component {
             value={this.props.inputConfirmPassword}
             onChange={(input) => this.handleInputAuth(input.target.value, INPUT_CONFIRM_PASSWORD)}
           />
+          {this.renderNotification(this.props.isValidinputConfirmPassword, "Your password and confirmation password do not match", "text-left", "", "smallText", false)}
         </div>
       );
     }
   }
 
   renderSignIn() {
+    const {
+      isValidinputEmail,
+      isValidinputPassword,
+    } = this.props;
+
+    // Check if signin btn clickable
+    const signInCondition = isValidinputEmail && isValidinputPassword;
+    
     if (!this.state.showConfirm) {
-      return (
+      return signInCondition ? (
         <button
           type="button"
           id="signInBtn"
-          className="btn btn-secondary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"
+          className={"btn btn-primary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"}
           onClick={() => this.handleClickSignIn()}
         >
           Sign In
         </button>
-      );
+      ) : (
+          <button
+            type="button"
+            id="signInBtn"
+            disabled
+            className={"btn btn-secondary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"}
+          >
+            Sign In
+        </button>
+        );
     }
+  }
+
+  renderSignUp() {
+    const {
+      isValidinputEmail,
+      isValidinputPassword,
+      isValidinputConfirmPassword
+    } = this.props;
+
+    // Check if signup btn clickable
+    const signUpCondition = (isValidinputEmail && isValidinputPassword && isValidinputConfirmPassword) || (!this.state.showConfirm);
+
+    return signUpCondition ? (
+      <button
+        type="button"
+        id="signUpBtn"
+        className="btn btn-primary w-100 rounded-pill mx-0 my-2"
+        onClick={() => this.handleClickSignUp()}
+      >
+        Sign Up
+      </button>
+    ) : (
+      <button
+        type="button"
+        id="signUpBtn"
+        disabled
+        className="btn btn-secondary w-100 rounded-pill mx-0 my-2"
+      >
+        Sign Up
+      </button>
+    );
   }
 
   renderBackToSignIn() {
@@ -112,11 +167,27 @@ class LoginModal extends Component {
       isSigningIn
     } = this.props;
 
-    // Close login modal and reset if no successful attempt to login
-    const $closeLoginModalBtn = document.querySelector("#close-login-btn");
-    if ($closeLoginModalBtn) {
-      $closeLoginModalBtn.onclick = () => this.props.authResetLoginInformation();
-    }
+    // Check if signin and signup btn clickable
+    // const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
+    // const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
+
+    // const $signInUpBtn = new Map();
+    // $signInUpBtn.set(document.querySelector("#signInBtn"), signInCondition);
+    // $signInUpBtn.set(document.querySelector("#signUpBtn"), signUpCondition);
+
+    // for (let [key, val] of $signInUpBtn) {
+    //   if (key) {
+    //     if (val) {
+    //       key.removeAttribute("disabled", false);
+    //       key.classList.remove("btn-secondary");
+    //       key.classList.add("btn-primary");
+    //     } else {
+    //       key.setAttribute("disabled", true);
+    //       key.classList.remove("btn-primary");
+    //       key.classList.add("btn-secondary");
+    //     }
+    //   }
+    // };
 
     return (
       <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
@@ -164,14 +235,7 @@ class LoginModal extends Component {
                     className="my-3"
                   />
                   {this.renderSignIn()}
-                  <button
-                    type="button"
-                    id="signUpBtn"
-                    className="btn btn-primary w-100 rounded-pill mx-0 my-2"
-                    onClick={() => this.handleClickSignUp()}
-                  >
-                    Sign Up
-                  </button>
+                  {this.renderSignUp()}
                   {this.renderBackToSignIn()}
                 </div>
               </form>
@@ -202,26 +266,26 @@ const mapStateToProps = ({ ShoeReducers }) => {
   });
 
   // Check if signin and signup btn clickable
-  const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
-  const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
+  // const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
+  // const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
 
-  const $signInUpBtn = new Map();
-  $signInUpBtn.set(document.querySelector("#signInBtn"), signInCondition);
-  $signInUpBtn.set(document.querySelector("#signUpBtn"), signUpCondition);
+  // const $signInUpBtn = new Map();
+  // $signInUpBtn.set(document.querySelector("#signInBtn"), signInCondition);
+  // $signInUpBtn.set(document.querySelector("#signUpBtn"), signUpCondition);
 
-  for (let [key, val] of $signInUpBtn) {
-    if (key) {
-      if (val) {
-        key.removeAttribute("disabled", false);
-        key.classList.remove("btn-secondary");
-        key.classList.add("btn-primary");
-      } else {
-        key.setAttribute("disabled", true);
-        key.classList.remove("btn-primary");
-        key.classList.add("btn-secondary");
-      }
-    }
-  };
+  // for (let [key, val] of $signInUpBtn) {
+  //   if (key) {
+  //     if (val) {
+  //       key.removeAttribute("disabled", false);
+  //       key.classList.remove("btn-secondary");
+  //       key.classList.add("btn-primary");
+  //     } else {
+  //       key.setAttribute("disabled", true);
+  //       key.classList.remove("btn-primary");
+  //       key.classList.add("btn-secondary");
+  //     }
+  //   }
+  // };
 
   // Close login modal after successfully sign in
   if (ShoeReducers.isSignInSuccessfully) {
