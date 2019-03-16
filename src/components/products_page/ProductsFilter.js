@@ -40,3 +40,4 @@ export default class ProductsFilter extends Component {
 }
 
 //TODO: Add 2 lines for filter section
+//TODO: Add path direction for easily follow

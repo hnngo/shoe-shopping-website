@@ -9,7 +9,7 @@ export default class LandingSampleProducts extends Component {
       return (
         <div className="col-md-4 col-sm-12" key={i}>
           <img src={item.imgURL} className="sample-products img-fluid" alt={item.name.toLowerCase().replace(" ","-")} />
-          <p className="monteserrat bold mb-0 mt-1">{item.name}</p>
+          <p className="monteserrat bold mb-0 mt-1">{item.name.toUpperCase()}</p>
           <p className="open-sans">{item.price}$</p>
         </div>
       );

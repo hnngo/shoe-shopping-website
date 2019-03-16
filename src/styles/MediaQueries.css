@@ -71,8 +71,7 @@ No media query for `xs` since this is the default in Bootstrap */
   }
 
   .landing-image-simple {
-    filter: brightness(75%);
-    object-fit: cover;
+    filter: brightness(60%);
     width: 100%;
     height: 280px
   }
@@ -153,10 +152,14 @@ No media query for `xs` since this is the default in Bootstrap */
   }
 
   .landing-image-simple {
-    filter: brightness(75%);
-    object-fit: cover;
+    filter: brightness(60%);
     width: 100%;
     height: 400px
+  }
+
+  .sample-col:hover .landing-image-simple{
+    filter: brightness(85%);
+    transform: scale(1.25);
   }
 
   .landing-slogan h3 {
@@ -182,5 +185,9 @@ No media query for `xs` since this is the default in Bootstrap */
   .products-product-img {
     width: 100%;
     height: 230px;
+  }
+
+  .products-heading-picture {
+    height: 300px;
   }
 }

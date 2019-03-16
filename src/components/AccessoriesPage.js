@@ -14,11 +14,9 @@ export default class AccessoriesPage extends Component {
           panoImageURL={accessoriesPage.pano.imgURL}
           categoryName="Accessories"
         />
-        <ProductsFilter
+        <ProductsBody
           headerSentence={accessoriesPage.headerSentence}
           filterContent={["All", ...data.navbar.accessories.byType]}
-        />
-        <ProductsBody
           productsTag={[gloves, bags, belts, sunglasses, purses]}
         />
       </div>
