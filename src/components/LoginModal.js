@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   authStoreLoginInformation,
   authLoginWithEmailAndPassword,
+  authResetLoginInformation
 } from '../actions';
 import {
   INPUT_EMAIL,
@@ -41,7 +42,7 @@ class LoginModal extends Component {
       inputPassword,
       authLoginWithEmailAndPassword
     } = this.props;
-
+    console.log("A");
     authLoginWithEmailAndPassword(inputEmail, inputPassword);
   }
 
@@ -69,7 +70,6 @@ class LoginModal extends Component {
         <button
           type="button"
           id="signInBtn"
-          disabled={true}
           className="btn btn-secondary w-100 rounded-pill my-2 mx-0 animated fadeInUp fast"
           onClick={() => this.handleClickSignIn()}
         >
@@ -94,11 +94,12 @@ class LoginModal extends Component {
     }
   }
 
-  renderNotification() {
-    if (this.props.isSignInSuccessfully === false) {
+  renderNotification(condition, notification, textAlign = "text-center", textStyle = "italic", fontSize = "mediumText", animation = true) {
+    if (condition === false) {
+      const classDivStyle = `${textAlign} ${textStyle} ${fontSize} ${animation ? "animated shake" : ""}`
       return (
-        <div className="text-center animated shake fast">
-          <p className="login-notification-text">Unsuccesful attempt to sign in</p>
+        <div className={classDivStyle}>
+          <p className="login-notification-text">{notification}</p>
         </div>
       );
     }
@@ -110,6 +111,12 @@ class LoginModal extends Component {
       inputPassword,
       isSigningIn
     } = this.props;
+
+    // Close login modal and reset if no successful attempt to login
+    const $closeLoginModalBtn = document.querySelector("#close-login-btn");
+    if ($closeLoginModalBtn) {
+      $closeLoginModalBtn.onclick = () => this.props.authResetLoginInformation();
+    }
 
     return (
       <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
@@ -132,6 +139,7 @@ class LoginModal extends Component {
                     value={inputEmail}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_EMAIL)}
                   />
+                  {this.renderNotification(this.props.isValidinputEmail, "Please input the correct email", "text-left", "", "smallText", false)}
                 </div>
                 <div className="form-group">
                   <input
@@ -144,10 +152,11 @@ class LoginModal extends Component {
                     value={inputPassword}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_PASSWORD)}
                   />
+                  {this.renderNotification(this.props.isValidinputPassword, "Passwords must be at least 6 characters long", "text-left", "", "smallText", false)}
                 </div>
                 {this.renderSignUpInput()}
                 <div className="modal-footer text-center d-block">
-                  {this.renderNotification()}
+                  {this.renderNotification(this.props.isSignInSuccessfully, "Unsuccesful attempt to sign in")}
                   <Dots
                     size={31}
                     color={"#313131"}
@@ -195,20 +204,18 @@ const mapStateToProps = ({ ShoeReducers }) => {
   // Check if signin and signup btn clickable
   const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
   const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
-  
+
   const $signInUpBtn = new Map();
   $signInUpBtn.set(document.querySelector("#signInBtn"), signInCondition);
   $signInUpBtn.set(document.querySelector("#signUpBtn"), signUpCondition);
 
   for (let [key, val] of $signInUpBtn) {
-    console.log("a")
     if (key) {
       if (val) {
         key.removeAttribute("disabled", false);
         key.classList.remove("btn-secondary");
         key.classList.add("btn-primary");
       } else {
-        console.log(val)
         key.setAttribute("disabled", true);
         key.classList.remove("btn-primary");
         key.classList.add("btn-secondary");
@@ -236,7 +243,8 @@ const mapStateToProps = ({ ShoeReducers }) => {
 
 export default connect(mapStateToProps, {
   authStoreLoginInformation,
-  authLoginWithEmailAndPassword
+  authLoginWithEmailAndPassword,
+  authResetLoginInformation
 })(LoginModal)
 
 //TODO: After login succesfully change the button sign into name or show the personal information

@@ -3,14 +3,21 @@ import 'firebase/auth';
 import {
   AUTH_WAITING_FOR_SIGNIN,
   AUTH_SUCCESSFULLY,
-  AUTH_UNSUCCESSFULLY
+  AUTH_UNSUCCESSFULLY,
+  AUTH_RESET_INFORMATION
 } from '../constants';
 
 export const authStoreLoginInformation = (input, type) => {
   return {
     type,
     payload: input
-  }
+  };
+}
+
+export const authResetLoginInformation = () => {
+  return {
+    type: AUTH_RESET_INFORMATION
+  };
 }
 
 export const authLoginWithEmailAndPassword = (email, password) => {
@@ -31,7 +38,7 @@ export const authLoginWithEmailAndPassword = (email, password) => {
           type: AUTH_UNSUCCESSFULLY
         })
       })
-  }
+  };
 }
 
 //TODO: Popup modal/alert to inform user of error login

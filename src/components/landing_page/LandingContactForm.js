@@ -7,9 +7,9 @@ export default class LandingContactForm extends Component {
         <h3 className="lobster my-4">Let us introduce you the best products in our universe</h3>
         <form>
           <div className="form-group row">
-            <label htmlFor="inputEmail" className="col-sm-2 col-form-label text-right">Email</label>
+            <label htmlFor="inputEmailContact" className="col-sm-2 col-form-label text-right">Email</label>
             <div className="col-sm-10">
-              <input type="email" className="form-control" id="inputEmail" placeholder="example@gmail.com" />
+              <input type="email" className="form-control" id="inputEmailContact" placeholder="example@gmail.com" />
               <small id="emailHelp" className="form-text text-muted text-left">We'll never share your email with anyone else.</small>
             </div>
           </div>

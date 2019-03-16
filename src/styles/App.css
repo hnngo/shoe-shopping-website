@@ -28,6 +28,14 @@ html, body {
   font-style: italic
 }
 
+.mediumText {
+  font-size: 14px;
+}
+
+.smallText {
+  font-size: 12px;
+}
+
 .open-sans {
   font-family: 'Open Sans', sans-serif;
 }
@@ -88,10 +96,8 @@ html, body {
 
 /* --------- LOGIN --------- */
 .login-notification-text {
-  font-size: 14px;
   color: red;
   font-family: 'Open Sans', sans-serif;
-  font-style: italic;
 }
 
 /* -------- LANDING PICTURE ------- */
