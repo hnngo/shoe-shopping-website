@@ -42,8 +42,8 @@ class App extends Component {
           <div className="landing-picture-container">
             <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route exact path="/shoes" component={ShoesPage} />
-              <Route exact path="/accessories" component={AccessoriesPage} />
+              <Route path="/shoes" component={ShoesPage} />
+              <Route path="/accessories" component={AccessoriesPage} />
             </Switch>
           </div>
           <Footer />

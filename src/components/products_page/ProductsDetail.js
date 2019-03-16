@@ -4,7 +4,12 @@ export default class ProductsDetail extends Component {
   render() {
     return (
       <div>
-        <h1>Detai</h1>
+        <h1>Detail</h1>
+        <h1>Detail</h1>
+        <h1>Detail</h1>
+        <h1>Detail</h1>
+        <h1>Detail</h1>
+        <h1>Detail</h1>
       </div>
     );
   }

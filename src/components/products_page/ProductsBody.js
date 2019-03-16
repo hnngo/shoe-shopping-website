@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ProductsFilter from './ProductsFilter';
 
 export default class ProductsBody extends Component {
@@ -7,8 +8,10 @@ export default class ProductsBody extends Component {
       return Object.keys(d).map((k, i) => {
         return (
           <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 my-2" key={d + i}>
+            <Link to={this.props.urlPath + "/detail"}>
             <img src={d[k].imgURL} className="products-product-img" alt="landing-sample-shoes" /><br />
-            <a href="/" className="products-products-title monteserrat mb-1 bold">{d[k].name.toUpperCase()}</a>
+            <p className="products-products-title monteserrat mb-1 bold">{d[k].name.toUpperCase()}</p>
+            </Link>
             <p>{d[k].price}$S</p>
           </div>
         );
