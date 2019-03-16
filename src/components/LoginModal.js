@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import {
   authStoreLoginInformation,
   authLoginWithEmailAndPassword,
-  authResetLoginInformation
+  authResetLoginInformation,
+  authCreateAccountWithEmailAndPassword
 } from '../actions';
 import {
   INPUT_EMAIL,
@@ -38,7 +39,7 @@ class LoginModal extends Component {
     if (!this.state.signingUp) {
       this.setState({ showConfirm: true, signingUp: true });
     } else {
-      console.log("TODO: On click sign up")
+      this.props.authCreateAccountWithEmailAndPassword(this.props.inputEmail, this.props.inputPassword);
     }
   }
 
@@ -164,30 +165,17 @@ class LoginModal extends Component {
     const {
       inputEmail,
       inputPassword,
-      isSigningIn
+      isSigningIn,
+      isCreating,
+      isValidinputEmail,
+      isValidinputPassword,
+      isSignInSuccessfully,
+      isCreatingSuccessfully
     } = this.props;
 
     // Check if signin and signup btn clickable
     // const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
     // const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
-
-    // const $signInUpBtn = new Map();
-    // $signInUpBtn.set(document.querySelector("#signInBtn"), signInCondition);
-    // $signInUpBtn.set(document.querySelector("#signUpBtn"), signUpCondition);
-
-    // for (let [key, val] of $signInUpBtn) {
-    //   if (key) {
-    //     if (val) {
-    //       key.removeAttribute("disabled", false);
-    //       key.classList.remove("btn-secondary");
-    //       key.classList.add("btn-primary");
-    //     } else {
-    //       key.setAttribute("disabled", true);
-    //       key.classList.remove("btn-primary");
-    //       key.classList.add("btn-secondary");
-    //     }
-    //   }
-    // };
 
     return (
       <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
@@ -210,7 +198,7 @@ class LoginModal extends Component {
                     value={inputEmail}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_EMAIL)}
                   />
-                  {this.renderNotification(this.props.isValidinputEmail, "Please input the correct email", "text-left", "", "smallText", false)}
+                  {this.renderNotification(isValidinputEmail, "Please input the correct email", "text-left", "", "smallText", false)}
                 </div>
                 <div className="form-group">
                   <input
@@ -223,15 +211,16 @@ class LoginModal extends Component {
                     value={inputPassword}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_PASSWORD)}
                   />
-                  {this.renderNotification(this.props.isValidinputPassword, "Passwords must be at least 6 characters long", "text-left", "", "smallText", false)}
+                  {this.renderNotification(isValidinputPassword, "Passwords must be at least 6 characters long", "text-left", "", "smallText", false)}
                 </div>
                 {this.renderSignUpInput()}
                 <div className="modal-footer text-center d-block">
-                  {this.renderNotification(this.props.isSignInSuccessfully, "Unsuccesful attempt to sign in")}
+                  {this.renderNotification(isSignInSuccessfully, "Unsuccesful attempt to sign in")}
+                  {this.renderNotification(isCreatingSuccessfully, "The username has already been used")}
                   <Dots
                     size={31}
                     color={"#313131"}
-                    animating={isSigningIn}
+                    animating={isSigningIn || isCreating}
                     className="my-3"
                   />
                   {this.renderSignIn()}
@@ -265,30 +254,8 @@ const mapStateToProps = ({ ShoeReducers }) => {
     }
   });
 
-  // Check if signin and signup btn clickable
-  // const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
-  // const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
-
-  // const $signInUpBtn = new Map();
-  // $signInUpBtn.set(document.querySelector("#signInBtn"), signInCondition);
-  // $signInUpBtn.set(document.querySelector("#signUpBtn"), signUpCondition);
-
-  // for (let [key, val] of $signInUpBtn) {
-  //   if (key) {
-  //     if (val) {
-  //       key.removeAttribute("disabled", false);
-  //       key.classList.remove("btn-secondary");
-  //       key.classList.add("btn-primary");
-  //     } else {
-  //       key.setAttribute("disabled", true);
-  //       key.classList.remove("btn-primary");
-  //       key.classList.add("btn-secondary");
-  //     }
-  //   }
-  // };
-
   // Close login modal after successfully sign in
-  if (ShoeReducers.isSignInSuccessfully) {
+  if (ShoeReducers.isSignInSuccessfully || ShoeReducers.isCreatingSuccessfully) {
     document.querySelector("#close-login-btn").click();
   }
 
@@ -301,14 +268,17 @@ const mapStateToProps = ({ ShoeReducers }) => {
     isSignInSuccessfully: ShoeReducers.isSignInSuccessfully,
     isValidinputEmail: ShoeReducers.isValidinputEmail,
     isValidinputPassword: ShoeReducers.isValidinputPassword,
-    isValidinputConfirmPassword: ShoeReducers.isValidinputConfirmPassword
+    isValidinputConfirmPassword: ShoeReducers.isValidinputConfirmPassword,
+    isCreating: ShoeReducers.isCreating,
+    isCreatingSuccessfully: ShoeReducers.isCreatingSuccessfully
   }
 }
 
 export default connect(mapStateToProps, {
   authStoreLoginInformation,
   authLoginWithEmailAndPassword,
-  authResetLoginInformation
+  authResetLoginInformation,
+  authCreateAccountWithEmailAndPassword
 })(LoginModal)
 
 //TODO: After login succesfully change the button sign into name or show the personal information

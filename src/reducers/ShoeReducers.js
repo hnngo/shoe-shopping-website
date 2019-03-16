@@ -5,7 +5,10 @@ import {
   AUTH_WAITING_FOR_SIGNIN,
   AUTH_SUCCESSFULLY,
   AUTH_UNSUCCESSFULLY,
-  AUTH_RESET_INFORMATION
+  AUTH_RESET_INFORMATION,
+  AUTH_CREATING_ACCOUNT,
+  AUTH_CREATE_SUCCESSFULLY,
+  AUTH_CREATE_UNSUCCESSFULLY
 } from '../constants';
 
 const INITIAL_STATE = {
@@ -17,6 +20,9 @@ const INITIAL_STATE = {
   isValidinputConfirmPassword: undefined,
   isSigningIn: false,
   isSignInSuccessfully: undefined,
+  isCreating: false,
+  isCreatingSuccessfully: undefined,
+
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -28,7 +34,8 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         inputEmail: action.payload,
         isValidinputEmail,
-        isSignInSuccessfully: undefined
+        isSignInSuccessfully: undefined,
+        isCreatingSuccessfully: undefined
       };
     case INPUT_PASSWORD:
       const isValidinputPassword = action.payload.length > 5;
@@ -36,7 +43,8 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         inputPassword: action.payload,
         isValidinputPassword,
-        isSignInSuccessfully: undefined
+        isSignInSuccessfully: undefined,
+        isCreatingSuccessfully: undefined
       };
     case INPUT_CONFIRM_PASSWORD:
       const isValidinputConfirmPassword = state.inputPassword === action.payload;
@@ -44,14 +52,21 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         inputConfirmPassword: action.payload,
         isValidinputConfirmPassword,
-        isSignInSuccessfully: undefined
+        isSignInSuccessfully: undefined,
+        isCreatingSuccessfully: undefined
       };
     case AUTH_WAITING_FOR_SIGNIN:
-      return { ...state, isSigningIn: true,  isSignInSuccessfully: undefined };
+      return { ...state, isSigningIn: true, isSignInSuccessfully: undefined };
     case AUTH_SUCCESSFULLY:
       return { ...state, isSigningIn: false, isSignInSuccessfully: true };
     case AUTH_UNSUCCESSFULLY:
       return { ...INITIAL_STATE, isSignInSuccessfully: false };
+    case AUTH_CREATING_ACCOUNT:
+      return { ...state, isCreating: true, isCreatingSuccessfully: undefined };
+    case AUTH_CREATE_SUCCESSFULLY:
+      return { ...state, isCreating: false, isCreatingSuccessfully: true };
+    case AUTH_CREATE_UNSUCCESSFULLY:
+      return { ...INITIAL_STATE, isCreating: false, isCreatingSuccessfully: false };
     case AUTH_RESET_INFORMATION:
       return { ...INITIAL_STATE };
     default:
