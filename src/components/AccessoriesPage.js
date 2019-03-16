@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import ProductsHeader from './products_page/ProductsHeader';
 import ProductsBody from './products_page/ProductsBody';
+import ProductsRedirect from './products_page/ProductsRedirect';
 import data from "../data.json";
-import ProductsDetail from './products_page/ProductsDetail';
 
 export default class AccessoriesPage extends Component {
   render() {
-    const { accessoriesPage, gloves, bags, belts, sunglasses, purses } = data.imgURL;
-    console.log(this.props.match)
+    const { gloves, bags, belts, sunglasses, purses } = data.imgURL.products.accessories;
+
     return (
       <div>
         <ProductsHeader
-          panoImageURL={accessoriesPage.pano.imgURL}
+          panoImageURL={data.imgURL.pages.accessoriesPage.pano.imgURL}
           categoryName="Accessories"
         />
         <Switch>
@@ -21,18 +21,18 @@ export default class AccessoriesPage extends Component {
             render={() =>
               <ProductsBody
                 urlPath={this.props.match.path}
-                headerSentence={accessoriesPage.headerSentence}
+                headerSentence={data.imgURL.pages.accessoriesPage.headerSentence}
                 filterContent={["All", ...data.navbar.accessories.byType]}
                 productsTag={[gloves, bags, belts, sunglasses, purses]}
               />
             }
           />
-          <Route
-            exact path={this.props.match.path + "/detail"}
-            render={() => <ProductsDetail />}
+          <ProductsRedirect
+            productsObj={data.imgURL.products.accessories}
+            pathName={this.props.match.path}
           />
         </Switch>
       </div>
-        );
-      }
-    }
+    );
+  }
+}

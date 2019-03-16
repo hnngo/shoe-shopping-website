@@ -4,6 +4,7 @@ import data from '../../data.json';
 
 export default class LandingSample extends Component {
   render() {
+    const { pages } = data.imgURL;
     return (
       <div>
         <div className="landing-slogan container w-75 text-center my-5">
@@ -14,16 +15,16 @@ export default class LandingSample extends Component {
         </div>
         <div className="row mt-2">
           <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated slideInLeft slow">
-            <img src={data.imgURL.landingPage.landingSampleShoes} className="landing-image-simple" alt="landing-sample-shoes" />
+            <img src={pages.landingPage.landingSampleShoes} className="landing-image-simple" alt="landing-sample-shoes" />
             <p className="landing-picture-text landing-sample-text open-sans">SNEAKERS</p>
           </div>
           <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated  slideInUp slow">
-            <img src={data.imgURL.landingPage.landingSampleBoots} className="landing-image-simple" alt="landing-sample-boots" />
+            <img src={pages.landingPage.landingSampleBoots} className="landing-image-simple" alt="landing-sample-boots" />
             <p className="landing-picture-text landing-sample-text open-sans">BOOTS</p>
           </div>
           <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated slideInRight slow">
           <Link to="/accessories">
-            <img src={data.imgURL.landingPage.landingSampleAccessories} className="landing-image-simple" alt="landing-sample-accessories" />
+            <img src={pages.landingPage.landingSampleAccessories} className="landing-image-simple" alt="landing-sample-accessories" />
             <p className="landing-picture-text landing-sample-text open-sans">ACCESSORIES</p></Link>
           </div>
         </div>

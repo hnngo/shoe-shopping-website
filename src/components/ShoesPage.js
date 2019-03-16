@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import ProductsHeader from './products_page/ProductsHeader';
 import ProductsBody from './products_page/ProductsBody';
+import ProductsRedirect from './products_page/ProductsRedirect';
 import data from '../data.json';
-import ProductsDetail from './products_page/ProductsDetail';
 
 export default class ShoesPage extends Component {
   render() {
-    const { shoesPage, nikeShoes, adidasShoes, vansShoes, drmartens } = data.imgURL;
-    
+    const { nikeShoes, adidasShoes, vansShoes, drmartens } = data.imgURL.products.shoes;
+
     return (
         <div>
           <ProductsHeader
-            panoImageURL={shoesPage.pano.imgURL}
+            panoImageURL={data.imgURL.pages.shoesPage.pano.imgURL}
             categoryName="Shoes"
           />
           <Switch>
@@ -21,15 +21,15 @@ export default class ShoesPage extends Component {
               render={() =>
                 <ProductsBody
                   urlPath={this.props.match.path}
-                  headerSentence={shoesPage.headerSentence}
+                  headerSentence={data.imgURL.pages.shoesPage.headerSentence}
                   filterContent={["All", ...data.navbar.shoes.byBrand, ...data.navbar.shoes.byStyle]}
                   productsTag={[nikeShoes, adidasShoes, vansShoes, drmartens]}
                 />
               }
             />
-            <Route
-              exact path={this.props.match.path + "/detail"}
-              render={() => <ProductsDetail />}
+            <ProductsRedirect
+              productsObj={data.imgURL.products.shoes}
+              pathName={this.props.match.path}
             />
           </Switch>
         </div>

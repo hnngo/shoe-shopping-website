@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import data from '../../data.json';
 
-const shoeData = data.imgURL;
+const shoeData = data.imgURL.products.shoes;
 
 export default class LandingSampleProducts extends Component {
   renderProduct(...arrProduct) {

@@ -5,7 +5,7 @@ export default class LandingPicture extends Component {
   render() {
     return (
       <div className="animated bounceIn">
-        <img src={data.imgURL.landingPage.landingWallpaper} className="img-fluid landing-wallpaper" alt="landing-wallpaper" />
+        <img src={data.imgURL.pages.landingPage.landingWallpaper} className="img-fluid landing-wallpaper" alt="landing-wallpaper" />
         <div className="landing-picture-text text-center open-sans">
           <h2>"Finest footwear for finest peoples"</h2>
           <p className="mb-0 mt-3">Imagine the best in every shoe</p>
