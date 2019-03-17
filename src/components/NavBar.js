@@ -108,7 +108,7 @@ class NavBar extends Component {
         <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm">
           <div className="container">
             {/* Logo Brand */}
-            <a className="navbar-brand" href="/">LOGO</a>
+            <Link className="navbar-brand" to="/">LOGO</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -119,24 +119,24 @@ class NavBar extends Component {
                   <a className="nav-link" href="/news">News <span className="sr-only">(current)</span></a>
                 </li> */}
                 <li className="nav-item">
-                  <a
+                  <Link
                     className="nav-link"
                     onMouseEnter={(e) => this.handleMouseEnter(e)}
                     onMouseOut={() => this.handleTimeOutMouseOut()}
-                    href="/shoes"
+                    to="/shoes"
                   >
                     Shoes
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
+                  <Link
                     onMouseEnter={(e) => this.handleMouseEnter(e)}
                     onMouseOut={() => this.handleTimeOutMouseOut()}
                     className="nav-link"
-                    href="/accessories"
+                    to="/accessories"
                   >
                     Accessories
-                  </a>
+                  </Link>
                 </li>
                 {/* <li className="nav-item">
                   <a
@@ -177,6 +177,6 @@ const mapStateToProps = ({ AuthReducers }) => {
 
 export default connect(mapStateToProps, { authSignOut })(NavBar);
 
-//TODO: Color change
-//TODO: Style change when clicking
+//TODO: Color/Style change when at the right path name
 //TODO: Transparent on top, and white navbar when scrolling down
+//TODO: Fix bug of automatically sign out when pressing category redirect

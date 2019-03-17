@@ -18,7 +18,7 @@ export default (state = INITIAL_STATE, action) => {
       const newCart = [ ...state.inCart, action.payload ];
       return { ...state, inCart: newCart, isSuccessfullyAdded: true, newItems: action.payload };
     case PUR_CLOSE_ATC_MODAL:
-      return { ...state, isSuccessfullyAdded: undefined, newItem: null }
+      return { ...state, isSuccessfullyAdded: undefined, newItems: null }
     default:
       return state;
   }

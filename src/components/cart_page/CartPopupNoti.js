@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
-import * as _ from 'lodash';
 import { purCloseAddToCartModal } from '../../actions';
 import { imgURL } from '../../data.json';
 

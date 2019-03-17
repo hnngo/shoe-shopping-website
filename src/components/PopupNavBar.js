@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import data from '../data.json';
 
 export default class PopupNavBar extends Component {
@@ -48,7 +49,7 @@ export default class PopupNavBar extends Component {
     return list.map((d, i) => {
       let path = "/" + d.toLowerCase();
 
-      return <li key={i}><a href={path}>{d}</a></li>;
+      return <li key={i}><Link to={path}>{d}</Link></li>;
     });
   }
 

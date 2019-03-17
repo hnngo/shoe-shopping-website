@@ -69,5 +69,3 @@ export const authSignOut = () => {
     })).catch((e) => console.log(e));
   }
 }
-
-//TODO: Popup modal/alert to inform user of error login
