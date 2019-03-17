@@ -4,8 +4,15 @@ import 'firebase/database';
 import {
   PUR_ADDING_TO_CART,
   PUR_ADDING_TO_CART_SUCCESSFULLY,
-  PUR_ADDING_TO_CART_UNSUCCESSFULLY
+  PUR_ADDING_TO_CART_UNSUCCESSFULLY,
+  PUR_CLOSE_ATC_MODAL
 } from '../constants';
+
+export const purCloseAddToCartModal = () => {
+  return {
+    type: PUR_CLOSE_ATC_MODAL
+  }
+}
 
 export const purAddToCart = (itemTag, qty, size) => {
   return (dispatch) => {

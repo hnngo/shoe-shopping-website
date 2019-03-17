@@ -16,3 +16,4 @@ export const AUTH_CREATE_UNSUCCESSFULLY = "auth_create_unsuccessfully";
 export const PUR_ADDING_TO_CART = "pur_adding_to_cart";
 export const PUR_ADDING_TO_CART_SUCCESSFULLY = "pur_adding_to_cart_successfully";
 export const PUR_ADDING_TO_CART_UNSUCCESSFULLY = "pur_adding_to_cart_unsuccessfully";
+export const PUR_CLOSE_ATC_MODAL = "pur_close_atc_modal";

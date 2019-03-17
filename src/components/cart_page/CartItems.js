@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {} from '../../actions';
 
-export default class CartItems extends Component {
+class CartItems extends Component {
   render() {
+    console.log(this.props.state.UserReducers);
     return (
       <div className="container-fluid my-3">
         <div className="row">
@@ -16,3 +19,13 @@ export default class CartItems extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    state
+  }
+}
+
+export default connect(mapStateToProps, {
+
+})(CartItems);

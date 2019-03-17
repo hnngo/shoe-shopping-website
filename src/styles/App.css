@@ -323,3 +323,29 @@ html, body {
 .products-detail-qty-container input {
   outline:none;
 }
+
+/* ------- MODAL --------*/
+.cart-modal-notification {
+  width: 75%;
+  /* height: 600px; */
+}
+
+.Modal {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 10%;
+  right: 10%;
+  background-color: white;
+  border-radius: 20px;
+
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}

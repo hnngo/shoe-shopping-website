@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import firebase from 'firebase/app';
@@ -13,7 +13,7 @@ import ShoesPage from './components/ShoesPage';
 import AccessoriesPage from './components/AccessoriesPage';
 import Footer from './components/Footer';
 import rootReducer from './reducers';
-import CartItems from './components/CartItems';
+import CartItems from './components/cart_page/CartItems';
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +37,23 @@ class App extends Component {
 
   render() {
     // Initial store for redux, which no initial state and apply middleware Redux Thunk
-    const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
+    //-----DEV-----//
+    const composeEnhancers =
+      typeof window === 'object' &&
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+          // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+        }) : compose;
+
+    const enhancer = composeEnhancers(
+      applyMiddleware(ReduxThunk),
+      // other store enhancers if any
+    );
+    //-----DEV-----//
+
+    const store = createStore(rootReducer, {}, enhancer);
+
+    // const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
 
     return (
       <BrowserRouter>
@@ -48,7 +64,7 @@ class App extends Component {
               <Route exact path="/" component={LandingPage} />
               <Route path="/shoes" component={ShoesPage} />
               <Route path="/accessories" component={AccessoriesPage} />
-              <Route path="/cart" component={CartItems}/>  
+              <Route path="/cart" component={CartItems} />
             </Switch>
           </div>
           <Footer />

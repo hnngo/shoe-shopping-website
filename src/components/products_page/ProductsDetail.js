@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   purAddToCart
 } from '../../actions';
+import CartPopup from '../cart_page/CartPopupNoti';
 
 class ProductsDetail extends Component {
   constructor(props) {
@@ -165,6 +166,7 @@ class ProductsDetail extends Component {
             </button>
           </div>
         </div>
+        <CartPopup />
       </div>
     );
   }
