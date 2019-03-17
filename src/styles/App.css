@@ -199,7 +199,7 @@ html, body {
 /* ------- FOOTER --------*/
 .footer-container {
   width: 100vw;
-  margin-top: 80px;
+  margin-top: 25px;
   /* background-color: rgba(0, 0, 0, 0.5) */
 }
 
@@ -275,11 +275,19 @@ html, body {
 
 .products-detail-des-text {
   line-height: 20px;
+  font-size: 14px;
 }
 
-.product-detail-size {
+.product-detail-size-btn {
   width: 90%;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
+
+/* .product-detail-size-btn:hover {
+  background-color: black;
+  color: white;
+} */
 
 .products-detail-collapse {
   border-bottom: 1px solid black;
@@ -290,7 +298,7 @@ html, body {
   background: transparent;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   outline: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
@@ -305,3 +313,6 @@ html, body {
   box-shadow: none !important;
 }
 
+.products-detail-qty-container input {
+  outline:none;
+}

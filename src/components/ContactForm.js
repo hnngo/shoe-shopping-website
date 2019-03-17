@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export default class LandingContactForm extends Component {
+export default class ContactForm extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container text-center">
         <h3 className="lobster my-4">Let us introduce you the best products in our universe</h3>
         <form>
           <div className="form-group row">
@@ -48,3 +48,4 @@ export default class LandingContactForm extends Component {
 //TODO: Submit button small when large screen
 //TODO: Adding sending email to input email
 //TODO: Submit button stop reloading page
+//TODO: Adding background to easily seperate from other parts

@@ -3,7 +3,6 @@ import LandingPicture from './LandingPicture';
 import LandingSample from './LandingSample';
 import LandingSampleProducts from './LandingSampleProducts';
 import LandingFeedback from './LandingFeedback';
-import LandingContactForm from './LandingContactForm';
 
 export default class LandingPage extends Component {
   render() {
@@ -13,7 +12,6 @@ export default class LandingPage extends Component {
         <LandingSample />
         <LandingSampleProducts />
         <LandingFeedback />
-        <LandingContactForm />
       </div>
     );
   }
