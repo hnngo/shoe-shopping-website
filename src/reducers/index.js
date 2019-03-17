@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import ShoeReducers from './ShoeReducers';
+import AuthReducers from './AuthReducers';
 import UserReducers from './UserReducers';
 
 export default combineReducers({
-  ShoeReducers,
+  AuthReducers,
   UserReducers
 })

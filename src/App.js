@@ -13,6 +13,7 @@ import ShoesPage from './components/ShoesPage';
 import AccessoriesPage from './components/AccessoriesPage';
 import Footer from './components/Footer';
 import rootReducer from './reducers';
+import CartItems from './components/CartItems';
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +30,9 @@ class App extends Component {
     };
 
     firebase.initializeApp(config);
+
+    // Sign out of the last sign in
+    // firebase.auth().signOut();
   }
 
   render() {
@@ -44,6 +48,7 @@ class App extends Component {
               <Route exact path="/" component={LandingPage} />
               <Route path="/shoes" component={ShoesPage} />
               <Route path="/accessories" component={AccessoriesPage} />
+              <Route path="/cart" component={CartItems}/>  
             </Switch>
           </div>
           <Footer />

@@ -1,0 +1,28 @@
+{
+  "userID": {
+    "information": {
+      "name": "Harrison Ngo",
+      "dob": "07 Sep 1994",
+      "address": "125 Locust Rd, Mount Holly, NJ 08060",
+      "phone": 1642232344
+    },
+    "inCart": {
+      "tagItem1": "numberOfItems1",
+      "tagItem2": "numberOfItems2",
+      "tagItem3": "numberOfItems3"
+    },
+    "inWish": ["tagItem1", "tagItem2"],
+    "order": [
+      {
+        "id": "923184",
+        "items": {
+          "tagItem1": "numberOfItems1",
+          "tagItem2": "numberOfItems2",
+          "tagItem3": "numberOfItems3"
+        },
+        "orderDate": "15 Dec 2018",
+        "deliveryDate": "18 Dec 2018"
+      }
+    ]
+  }
+}

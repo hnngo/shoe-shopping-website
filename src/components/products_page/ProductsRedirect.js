@@ -19,7 +19,7 @@ export default class ProductsRedirect extends Component {
         <Route
           key={i.tag}
           path={this.props.pathName + "/" + i.tag}
-          render={() => <ProductsDetail item={i}/>}
+          render={() => <ProductsDetail item={i} category={this.props.pathName.slice(1)}/>}
         />
       );
     })

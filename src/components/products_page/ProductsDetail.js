@@ -1,21 +1,67 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  purAddToCart
+} from '../../actions';
 
-export default class ProductsDetail extends Component {
-  handleOnChangeQty() {
-    console.log("Change Qty")
+class ProductsDetail extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      chosenSize: this.props.category === "shoes" ? 8.5 : "XS",
+      qty: 1
+    }
+  }
+
+  handleOnChangeQty(e) {
+    switch (e.target.classList[1]) {
+      case "fa-arrow-left":
+        this.setState({ qty: this.state.qty - 1 });
+        break;
+      case "fa-arrow-right":
+        this.setState({ qty: this.state.qty + 1 });
+        break;
+      default:
+        this.setState({ qty: e.target.value });
+    }
+  }
+
+  handleClickSize(size) {
+    if (!isNaN(size)) {
+      size = +size;
+    }
+
+    this.setState({ chosenSize: size });
+  }
+
+  handleClickAddToCart() {
+    this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize);
+  }
+
+  handleClickAddToWishlist() {
+    console.log("add wl");
   }
 
   renderSize() {
-    const sizeArr = [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13];
+    const sizeShoesArr = [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13];
+    const sizeAccessoriesArr = ["XS", "S", "M", "L", "XL"];
+    const size = this.props.category === "shoes" ? sizeShoesArr : sizeAccessoriesArr;
 
-    return sizeArr.map((item) =>
-      <div className="w-25 my-1" key={item}>
-        <button
-          className="btn btn-outline-dark product-detail-size-btn"
-        >
-          {item}
-        </button>
-      </div>
+    return size.map((item, i) => {
+      const chosenSizeBtnClass = (item === this.state.chosenSize) ? "btn-dark" : "btn-outline-dark";
+
+      return (
+        <div className="w-25 my-1" key={item}>
+          <button
+            className={"btn product-detail-size-btn " + chosenSizeBtnClass}
+            onClick={(e) => this.handleClickSize(e.target.innerHTML)}
+          >
+            {item}
+          </button>
+        </div>
+      )
+    }
     );
   }
 
@@ -23,13 +69,13 @@ export default class ProductsDetail extends Component {
     return (
       <div className="w-100 my-3">
         <div className="products-detail-qty-container">
-          <i className="fas fa-arrow-left"></i>
+          <i className="fas fa-arrow-left" onClick={(e) => this.handleOnChangeQty(e)}></i>
           <input
             className="w-25 border-0 text-center"
-            value={1}
-            onChange={() => this.handleOnChangeQty()}
+            value={this.state.qty}
+            onChange={(e) => this.handleOnChangeQty(e)}
           />
-          <i className="fas fa-arrow-right"></i>
+          <i className="fas fa-arrow-right" onClick={(e) => this.handleOnChangeQty(e)}></i>
         </div>
       </div>
     )
@@ -103,10 +149,18 @@ export default class ProductsDetail extends Component {
               </div>, true
             )}
 
-            <button type="button" className="btn btn-dark btn-block">
+            <button
+              type="button"
+              className="btn btn-dark btn-block"
+              onClick={() => this.handleClickAddToCart()}
+            >
               <i className="fas fa-cart-plus mr-2"></i>Add to cart
             </button>
-            <button type="button" className="btn btn-outline-dark btn-block">
+            <button
+              type="button"
+              className="btn btn-outline-dark btn-block"
+              onClick={() => this.handleClickAddToWishlist()}
+            >
               <i className="far fa-heart mr-2"></i>Add to wishlist
             </button>
           </div>
@@ -116,7 +170,12 @@ export default class ProductsDetail extends Component {
   }
 }
 
+export default connect(null, {
+  purAddToCart
+})(ProductsDetail)
+
 //TODO: Size guide
 //TODO: Click size button to save the state
 //TODO: Add more images on other sides of products
 //TODO: When click collapse change the icon to "-"
+//TODO: Random generate recommendation samples

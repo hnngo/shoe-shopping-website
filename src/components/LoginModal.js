@@ -174,8 +174,8 @@ class LoginModal extends Component {
     } = this.props;
 
     // Check if signin and signup btn clickable
-    // const signInCondition = ShoeReducers.isValidinputEmail && ShoeReducers.isValidinputPassword;
-    // const signUpCondition = (signInCondition && ShoeReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
+    // const signInCondition = AuthReducers.isValidinputEmail && AuthReducers.isValidinputPassword;
+    // const signUpCondition = (signInCondition && AuthReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
 
     return (
       <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
@@ -236,7 +236,7 @@ class LoginModal extends Component {
   }
 }
 
-const mapStateToProps = ({ ShoeReducers }) => {
+const mapStateToProps = ({ AuthReducers }) => {
   // Add validation for email, pwd and confirm pwd
   const checkValidateItems = ["inputEmail", "inputPassword", "inputConfirmPassword"]
 
@@ -244,10 +244,10 @@ const mapStateToProps = ({ ShoeReducers }) => {
     let selectItem = document.querySelector('#' + item);
     if (selectItem !== null) {
       selectItem.classList.remove("is-valid", "is-invalid");
-      if (ShoeReducers["isValid" + item] === true) {
+      if (AuthReducers["isValid" + item] === true) {
         selectItem.classList.remove("is-invalid");
         selectItem.classList.add("is-valid");
-      } else if (ShoeReducers["isValid" + item] === false) {
+      } else if (AuthReducers["isValid" + item] === false) {
         selectItem.classList.remove("is-valid");
         selectItem.classList.add("is-invalid");
       }
@@ -255,22 +255,22 @@ const mapStateToProps = ({ ShoeReducers }) => {
   });
 
   // Close login modal after successfully sign in
-  if (ShoeReducers.isSignInSuccessfully || ShoeReducers.isCreatingSuccessfully) {
+  if (AuthReducers.isSignInSuccessfully || AuthReducers.isCreatingSuccessfully) {
     document.querySelector("#close-login-btn").click();
   }
 
   // Return state to props
   return {
-    inputEmail: ShoeReducers.inputEmail,
-    inputPassword: ShoeReducers.inputPassword,
-    inputConfirmPassword: ShoeReducers.inputConfirmPassword,
-    isSigningIn: ShoeReducers.isSigningIn,
-    isSignInSuccessfully: ShoeReducers.isSignInSuccessfully,
-    isValidinputEmail: ShoeReducers.isValidinputEmail,
-    isValidinputPassword: ShoeReducers.isValidinputPassword,
-    isValidinputConfirmPassword: ShoeReducers.isValidinputConfirmPassword,
-    isCreating: ShoeReducers.isCreating,
-    isCreatingSuccessfully: ShoeReducers.isCreatingSuccessfully
+    inputEmail: AuthReducers.inputEmail,
+    inputPassword: AuthReducers.inputPassword,
+    inputConfirmPassword: AuthReducers.inputConfirmPassword,
+    isSigningIn: AuthReducers.isSigningIn,
+    isSignInSuccessfully: AuthReducers.isSignInSuccessfully,
+    isValidinputEmail: AuthReducers.isValidinputEmail,
+    isValidinputPassword: AuthReducers.isValidinputPassword,
+    isValidinputConfirmPassword: AuthReducers.isValidinputConfirmPassword,
+    isCreating: AuthReducers.isCreating,
+    isCreatingSuccessfully: AuthReducers.isCreatingSuccessfully
   }
 }
 

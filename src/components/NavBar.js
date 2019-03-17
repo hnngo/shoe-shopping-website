@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PopupNavBar from './PopupNavBar';
 import LoginModal from './LoginModal';
 
@@ -20,7 +21,7 @@ export default class NavBar extends Component {
     }
 
     // Show popup and save the current cursor pointing
-    this.setState({ 
+    this.setState({
       showPopup: true,
       curTarget: e.target.innerHTML.toLowerCase()
     });
@@ -30,14 +31,14 @@ export default class NavBar extends Component {
     if (window.innerWidth < 768) {
       return
     }
-    
+
     // When mouse out, immediately set previous target
     this.setState({ prevTarget: this.state.curTarget });
 
     // Check if mouse is moved to the popup or switch to next target
     setTimeout(() => {
       if ((this.state.enterPopup === false) && (this.state.prevTarget === this.state.curTarget)) {
-        this.setState({ 
+        this.setState({
           showPopup: false,
           curTarget: undefined,
           prevTarget: undefined
@@ -107,11 +108,18 @@ export default class NavBar extends Component {
               </ul>
               <form className="form-inline my-2 my-lg-0">
                 <input className="nav-search form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "220px" }} />
-                <button type="button" className="btn my-2 my-sm-0"><i className="fas fa-shopping-cart"></i></button>
-                <button 
+                <Link to="/cart">
+                  <button
+                    type="button"
+                    className="btn my-2 my-sm-0"
+                  >
+                    <i className="fas fa-shopping-cart" />
+                  </button>
+                </Link>
+                <button
                   type="button"
                   className="btn my-2 my-sm-0"
-                  data-toggle="modal" 
+                  data-toggle="modal"
                   data-target="#loginModal">
                   <i className="fas fa-user" />
                 </button>
