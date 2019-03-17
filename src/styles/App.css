@@ -28,11 +28,11 @@ html, body {
   font-style: italic
 }
 
-.mediumText {
+.medium-text {
   font-size: 14px;
 }
 
-.smallText {
+.small-text {
   font-size: 12px;
 }
 
@@ -51,8 +51,17 @@ html, body {
 .simple-input {
   outline: none;
   -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
   box-shadow: none !important;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.fas {
+  cursor: pointer;
 }
 
 /* --------- NAV BAR --------- */
@@ -146,6 +155,7 @@ html, body {
      object-fit: cover;
   width: 100%;
   height: 200px;
+  -webkit-transition: 1s;
   transition: 1s;
 }
 
@@ -199,7 +209,7 @@ html, body {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* ------- SHOES PAGE --------*/
+/* ------- PRODUCTS PAGE --------*/
 .products-heading-container {
   position: relative;
   letter-spacing: 2px;
@@ -262,3 +272,36 @@ html, body {
   text-decoration: none;
   color: black;
 }
+
+.products-detail-des-text {
+  line-height: 20px;
+}
+
+.product-detail-size {
+  width: 90%;
+}
+
+.products-detail-collapse {
+  border-bottom: 1px solid black;
+}
+
+.products-detail-collapse-header-text {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.products-detail-collapse-header-text:active,
+.products-detail-collapse-header-text:hover,
+.products-detail-collapse-header-text:link,
+.products-detail-collapse-header-text:visited {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+

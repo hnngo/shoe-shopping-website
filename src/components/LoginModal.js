@@ -66,7 +66,7 @@ class LoginModal extends Component {
             value={this.props.inputConfirmPassword}
             onChange={(input) => this.handleInputAuth(input.target.value, INPUT_CONFIRM_PASSWORD)}
           />
-          {this.renderNotification(this.props.isValidinputConfirmPassword, "Your password and confirmation password do not match", "text-left", "", "smallText", false)}
+          {this.renderNotification(this.props.isValidinputConfirmPassword, "Your password and confirmation password do not match", "text-left", "", "small-text", false)}
         </div>
       );
     }
@@ -150,7 +150,7 @@ class LoginModal extends Component {
     }
   }
 
-  renderNotification(condition, notification, textAlign = "text-center", textStyle = "italic", fontSize = "mediumText", animation = true) {
+  renderNotification(condition, notification, textAlign = "text-center", textStyle = "italic", fontSize = "medium-text", animation = true) {
     if (condition === false) {
       const classDivStyle = `${textAlign} ${textStyle} ${fontSize} ${animation ? "animated shake" : ""}`
       return (
@@ -198,7 +198,7 @@ class LoginModal extends Component {
                     value={inputEmail}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_EMAIL)}
                   />
-                  {this.renderNotification(isValidinputEmail, "Please input the correct email", "text-left", "", "smallText", false)}
+                  {this.renderNotification(isValidinputEmail, "Please input the correct email", "text-left", "", "small-text", false)}
                 </div>
                 <div className="form-group">
                   <input
@@ -211,7 +211,7 @@ class LoginModal extends Component {
                     value={inputPassword}
                     onChange={(input) => this.handleInputAuth(input.target.value, INPUT_PASSWORD)}
                   />
-                  {this.renderNotification(isValidinputPassword, "Passwords must be at least 6 characters long", "text-left", "", "smallText", false)}
+                  {this.renderNotification(isValidinputPassword, "Passwords must be at least 6 characters long", "text-left", "", "small-text", false)}
                 </div>
                 {this.renderSignUpInput()}
                 <div className="modal-footer text-center d-block">

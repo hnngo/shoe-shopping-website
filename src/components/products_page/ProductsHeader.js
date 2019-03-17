@@ -3,7 +3,7 @@ import React from 'react';
 export default (props) => {
   return (
     <div>
-      <div className="products-heading-container">
+      <div className="products-heading-container shadow">
         <img 
           src={props.panoImageURL} 
           className="products-heading-picture" 
