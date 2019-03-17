@@ -123,7 +123,8 @@ class ProductsDetail extends Component {
             <img
               src={this.props.item.imgURL}
               className="detail-products-img img-fluid"
-              alt={this.props.item.name.toLowerCase().replace(" ", "-")} />
+              alt={this.props.item.name.toLowerCase().replace(" ", "-")}
+            />
           </div>
           <div className="col-sm-5 col-xs-12">
             <h4 className="monteserrat bold mb-0 mt-1">

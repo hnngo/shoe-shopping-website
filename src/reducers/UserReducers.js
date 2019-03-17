@@ -8,6 +8,7 @@ import {
 const INITIAL_STATE = {
   inCart: [],
   inWishlist: [],
+  newItems: null,
   isSuccessfullyAdded: undefined
 }
 
@@ -15,9 +16,9 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case PUR_ADDING_TO_CART_SUCCESSFULLY:
       const newCart = [ ...state.inCart, action.payload ];
-      return { ...state, inCart: newCart, isSuccessfullyAdded: true };
+      return { ...state, inCart: newCart, isSuccessfullyAdded: true, newItems: action.payload };
     case PUR_CLOSE_ATC_MODAL:
-      return { ...state, isSuccessfullyAdded: undefined }
+      return { ...state, isSuccessfullyAdded: undefined, newItem: null }
     default:
       return state;
   }

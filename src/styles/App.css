@@ -326,11 +326,6 @@ html, body {
 
 /* ------- MODAL --------*/
 .cart-modal-notification {
-  width: 75%;
-  /* height: 600px; */
-}
-
-.Modal {
   position: absolute;
   top: 20%;
   bottom: 20%;
@@ -341,11 +336,21 @@ html, body {
 
 }
 
-.Overlay {
+.cart-modal-notification-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cart-modal-header {
+  border-bottom: 1px solid rgb(194, 192, 192);
+}
+
+.cart-modal-close-btn {
+  border: none;
+  background: transparent;
+  outline: none;
 }
