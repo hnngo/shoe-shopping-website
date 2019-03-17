@@ -8,7 +8,8 @@ import {
   AUTH_RESET_INFORMATION,
   AUTH_CREATING_ACCOUNT,
   AUTH_CREATE_SUCCESSFULLY,
-  AUTH_CREATE_UNSUCCESSFULLY
+  AUTH_CREATE_UNSUCCESSFULLY,
+  AUTH_SIGN_OUT_SUCCESSFULLY
 } from '../constants';
 
 const INITIAL_STATE = {
@@ -21,8 +22,7 @@ const INITIAL_STATE = {
   isSigningIn: false,
   isSignInSuccessfully: undefined,
   isCreating: false,
-  isCreatingSuccessfully: undefined,
-
+  isCreatingSuccessfully: undefined
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -68,6 +68,7 @@ export default (state = INITIAL_STATE, action) => {
     case AUTH_CREATE_UNSUCCESSFULLY:
       return { ...INITIAL_STATE, isCreating: false, isCreatingSuccessfully: false };
     case AUTH_RESET_INFORMATION:
+    case AUTH_SIGN_OUT_SUCCESSFULLY:
       return { ...INITIAL_STATE };
     default:
       return state;

@@ -11,6 +11,7 @@ export const AUTH_RESET_INFORMATION = "auth_reset_information";
 export const AUTH_CREATING_ACCOUNT = "auth_creating_account";
 export const AUTH_CREATE_SUCCESSFULLY = "auth_create_successfully";
 export const AUTH_CREATE_UNSUCCESSFULLY = "auth_create_unsuccessfully";
+export const AUTH_SIGN_OUT_SUCCESSFULLY = "auth_sign_out_successfully";
 
 // --------- SHOPPING --------- //
 export const PUR_ADDING_TO_CART = "pur_adding_to_cart";

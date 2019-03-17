@@ -7,7 +7,8 @@ import {
   AUTH_RESET_INFORMATION,
   AUTH_CREATING_ACCOUNT,
   AUTH_CREATE_SUCCESSFULLY,
-  AUTH_CREATE_UNSUCCESSFULLY
+  AUTH_CREATE_UNSUCCESSFULLY,
+  AUTH_SIGN_OUT_SUCCESSFULLY,
 } from '../constants';
 
 export const authStoreLoginInformation = (input, type) => {
@@ -58,6 +59,14 @@ export const authCreateAccountWithEmailAndPassword = (email, password) => {
           type: AUTH_CREATE_UNSUCCESSFULLY
         })
       });
+  }
+}
+
+export const authSignOut = () => {
+  return (dispatch) => {
+    firebase.auth().signOut().then(() => dispatch({
+      type: AUTH_SIGN_OUT_SUCCESSFULLY
+    })).catch((e) => console.log(e));
   }
 }
 

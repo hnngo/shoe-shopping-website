@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PopupNavBar from './PopupNavBar';
 import LoginModal from './LoginModal';
+import { authSignOut } from '../actions';
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
 
@@ -47,7 +49,12 @@ export default class NavBar extends Component {
     }, 300);
   }
 
+  handleClickSignOut() {
+    this.props.authSignOut();
+  }
+
   showPopup() {
+    // Only showing popup nav bar when on large screen
     if (this.state.showPopup && (window.innerWidth >= 768)) {
       return (
         <PopupNavBar
@@ -55,6 +62,42 @@ export default class NavBar extends Component {
           onMouseOut={() => this.setState({ enterPopup: false, showPopup: false })}
           popupType={this.state.curTarget}
         />
+      );
+    }
+  }
+
+  // Check if user already signed in or not
+  renderUserIcon() {
+    // const user = firebase.auth().currentUser;
+    if (this.props.isSignInSuccessfully) {
+      return (
+        <div className="btn-group">
+          <button type="button" className="cart-modal-close-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i className="fas fa-user mr-1" />User
+          </button>
+          <div className="dropdown-menu dropdown-menu-right">
+            <button className="dropdown-item" type="button">Orders</button>
+            <button className="dropdown-item" type="button">Setting</button>
+            <div className="dropdown-divider"></div>
+            <button
+              className="dropdown-item"
+              type="button"
+              onClick={() => this.handleClickSignOut()}
+            >
+              Sign Out
+            </button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <button
+          type="button"
+          className="btn my-2 my-sm-0"
+          data-toggle="modal"
+          data-target="#loginModal">
+          <i className="fas fa-user" />
+        </button>
       );
     }
   }
@@ -116,13 +159,7 @@ export default class NavBar extends Component {
                     <i className="fas fa-shopping-cart" />
                   </button>
                 </Link>
-                <button
-                  type="button"
-                  className="btn my-2 my-sm-0"
-                  data-toggle="modal"
-                  data-target="#loginModal">
-                  <i className="fas fa-user" />
-                </button>
+                {this.renderUserIcon()}
               </form>
             </div>
           </div>
@@ -133,6 +170,12 @@ export default class NavBar extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ AuthReducers }) => {
+  return { isSignInSuccessfully: AuthReducers.isSignInSuccessfully }
+}
+
+export default connect(mapStateToProps, { authSignOut })(NavBar);
 
 //TODO: Color change
 //TODO: Style change when clicking
