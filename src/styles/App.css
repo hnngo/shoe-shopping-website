@@ -172,6 +172,13 @@ html, body {
   text-shadow: 1px 1px 2px black;
 }
 
+
+.sample-link,
+.sample-link:hover {
+  text-decoration: none !important;
+  color: inherit;
+}
+
 /* ------- LANDING SAMPLE PRODUCTS --------*/
 .sample-header {
   font-size: 40px;
