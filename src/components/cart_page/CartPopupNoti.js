@@ -28,18 +28,20 @@ class CartPopup extends Component {
     if (this.props.newItems) {
       return (
         <div className="row my-2">
-          <div className="col-sm-4">
+          <div className="col-sm-5">
             <img
               src={this.state.data[this.props.newItems[0]].imgURL}
               className="img-fluid"
               alt={this.state.data[this.props.newItems[0]].name.toLowerCase().replace(" ", "-")}
             />
           </div>
-          <div className="col-sm-8">
-            <h5>{this.state.data[this.props.newItems[0]].name}</h5>
-            <p>{this.state.data[this.props.newItems[0]].price}</p>
-            <p>Qty: {this.props.newItems[1]}</p>
-            <p>Size: {this.props.newItems[2]}</p>
+          <div className="col-sm-7">
+            <h5 className="mt-2">{this.state.data[this.props.newItems[0]].name}</h5>
+            <p className="mt-0 pt-0">Size {this.props.newItems[2]}</p>
+            <div className="d-flex justify-content-between">
+              <p className="cart-modal-price">{+this.state.data[this.props.newItems[0]].price * +this.props.newItems[1]}$</p>
+              <p className="cart-modal-qty">Qty: {this.props.newItems[1]}</p>
+            </div>
           </div>
         </div>
       )
@@ -62,12 +64,17 @@ class CartPopup extends Component {
           </button>
         </div>
         <div className="row">
-          <div className="col-sm-7">
+          <div className="col-sm-7 cart-modal-item-detail">
             {this.renderAddedItem()}
           </div>
           <div className="col-sm-5">
-            cart
+            My shopping Cart
+            + Go to cart
+            + Check out
           </div>
+        </div>
+        <div className="row cart-modal-recommendation-items">
+          <h4>Recommendation Items</h4>
         </div>
       </div>
     );
@@ -99,3 +106,5 @@ const mapStateToProps = ({ UserReducers }) => {
 export default connect(mapStateToProps, {
   purCloseAddToCartModal
 })(CartPopup);
+
+//TODO: On small screen cart pop up is hiden

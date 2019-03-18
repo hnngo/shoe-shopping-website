@@ -324,7 +324,7 @@ html, body {
   outline:none;
 }
 
-/* ------- MODAL --------*/
+/* ------- CART MODAL --------*/
 .cart-modal-notification {
   position: absolute;
   top: 20%;
@@ -346,11 +346,24 @@ html, body {
 }
 
 .cart-modal-header {
-  border-bottom: 1px solid rgb(194, 192, 192);
+  border-bottom: 1px solid rgb(192, 192, 192);
 }
 
 .cart-modal-close-btn {
   border: none;
   background: transparent;
   outline: none;
+}
+
+.cart-modal-price {
+  color: rgb(7, 104, 7);
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.4px;
+}
+
+.cart-modal-qty {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.3px;
 }
