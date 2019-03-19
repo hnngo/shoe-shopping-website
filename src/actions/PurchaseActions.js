@@ -38,3 +38,5 @@ export const purAddToCart = (itemTag, qty, size) => {
 export const purAddToWishlist = (itemTag, qty, size) => {
 
 }
+
+//TODO: Fix no sign in still can add to cart

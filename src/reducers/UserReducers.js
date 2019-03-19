@@ -1,4 +1,6 @@
 import {
+  AUTH_SIGN_OUT_SUCCESSFULLY,
+  AUTH_GET_INCART_ITEMS,
   PUR_ADDING_TO_CART,
   PUR_ADDING_TO_CART_SUCCESSFULLY,
   PUR_ADDING_TO_CART_UNSUCCESSFULLY,
@@ -14,8 +16,15 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case AUTH_SIGN_OUT_SUCCESSFULLY: 
+      return { ...INITIAL_STATE };
+    case AUTH_GET_INCART_ITEMS:
+      return {
+        ...state,
+        inCart: action.payload ? action.payload : []
+      }
     case PUR_ADDING_TO_CART_SUCCESSFULLY:
-      const newCart = [ ...state.inCart, action.payload ];
+      let newCart = [ ...state.inCart, action.payload ];
       return { ...state, inCart: newCart, isSuccessfullyAdded: true, newItems: action.payload };
     case PUR_CLOSE_ATC_MODAL:
       return { ...state, isSuccessfullyAdded: undefined, newItems: null }

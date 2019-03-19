@@ -1,5 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
+import { Redirect } from 'react-router-dom';
 import {
   AUTH_WAITING_FOR_SIGNIN,
   AUTH_SUCCESSFULLY,
@@ -9,6 +11,7 @@ import {
   AUTH_CREATE_SUCCESSFULLY,
   AUTH_CREATE_UNSUCCESSFULLY,
   AUTH_SIGN_OUT_SUCCESSFULLY,
+  AUTH_GET_INCART_ITEMS,
 } from '../constants';
 
 export const authStoreLoginInformation = (input, type) => {
@@ -36,6 +39,13 @@ export const authLoginWithEmailAndPassword = (email, password) => {
         dispatch({
           type: AUTH_SUCCESSFULLY
         })
+
+        // Get the user's cart items/ order informaiton
+        const curUserUid = firebase.auth().currentUser.uid;
+        firebase.database().ref(`/users/${curUserUid}/inCart`).once('value', snapshot => dispatch({
+          type: AUTH_GET_INCART_ITEMS,
+          payload: snapshot.val()
+        }));
       }).catch(() => {
         // Handle error login
         dispatch({
@@ -64,8 +74,10 @@ export const authCreateAccountWithEmailAndPassword = (email, password) => {
 
 export const authSignOut = () => {
   return (dispatch) => {
-    firebase.auth().signOut().then(() => dispatch({
-      type: AUTH_SIGN_OUT_SUCCESSFULLY
-    })).catch((e) => console.log(e));
+    firebase.auth().signOut()
+    .then(() => {
+      dispatch({ type: AUTH_SIGN_OUT_SUCCESSFULLY })
+    })
+    .catch((e) => console.log(e));
   }
 }
