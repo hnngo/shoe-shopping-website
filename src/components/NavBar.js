@@ -180,3 +180,5 @@ export default connect(mapStateToProps, { authSignOut })(NavBar);
 //TODO: Color/Style change when at the right path name
 //TODO: Transparent on top, and white navbar when scrolling down
 //TODO: Fix bug of automatically sign out when pressing category redirect
+//TODO: Show cart only when login successfully
+//TODO: Auto collapse when login successfully in small screen

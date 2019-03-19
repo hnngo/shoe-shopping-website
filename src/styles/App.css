@@ -367,3 +367,27 @@ html, body {
   font-size: 15px;
   letter-spacing: 0.3px;
 }
+
+/* ------- CART ITEMS --------*/
+.cart-item-detail {
+  background-color: rgb(243, 243, 243);
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  box-shadow: 1px 1px #c0c0c0;
+}
+
+.cart-item-detail img {
+  border-radius: 20px;
+}
+
+.cart-item-qty {
+  width: 12%;
+  background: transparent;
+}
+
+.cart-item-detail i {
+  font-size: 11px;
+  color: rgb(99, 99, 99)
+}

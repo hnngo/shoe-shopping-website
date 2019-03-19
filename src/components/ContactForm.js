@@ -49,3 +49,4 @@ export default class ContactForm extends Component {
 //TODO: Adding sending email to input email
 //TODO: Submit button stop reloading page
 //TODO: Adding background to easily seperate from other parts
+//TODO: Contact show a seperate part only in background otherwise show with footer

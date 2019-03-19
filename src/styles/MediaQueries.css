@@ -3,6 +3,10 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
+  .hidden-small-screen {
+    display: none;
+  }
+
   .landing-wallpaper {
     filter: brightness(40%);
     object-fit: cover;
@@ -63,6 +67,10 @@ No media query for `xs` since this is the default in Bootstrap */
 }
 
 @media (min-width: 576px) {
+  .hidden-small-screen {
+    display: block;
+  }
+
   .landing-wallpaper {
     filter: brightness(40%);
     object-fit: cover;
