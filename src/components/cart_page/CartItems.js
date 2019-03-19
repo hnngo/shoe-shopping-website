@@ -88,14 +88,11 @@ class CartItems extends Component {
     return (
       <div className="container-fluid my-3">
         <div className="row">
-          <div className="col-sm-8 hidden-small-screen">
+          <div className="col-sm-8">
             {this.renderItemsInCart()}
           </div>
-          <div className="col-sm-4 col-12">
+          <div className="col-sm-4">
             {this.renderTotal()}
-          </div>
-          <div className="col-sm-0 col-12">
-            {this.renderItemsInCart()}
           </div>
         </div>
       </div>

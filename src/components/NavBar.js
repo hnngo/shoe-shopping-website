@@ -71,21 +71,31 @@ class NavBar extends Component {
     // const user = firebase.auth().currentUser;
     if (this.props.isSignInSuccessfully) {
       return (
-        <div className="btn-group">
-          <button type="button" className="cart-modal-close-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i className="fas fa-user mr-1" />User
-          </button>
-          <div className="dropdown-menu dropdown-menu-right">
-            <button className="dropdown-item" type="button">Orders</button>
-            <button className="dropdown-item" type="button">Setting</button>
-            <div className="dropdown-divider"></div>
+        <div>
+          <Link to="/cart">
             <button
-              className="dropdown-item"
               type="button"
-              onClick={() => this.handleClickSignOut()}
+              className="btn my-2 my-sm-0"
             >
-              Sign Out
+              <i className="fas fa-shopping-cart" />
             </button>
+          </Link>
+          <div className="btn-group">
+            <button type="button" className="cart-modal-close-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i className="fas fa-user mr-1" />User
+            </button>
+            <div className="dropdown-menu dropdown-menu-right">
+              <button className="dropdown-item" type="button">Orders</button>
+              <button className="dropdown-item" type="button">Setting</button>
+              <div className="dropdown-divider"></div>
+              <button
+                className="dropdown-item"
+                type="button"
+                onClick={() => this.handleClickSignOut()}
+              >
+                Sign Out
+            </button>
+            </div>
           </div>
         </div>
       );
@@ -109,7 +119,12 @@ class NavBar extends Component {
           <div className="container">
             {/* Logo Brand */}
             <Link className="navbar-brand" to="/">LOGO</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <span className="navbar-toggler-icon"></span>
             </button>
 
@@ -151,14 +166,14 @@ class NavBar extends Component {
               </ul>
               <form className="form-inline my-2 my-lg-0">
                 <input className="nav-search form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "220px" }} />
-                <Link to="/cart">
+                {/* <Link to="/cart">
                   <button
                     type="button"
                     className="btn my-2 my-sm-0"
                   >
                     <i className="fas fa-shopping-cart" />
                   </button>
-                </Link>
+                </Link> */}
                 {this.renderUserIcon()}
               </form>
             </div>
@@ -178,7 +193,3 @@ const mapStateToProps = ({ AuthReducers }) => {
 export default connect(mapStateToProps, { authSignOut })(NavBar);
 
 //TODO: Color/Style change when at the right path name
-//TODO: Transparent on top, and white navbar when scrolling down
-//TODO: Fix bug of automatically sign out when pressing category redirect
-//TODO: Show cart only when login successfully
-//TODO: Auto collapse when login successfully in small screen

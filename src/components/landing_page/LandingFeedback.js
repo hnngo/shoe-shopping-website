@@ -43,3 +43,4 @@ export default () => {
 }
 
 //TODO: Adding feedback background pill rectangle
+//TODO: Adding hover effect for feedback content or avatar

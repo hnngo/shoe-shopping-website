@@ -13,7 +13,7 @@ export default class LandingSample extends Component {
           <p className="open-sans">We took the best principles from designing running shoes and applied them to classic and timesless dress shoes you can wear all day</p>
           <p>-------</p>
         </div>
-        <div className="row mt-2">
+        <div className="row mt-2" id="learnMore">
           <div className="sample-col col-lg-4 col-md-4 col-sm-12 animated slideInLeft slow">
             <img src={pages.landingPage.landingSampleShoes} className="landing-image-simple" alt="landing-sample-shoes" />
             <p className="landing-picture-text landing-sample-text open-sans">SNEAKERS</p>

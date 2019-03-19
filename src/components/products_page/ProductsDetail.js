@@ -42,7 +42,7 @@ class ProductsDetail extends Component {
       this.setState({ showAlert: true });
       return;
     }
-
+    
     this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize);
   }
 

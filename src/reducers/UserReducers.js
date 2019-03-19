@@ -24,7 +24,7 @@ export default (state = INITIAL_STATE, action) => {
         inCart: action.payload ? action.payload : []
       }
     case PUR_ADDING_TO_CART_SUCCESSFULLY:
-      let newCart = [ ...state.inCart, action.payload ];
+      let newCart = [ ...Object.values(state.inCart), action.payload ];
       return { ...state, inCart: newCart, isSuccessfullyAdded: true, newItems: action.payload };
     case PUR_CLOSE_ATC_MODAL:
       return { ...state, isSuccessfullyAdded: undefined, newItems: null }

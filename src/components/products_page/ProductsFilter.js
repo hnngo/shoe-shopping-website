@@ -20,7 +20,6 @@ export default class ProductsFilter extends Component {
   }
 
   render() {
-    // console.log(this.props.filterContent);
     return (
       <div className="mt-5">
         <p className="open-sans text-center pb-3 italic px-3 w-75 mx-auto">{this.props.headerSentence}</p>
