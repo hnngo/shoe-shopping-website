@@ -18,7 +18,7 @@ export const purAddToCart = (itemTag, qty, size) => {
   return (dispatch) => {
     dispatch({ type: PUR_ADDING_TO_CART });
     const currentUser = firebase.auth().currentUser;
-
+    
     if (currentUser !== null) {
       const uid = currentUser.uid;
       firebase.database().ref(`/users/${uid}/inCart`).push([itemTag, qty, size]).then(() => dispatch({

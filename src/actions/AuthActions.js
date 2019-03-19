@@ -1,7 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-import { Redirect } from 'react-router-dom';
 import {
   AUTH_WAITING_FOR_SIGNIN,
   AUTH_SUCCESSFULLY,

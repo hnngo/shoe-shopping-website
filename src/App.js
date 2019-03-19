@@ -32,7 +32,7 @@ class App extends Component {
     firebase.initializeApp(config);
 
     // Sign out of the last sign in
-    // firebase.auth().signOut();
+    firebase.auth().signOut();
   }
 
   render() {

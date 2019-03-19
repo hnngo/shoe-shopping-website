@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CartPopup from '../cart_page/CartPopupNoti';
 import {
   purAddToCart
 } from '../../actions';
-import CartPopup from '../cart_page/CartPopupNoti';
 
 class ProductsDetail extends Component {
   constructor(props) {
@@ -11,7 +11,8 @@ class ProductsDetail extends Component {
 
     this.state = {
       chosenSize: this.props.category === "shoes" ? 8.5 : "XS",
-      qty: 1
+      qty: 1,
+      showAlert: false
     }
   }
 
@@ -37,6 +38,11 @@ class ProductsDetail extends Component {
   }
 
   handleClickAddToCart() {
+    if (!this.props.isSignInSuccessfully) {
+      this.setState({ showAlert: true });
+      return;
+    }
+
     this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize);
   }
 
@@ -115,6 +121,17 @@ class ProductsDetail extends Component {
     )
   }
 
+  renderAlert() {
+    if (this.state.showAlert) {
+      setTimeout(() => this.setState({ showAlert: false }), 3000);
+      return (
+        <div className="alert alert-danger text-center" role="alert">
+          <p className="my-0 py-0">Please Sign In to add items</p>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="container my-5">
@@ -150,7 +167,7 @@ class ProductsDetail extends Component {
                 </div>
               </div>, true
             )}
-
+            {this.renderAlert()}
             <button
               type="button"
               className="btn btn-dark btn-block"
@@ -173,7 +190,11 @@ class ProductsDetail extends Component {
   }
 }
 
-export default connect(null, {
+const mapStateToProps = ({ AuthReducers }) => {
+  return { isSignInSuccessfully: AuthReducers.isSignInSuccessfully };
+}
+
+export default connect(mapStateToProps, {
   purAddToCart
 })(ProductsDetail)
 

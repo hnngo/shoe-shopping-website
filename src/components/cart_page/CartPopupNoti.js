@@ -24,7 +24,6 @@ class CartPopup extends Component {
   }
 
   renderAddedItem() {
-    console.log(this.state.data)
     if (this.props.newItems) {
       return (
         <div className="row my-2">
