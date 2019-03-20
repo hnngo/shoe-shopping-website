@@ -283,6 +283,10 @@ html, body {
   outline: none !important;
 }
 
+.products-filter-selected {
+  background-color: #acacac;
+}
+
 .products-product-img {
   -o-object-fit: cover;
      object-fit: cover;

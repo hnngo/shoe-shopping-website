@@ -24,6 +24,7 @@ class LoginModal extends Component {
     };
 
     // Close login modal and reset if no successful attempt to login
+    //TODO:
     const $closeLoginModalBtn = document.querySelector("#close-login-btn");
     if ($closeLoginModalBtn && !this.props.isSignInSuccessfully) {
       $closeLoginModalBtn.onclick = () => this.props.authResetLoginInformation();

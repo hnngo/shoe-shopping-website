@@ -30,6 +30,7 @@ export default class ProductsBody extends Component {
         <ProductsFilter
           headerSentence={this.props.headerSentence}
           filterContent={this.props.filterContent}
+          path={this.props.urlPath}
         />
         <div className="container mt-4">
           <div className="row text-center">
@@ -40,4 +41,3 @@ export default class ProductsBody extends Component {
     );
   }
 }
-

@@ -14,6 +14,25 @@ export const AUTH_CREATE_UNSUCCESSFULLY = "AUTH_CREATE_UNSUCCESSFULLY";
 export const AUTH_SIGN_OUT_SUCCESSFULLY = "AUTH_SIGN_OUT_SUCCESSFULLY";
 export const AUTH_GET_INCART_ITEMS = "AUTH_GET_INCART_ITEMS"
 
+// --------- FILTER CONTENT --------- //
+export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
+export const FILTER_SHOES = "FILTER_SHOES";
+export const FILTER_ACCESSORIES = "FILTER_ACCESSORIES";
+export const FILTER_SHOES_SELECTIONS = {
+  FILTER_NIKE: "nikeShoes",
+  FILTER_ADIDAS: "adidasShoes",
+  FILTER_VANS: "vansShoes",
+  FILTER_DR_MARTENS: "drmartens",
+}
+
+export const FILTER_ACCESSORIES_SELECTIONS = {
+  FILTER_BAGS: "bags",
+  FILTER_BELT: "belts",
+  FILTER_GLOVE: "gloves",
+  FILTER_SUNGLASS: "sunglasses",
+  FILTER_PURSES:"purses",
+}
+
 // --------- SHOPPING --------- //
 export const PUR_ADDING_TO_CART = "PUR_ADDING_TO_CART";
 export const PUR_ADDING_TO_CART_SUCCESSFULLY = "PUR_ADDING_TO_CART_SUCCESSFULLY";

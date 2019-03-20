@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import ProductsHeader from './products_page/ProductsHeader';
 import ProductsBody from './products_page/ProductsBody';
 import ProductsRedirect from './products_page/ProductsRedirect';
 import ProductsPath from './products_page/ProductsPath';
 import data from "../data.json";
 
-export default class AccessoriesPage extends Component {
+class AccessoriesPage extends Component {
   render() {
-    const { gloves, bags, belts, sunglasses, purses } = data.imgURL.products.accessories;
+    // Prepare if products is filtered
+    let filteredProducts;
+    if (this.props.accessoriesFilter instanceof Array) {
+      filteredProducts = this.props.accessoriesFilter.map((item) => data.imgURL.products.accessories[item]);
+    } else {
+      filteredProducts = [data.imgURL.products.accessories[this.props.accessoriesFilter]];
+    }
 
     return (
       <div>
@@ -25,7 +32,7 @@ export default class AccessoriesPage extends Component {
                 urlPath={this.props.match.path}
                 headerSentence={data.imgURL.pages.accessoriesPage.headerSentence}
                 filterContent={["All", ...data.navbar.accessories.byType]}
-                productsTag={[gloves, bags, belts, sunglasses, purses]}
+                productsTag={filteredProducts}
               />
             }
           />
@@ -38,3 +45,9 @@ export default class AccessoriesPage extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ FilterReducers }) => {
+  return { accessoriesFilter: FilterReducers.accessoriesFilter };
+};
+
+export default connect(mapStateToProps)(AccessoriesPage);

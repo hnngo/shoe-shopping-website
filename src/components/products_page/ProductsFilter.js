@@ -1,16 +1,61 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { filterProducts } from '../../actions';
+import {
+  FILTER_ACCESSORIES,
+  FILTER_SHOES,
+  FILTER_SHOES_SELECTIONS,
+  FILTER_ACCESSORIES_SELECTIONS
+} from '../../constants'
 
-export default class ProductsFilter extends Component {
-  handleClick(e) {
-    e.preventDefault();
+class ProductsFilter extends Component {
+  constructor(props) {
+    super(props);
+
+    // Prepare filter content
+    let type;
+    let typeArr = [];
+
+    if (this.props.path.slice(1) === "shoes") {
+      type = FILTER_SHOES;
+      typeArr = Object.values(FILTER_SHOES_SELECTIONS);
+    } else {
+      type = FILTER_ACCESSORIES;
+      typeArr = Object.values(FILTER_ACCESSORIES_SELECTIONS);
+    }
+    typeArr.unshift("all");
+
+    this.state = {
+      filterSelected: 0, // All
+      filterType: type,
+      filterTypeArr: typeArr
+    };
+  }
+
+  handleClick(filterSelected) {
+    if (filterSelected !== this.state.filterSelected) {
+      this.setState({ filterSelected });
+
+      this.props.filterProducts({
+        type: this.state.filterType,
+        selectedFilter: this.state.filterTypeArr[filterSelected]
+      });
+    }
   }
 
   renderFilterBubbles(dataArr) {
     return (
       dataArr.map((d, i) => {
+        let selectedClass;
+        if (this.state.filterSelected === i) {
+          selectedClass = "products-filter-selected";
+        }
         return (
           <li key={i} className="mx-1 d-inline-block">
-            <button className="products-filter-bubbles" onClick={(e) => this.handleClick(e)}>
+            <button 
+              className={"products-filter-bubbles " + selectedClass}
+              onClick={() => this.handleClick(i)}
+            >
               {d.toUpperCase()}
             </button>
           </li>
@@ -38,5 +83,5 @@ export default class ProductsFilter extends Component {
   }
 }
 
+export default connect(null, { filterProducts })(ProductsFilter);
 //TODO: Add 2 lines for filter section
-//TODO: Add path direction for easily follow

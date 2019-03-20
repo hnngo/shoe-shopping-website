@@ -38,7 +38,7 @@ class ProductsDetail extends Component {
   }
 
   handleClickAddToCart() {
-    if (!this.props.isSignInSuccessfully) {
+    if (!this.props.isSignInSuccessfully && !this.props.isCreatingSuccessfully) {
       this.setState({ showAlert: true });
       return;
     }
@@ -191,7 +191,10 @@ class ProductsDetail extends Component {
 }
 
 const mapStateToProps = ({ AuthReducers }) => {
-  return { isSignInSuccessfully: AuthReducers.isSignInSuccessfully };
+  return { 
+    isSignInSuccessfully: AuthReducers.isSignInSuccessfully,
+    isCreatingSuccessfully: AuthReducers.isCreatingSuccessfully,
+  };
 }
 
 export default connect(mapStateToProps, {

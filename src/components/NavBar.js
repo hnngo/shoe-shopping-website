@@ -69,7 +69,7 @@ class NavBar extends Component {
   // Check if user already signed in or not
   renderUserIcon() {
     // const user = firebase.auth().currentUser;
-    if (this.props.isSignInSuccessfully) {
+    if (this.props.isSignInSuccessfully || this.props.isCreatingSuccessfully) {
       return (
         <div>
           <Link to="/cart">
@@ -165,7 +165,7 @@ class NavBar extends Component {
                 </li> */}
               </ul>
               <form className="form-inline my-2 my-lg-0">
-                <input className="nav-search form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "220px" }} />
+                <input className="nav-search form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "210px" }} />
                 {/* <Link to="/cart">
                   <button
                     type="button"
@@ -187,7 +187,10 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = ({ AuthReducers }) => {
-  return { isSignInSuccessfully: AuthReducers.isSignInSuccessfully }
+  return { 
+    isSignInSuccessfully: AuthReducers.isSignInSuccessfully,
+    isCreatingSuccessfully: AuthReducers.isCreatingSuccessfully
+  }
 }
 
 export default connect(mapStateToProps, { authSignOut })(NavBar);
