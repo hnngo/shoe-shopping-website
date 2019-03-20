@@ -34,7 +34,7 @@ class CartItems extends Component {
 
     switch (e.target.classList[1]) {
       case "fa-minus":
-        if (newVal === 1) {
+        if (newVal[1] === 1) {
           return;
         }
 
@@ -103,20 +103,28 @@ class CartItems extends Component {
   }
 
   renderTotal() {
+    let numberOfItems = 0;
+    let totalMoney = 0;
+
+    if (this.props.inCart.length > 0) {
+      numberOfItems = this.props.inCart.length;
+      totalMoney = this.props.inCart.map((item) => item[1] * this.state.data[item[0]].price).reduce((acc, cur) => acc + cur);
+    }
+
     return (
-      <div className="cart-item-detail pb-3 px-3">
+      <div className="cart-item-detail pb-3 px-3 pt-2">
         <h4>Order Summary</h4>
         <div className="d-flex justify-content-between">
-          <p>Subtotal (n items)</p>
-          <p>1000 SGD</p>
+          <p>Subtotal ({numberOfItems} items)</p>
+          <p>{totalMoney} SGD</p>
         </div>
         <div className="d-flex justify-content-between">
           <p>Shipping fee</p>
           <p>30 SGD</p>
         </div>
-        <div className="d-flex justify-content-between">
-          <p>Total</p>
-          <p>1030 SGD</p>
+        <div className="d-flex justify-content-between border-top mt-2 mb-1 pt-1">
+          <p className="h5">Total</p>
+          <p className="cart-item-total-money">{totalMoney + 30} SGD</p>
         </div>
         <button className="btn btn-block btn-secondary">
           PROCEED TO CHECK OUT
