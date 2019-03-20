@@ -5,7 +5,8 @@ import {
   PUR_ADDING_TO_CART_SUCCESSFULLY,
   PUR_ADDING_TO_CART_UNSUCCESSFULLY,
   PUR_CLOSE_ATC_MODAL,
-  PUR_REMOVE_FROM_CART
+  PUR_REMOVE_FROM_CART_SUCCESSFULLY,
+  PUR_UPDATE_ITEM_IN_CART
 } from '../constants';
 
 const INITIAL_STATE = {
@@ -38,9 +39,19 @@ export default (state = INITIAL_STATE, action) => {
       };
     case PUR_CLOSE_ATC_MODAL:
       return { ...state, isSuccessfullyAdded: undefined, newItems: null }
-    case PUR_REMOVE_FROM_CART:
+    case PUR_REMOVE_FROM_CART_SUCCESSFULLY:
       newCart = state.inCart.filter((item) => item[3] !== action.payload);
       return { ...state, inCart: newCart };
+    case PUR_UPDATE_ITEM_IN_CART:
+      newCart = state.inCart.map((item) => {
+        if (item[3] === action.payload[3]) {
+          item = action.payload.slice();
+        }
+
+        return item;
+      })
+
+      return { ...state, inCart: newCart }
     default:
       return state;
   }

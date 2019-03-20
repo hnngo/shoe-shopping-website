@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { } from '../../actions';
 import { imgURL } from '../../data.json';
-import { purRemoveFromCart } from '../../actions';
+import {
+  purRemoveFromCart,
+  purUpdateCart
+} from '../../actions';
 
 class CartItems extends Component {
   constructor(props) {
@@ -25,6 +27,27 @@ class CartItems extends Component {
 
   handleClickRemove(refID) {
     this.props.purRemoveFromCart(refID);
+  }
+
+  handleClickIncDec(e, item) {
+    const newVal = item.slice();
+
+    switch (e.target.classList[1]) {
+      case "fa-minus":
+        if (newVal === 1) {
+          return;
+        }
+
+        newVal[1] -= 1;
+        break;
+      case "fa-plus":
+        newVal[1] += 1;
+        break;
+      default:
+        return;
+    }
+
+    this.props.purUpdateCart(newVal);
   }
 
   renderItemsInCart() {
@@ -51,17 +74,23 @@ class CartItems extends Component {
                   <p className="cart-modal-price">{+data[item[0]].price * +item[1]}$</p>
                   <div className="">
                     <div className="text-right">
-                      <i 
+                      <i
                         className="fas fa-trash-alt mr-4"
                         onClick={() => this.handleClickRemove(item[3])}
                       />
-                      <i className="fas fa-minus" onClick={(e) => { }}></i>
+                      <i
+                        className="fas fa-minus"
+                        onClick={(e) => this.handleClickIncDec(e, item)}
+                      />
                       <input
                         className="border-0 text-center cart-item-qty"
                         value={item[1]}
-                        onChange={(e) => { }}
+                        disabled
                       />
-                      <i className="fas fa-plus" onClick={(e) => { }}></i>
+                      <i
+                        className="fas fa-plus"
+                        onClick={(e) => this.handleClickIncDec(e, item)}
+                      />
                     </div>
                   </div>
                 </div>
@@ -120,10 +149,11 @@ const mapStateToProps = ({ UserReducers }) => {
 }
 
 export default connect(mapStateToProps, {
-  purRemoveFromCart
+  purRemoveFromCart,
+  purUpdateCart
 })(CartItems);
 
 //TODO: Show all of same categories shooes
 //TODO: One button to scoll to check out on small screen
 //TODO: Need pano image on cart check out
-//TODO: Show need to login to see cart or dont show cart item and block access to cart if not login
+//TODO: Block access to /cart if not login
