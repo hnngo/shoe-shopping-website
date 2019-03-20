@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { } from '../../actions';
 import { imgURL } from '../../data.json';
+import { purRemoveFromCart } from '../../actions';
 
 class CartItems extends Component {
   constructor(props) {
@@ -22,6 +23,10 @@ class CartItems extends Component {
     this.state = { data: dataTag };
   }
 
+  handleClickRemove(refID) {
+    this.props.purRemoveFromCart(refID);
+  }
+
   renderItemsInCart() {
     const { data } = this.state;
 
@@ -36,21 +41,28 @@ class CartItems extends Component {
                 alt={data[item[0]].name.toLowerCase().replace(" ", "-")}
               />
             </div>
-            <div className="col-sm-8">
-              <h5 className="mt-2">{data[item[0]].name}</h5>
-              <p className="">Size {item[2]}</p>
-              <div className="d-flex justify-content-between">
-                <p className="cart-modal-price">{+data[item[0]].price * +item[1]}$</p>
-                <div className="">
-                  <div className="text-right">
-                    <i className="fas fa-trash-alt mr-4"></i>
-                    <i className="fas fa-minus" onClick={(e) => { }}></i>
-                    <input
-                      className="border-0 text-center cart-item-qty"
-                      value={item[1]}
-                      onChange={(e) => { }}
-                    />
-                    <i className="fas fa-plus" onClick={(e) => { }}></i>
+            <div className="col-sm-8 d-flex flex-column align-items-start">
+              <div className="mb-auto">
+                <h5 className="mt-2">{data[item[0]].name}</h5>
+                <p className="">Size {item[2]}</p>
+              </div>
+              <div className="w-100">
+                <div className="d-flex justify-content-between">
+                  <p className="cart-modal-price">{+data[item[0]].price * +item[1]}$</p>
+                  <div className="">
+                    <div className="text-right">
+                      <i 
+                        className="fas fa-trash-alt mr-4"
+                        onClick={() => this.handleClickRemove(item[3])}
+                      />
+                      <i className="fas fa-minus" onClick={(e) => { }}></i>
+                      <input
+                        className="border-0 text-center cart-item-qty"
+                        value={item[1]}
+                        onChange={(e) => { }}
+                      />
+                      <i className="fas fa-plus" onClick={(e) => { }}></i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -86,7 +98,7 @@ class CartItems extends Component {
 
   render() {
     return (
-      <div className="container-fluid my-3">
+      <div className="container-fluid mt-3">
         <div className="row">
           <div className="col-sm-8">
             {this.renderItemsInCart()}
@@ -108,7 +120,7 @@ const mapStateToProps = ({ UserReducers }) => {
 }
 
 export default connect(mapStateToProps, {
-
+  purRemoveFromCart
 })(CartItems);
 
 //TODO: Show all of same categories shooes

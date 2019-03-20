@@ -203,3 +203,4 @@ export default connect(mapStateToProps, {
 //TODO: Add more images on other sides of products
 //TODO: When click collapse change the icon to "-"
 //TODO: Random generate recommendation samples
+//TODO: IN adding time, disable add to cart and add to wish list
