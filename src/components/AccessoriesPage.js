@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import ProductsHeader from './products_page/ProductsHeader';
 import ProductsBody from './products_page/ProductsBody';
 import ProductsRedirect from './products_page/ProductsRedirect';
+import ProductsPath from './products_page/ProductsPath';
 import data from "../data.json";
 
 export default class AccessoriesPage extends Component {
@@ -15,6 +16,7 @@ export default class AccessoriesPage extends Component {
           panoImageURL={data.imgURL.pages.accessoriesPage.pano.imgURL}
           categoryName="Accessories"
         />
+        <ProductsPath fullPathName={this.props.history.location.pathname} />
         <Switch>
           <Route
             exact path={this.props.match.path}

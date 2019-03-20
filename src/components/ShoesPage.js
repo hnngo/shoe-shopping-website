@@ -3,18 +3,20 @@ import { Switch, Route } from 'react-router-dom';
 import ProductsHeader from './products_page/ProductsHeader';
 import ProductsBody from './products_page/ProductsBody';
 import ProductsRedirect from './products_page/ProductsRedirect';
+import ProductsPath from './products_page/ProductsPath';
 import data from '../data.json';
 
 export default class ShoesPage extends Component {
   render() {
     const { nikeShoes, adidasShoes, vansShoes, drmartens } = data.imgURL.products.shoes;
-
+    
     return (
       <div>
         <ProductsHeader
           panoImageURL={data.imgURL.pages.shoesPage.pano.imgURL}
           categoryName="Shoes"
         />
+        <ProductsPath fullPathName={this.props.history.location.pathname} />
         <Switch>
           <Route
             exact path={this.props.match.path}

@@ -22,7 +22,7 @@ export default (state = INITIAL_STATE, action) => {
       return { ...INITIAL_STATE };
     case AUTH_GET_INCART_ITEMS:
       let newCart = [];
-
+      // Handle when first time sign in no inCart category
       if (action.payload) {
         if (Object.keys(action.payload).length > 0) {
           Object.keys(action.payload).forEach((key, i) => {
@@ -31,7 +31,7 @@ export default (state = INITIAL_STATE, action) => {
           })
         }
       }
-      
+
       return { ...state, inCart: newCart };
     case PUR_ADDING_TO_CART_SUCCESSFULLY:
       newCart = [...state.inCart, action.payload];
