@@ -136,14 +136,14 @@ class ProductsDetail extends Component {
     return (
       <div className="container my-5">
         <div className="row">
-          <div className="col-sm-7 col-xs-12">
+          <div className="col-md-8 col-sm-7 col-xs-12 text-center">
             <img
               src={this.props.item.imgURL}
               className="detail-products-img img-fluid"
               alt={this.props.item.name.toLowerCase().replace(" ", "-")}
             />
           </div>
-          <div className="col-sm-5 col-xs-12">
+          <div className="col-md-4 col-sm-5 col-xs-12">
             <h4 className="monteserrat bold mb-0 mt-1">
               {this.props.item.name}
             </h4>

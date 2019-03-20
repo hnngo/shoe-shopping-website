@@ -368,6 +368,18 @@ html, body {
   letter-spacing: 0.3px;
 }
 
+.cart-modal-shooping-detail span {
+  font-size: 14px;
+  font-weight: 200px;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.cart-modal-shooping-detail span {
+  font-size: 14px;
+  font-weight: 200px;
+  font-family: 'Montserrat', sans-serif; 
+}
+
 /* ------- CART ITEMS --------*/
 .cart-item-detail {
   background-color: white;

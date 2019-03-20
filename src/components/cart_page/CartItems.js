@@ -57,7 +57,7 @@ class CartItems extends Component {
       return this.props.inCart.map((item, i) => {
         return (
           <div key={i} className="row cart-item-detail">
-            <div className="col-sm-4">
+            <div className="col-sm-4 text-center">
               <img
                 src={data[item[0]].imgURL}
                 className="img-fluid my-2"
@@ -99,6 +99,12 @@ class CartItems extends Component {
           </div>
         );
       })
+    } else {
+      return (
+        <div className="cart-item-detail p-4">
+          <h5>No item(s) in cart</h5>
+        </div>
+      )
     }
   }
 
@@ -135,7 +141,7 @@ class CartItems extends Component {
 
   render() {
     return (
-      <div className="container-fluid mt-3">
+      <div className="cart-item-container mt-3">
         <div className="row">
           <div className="col-sm-8">
             {this.renderItemsInCart()}

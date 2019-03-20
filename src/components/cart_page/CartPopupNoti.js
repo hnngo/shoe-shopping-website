@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { purCloseAddToCartModal } from '../../actions';
 import { imgURL } from '../../data.json';
 
@@ -26,8 +27,8 @@ class CartPopup extends Component {
   renderAddedItem() {
     if (this.props.newItems) {
       return (
-        <div className="row my-2">
-          <div className="col-sm-5">
+        <div className="row mt-2 mb-1">
+          <div className="col-sm-5 text-center">
             <img
               src={this.state.data[this.props.newItems[0]].imgURL}
               className="img-fluid"
@@ -39,12 +40,45 @@ class CartPopup extends Component {
             <p className="mt-0 pt-0">Size {this.props.newItems[2]}</p>
             <div className="d-flex justify-content-between">
               <p className="cart-modal-price">{+this.state.data[this.props.newItems[0]].price * +this.props.newItems[1]}$</p>
-              <p className="cart-modal-qty">Qty: {this.props.newItems[1]}</p>
+              <p className="cart-modal-qty mr-1">Qty: {this.props.newItems[1]}</p>
             </div>
           </div>
         </div>
       )
     }
+  }
+
+  renderCart() {
+    let numberOfItems = 0;
+    let totalMoney = 0;
+
+    if (this.props.inCart.length > 0) {
+      numberOfItems = this.props.inCart.length;
+      totalMoney = this.props.inCart.map((item) => item[1] * this.state.data[item[0]].price).reduce((acc, cur) => acc + cur);
+    }
+
+    return (
+      <div className="cart-modal-shooping-detail pb-3 px-3 pt-2">
+        <h5>Shopping cart <span>({numberOfItems} items)</span></h5>
+        <div className="d-flex justify-content-between border-top mt-3 mb-1 pt-1">
+          <h5>Total</h5>
+          <p className="cart-item-total-money">{totalMoney + 30} SGD</p>
+        </div>
+        <div className="text-center">
+          <Link to="/cart">
+            <button
+              className="btn btn-outline-secondary mr-2 mb-2"
+              onClick={() => this.props.purCloseAddToCartModal()}
+            >
+              GO TO CART
+            </button>
+          </Link>
+          <button className="btn btn-secondary mb-2">
+            CHECK OUT
+          </button>
+        </div>
+      </div>
+    );
   }
 
   renderModal() {
@@ -63,17 +97,17 @@ class CartPopup extends Component {
           </button>
         </div>
         <div className="row">
-          <div className="col-sm-7 cart-modal-item-detail">
+          <div className="col-sm-7 col-xs-12 cart-modal-item-detail">
             {this.renderAddedItem()}
           </div>
-          <div className="col-sm-5">
-            My shopping Cart
-            + Go to cart
-            + Check out
+          <div className="d-none d-sm-block col-sm-5">
+            {this.renderCart()}
           </div>
         </div>
         <div className="row cart-modal-recommendation-items">
-          <h4>Recommendation Items</h4>
+          <div className="d-none d-sm-block col-sm-12">
+            <h4>Recommendation Items</h4>
+          </div>
         </div>
       </div>
     );
@@ -99,11 +133,10 @@ const mapStateToProps = ({ UserReducers }) => {
   return {
     isSuccessfullyAdded: UserReducers.isSuccessfullyAdded,
     newItems: UserReducers.newItems,
+    inCart: UserReducers.inCart,
   }
 }
 
 export default connect(mapStateToProps, {
   purCloseAddToCartModal
 })(CartPopup);
-
-//TODO: On small screen cart pop up is hiden

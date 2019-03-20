@@ -285,3 +285,4 @@ export default connect(mapStateToProps, {
 //TODO: When fail login first, reopen the modal wont show again notification
 //TODO: Remove outline default of bootstrap
 //TODO: Login information wont save if close the modal
+//TODO: Signout button was hidden in small screen

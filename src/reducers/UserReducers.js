@@ -22,15 +22,19 @@ export default (state = INITIAL_STATE, action) => {
       return { ...INITIAL_STATE };
     case AUTH_GET_INCART_ITEMS:
       let newCart = [];
-      if (Object.keys(action.payload).length > 0) {
-        Object.keys(action.payload).forEach((key, i) => {
-          newCart.push(action.payload[key])
-          newCart[i].push(key)
-        })
+
+      if (action.payload) {
+        if (Object.keys(action.payload).length > 0) {
+          Object.keys(action.payload).forEach((key, i) => {
+            newCart.push(action.payload[key])
+            newCart[i].push(key)
+          })
+        }
       }
+      
       return { ...state, inCart: newCart };
     case PUR_ADDING_TO_CART_SUCCESSFULLY:
-      newCart = [ ...state.inCart, action.payload ];
+      newCart = [...state.inCart, action.payload];
       return {
         ...state,
         inCart: newCart,
