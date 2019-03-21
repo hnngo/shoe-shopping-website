@@ -77,6 +77,10 @@ No media query for `xs` since this is the default in Bootstrap */
     margin-right: 3%;
     margin-left: 3%;
   }
+
+  .cart-checkout-svg {
+    width: 40px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -241,7 +245,10 @@ No media query for `xs` since this is the default in Bootstrap */
   }
 
   .cart-item-container{
-    margin-right: 15%;
-    margin-left: 15%;
+    /* margin-right: 15%;
+    margin-left: 15%; */
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

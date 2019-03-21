@@ -5,6 +5,7 @@ import {
   purRemoveFromCart,
   purUpdateCart
 } from '../../actions';
+import CartCheckout from './CartCheckout.js';
 
 class CartItems extends Component {
   constructor(props) {
@@ -22,7 +23,10 @@ class CartItems extends Component {
       }
     }
 
-    this.state = { data: dataTag };
+    this.state = {
+      data: dataTag,
+      showCheckout: false
+    };
   }
 
   handleClickRemove(refID) {
@@ -48,6 +52,37 @@ class CartItems extends Component {
     }
 
     this.props.purUpdateCart(newVal);
+  }
+
+  handleClickCheckout() {
+    // Hanle if items in cart to check out
+    // if (this.props.inCart.length === 0) {
+    //   return;
+    // }
+
+    this.setState({ showCheckout: true });
+
+    const $containerItems = document.querySelector(".cart-item-summary");
+    const $containerCheckout = document.querySelector(".cart-item-checkout");
+
+    $containerItems.classList.add("bounceOutLeft");
+    setTimeout(() => {
+      $containerItems.classList.add("d-none");
+      $containerCheckout.classList.remove("d-none");
+      document.querySelector("#checkoutBtn").innerHTML = "PLACE ORDER";
+    }, 500)
+  }
+
+  handleClickBackToOrder() {
+    this.setState({ showCheckout: false });
+    const $containerItems = document.querySelector(".cart-item-summary")
+    const $containerCheckout = document.querySelector(".cart-item-checkout")
+
+    $containerItems.classList.remove("d-none");
+    $containerItems.classList.remove("bounceOutLeft");
+    $containerItems.classList.add("bounceInLeft");
+    $containerCheckout.classList.add("d-none");
+    document.querySelector("#checkoutBtn").innerHTML = "PROCEED TO CHECK OUT";
   }
 
   renderItemsInCart() {
@@ -108,6 +143,19 @@ class CartItems extends Component {
     }
   }
 
+  renderBackToOrder() {
+    if (this.state.showCheckout) {
+      return (
+        <button
+          className="btn btn-block btn-outline-secondary animated fadeInUp"
+          onClick={() => this.handleClickBackToOrder()}
+        >
+          BACK TO ORDER
+        </button>
+      );
+    }
+  }
+
   renderTotal() {
     let numberOfItems = 0;
     let totalMoney = 0;
@@ -126,15 +174,20 @@ class CartItems extends Component {
         </div>
         <div className="d-flex justify-content-between">
           <p>Shipping fee</p>
-          <p>30 SGD</p>
+          <p>{numberOfItems > 0 ? 30 : 0} SGD</p>
         </div>
         <div className="d-flex justify-content-between border-top mt-2 mb-1 pt-1">
           <p className="h5">Total</p>
-          <p className="cart-item-total-money">{totalMoney + 30} SGD</p>
+          <p className="cart-item-total-money">{totalMoney + (numberOfItems > 0 ? 30 : 0)} SGD</p>
         </div>
-        <button className="btn btn-block btn-secondary">
+        <button
+          id="checkoutBtn"
+          className="btn btn-block btn-secondary"
+          onClick={() => this.handleClickCheckout()}
+        >
           PROCEED TO CHECK OUT
         </button>
+        {this.renderBackToOrder()}
       </div>
     );
   }
@@ -143,11 +196,14 @@ class CartItems extends Component {
     return (
       <div className="cart-item-container mt-3">
         <div className="row">
-          <div className="col-sm-8">
+          <div className="col-sm-8 cart-item-summary animated">
             {this.renderItemsInCart()}
           </div>
-          <div className="col-sm-4">
+          <div className="col-sm-4 animated">
             {this.renderTotal()}
+          </div>
+          <div className="col-sm-8 d-none cart-item-checkout animated">
+            <CartCheckout />
           </div>
         </div>
       </div>

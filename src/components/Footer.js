@@ -16,3 +16,5 @@ export default class Footer extends Component {
     );
   }
 }
+
+//TODO: stick at top when no more items in cart

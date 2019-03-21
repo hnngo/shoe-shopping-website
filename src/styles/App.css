@@ -407,6 +407,7 @@ html, body {
   margin-left: 0.5%;
   margin-right: 0.5%;
   box-shadow: 1px 1px 3px #c0c0c0;
+  transition: 1s;
 }
 
 .cart-item-detail img {
@@ -427,4 +428,8 @@ html, body {
   font-size: 18px;
   font-weight: bold;
   color: #238443
+}
+
+.cart-checkout-svg {
+  width: 40px;
 }
