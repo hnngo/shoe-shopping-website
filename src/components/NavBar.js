@@ -196,4 +196,3 @@ const mapStateToProps = ({ AuthReducers }) => {
 export default connect(mapStateToProps, { authSignOut })(NavBar);
 
 //TODO: Color/Style change when at the right path name
-//TODO: Redirect to home when signout

@@ -202,7 +202,6 @@ export default connect(mapStateToProps, {
 })(ProductsDetail)
 
 //TODO: Size guide
-//TODO: Click size button to save the state
 //TODO: Add more images on other sides of products
 //TODO: When click collapse change the icon to "-"
 //TODO: Random generate recommendation samples

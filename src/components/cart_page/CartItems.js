@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { imgURL } from '../../data.json';
 import {
   purRemoveFromCart,
@@ -56,9 +57,9 @@ class CartItems extends Component {
 
   handleClickCheckout() {
     // Hanle if items in cart to check out
-    // if (this.props.inCart.length === 0) {
-    //   return;
-    // }
+    if (this.props.inCart.length === 0) {
+      return;
+    }
 
     this.setState({ showCheckout: true });
 
@@ -66,23 +67,31 @@ class CartItems extends Component {
     const $containerCheckout = document.querySelector(".cart-item-checkout");
 
     $containerItems.classList.add("bounceOutLeft");
+    $containerCheckout.classList.remove("bounceOutLeft");
+    
     setTimeout(() => {
       $containerItems.classList.add("d-none");
       $containerCheckout.classList.remove("d-none");
+      $containerCheckout.classList.add("bounceInLeft");
       document.querySelector("#checkoutBtn").innerHTML = "PLACE ORDER";
-    }, 500)
+    }, 200)
   }
 
   handleClickBackToOrder() {
     this.setState({ showCheckout: false });
     const $containerItems = document.querySelector(".cart-item-summary")
     const $containerCheckout = document.querySelector(".cart-item-checkout")
-
-    $containerItems.classList.remove("d-none");
-    $containerItems.classList.remove("bounceOutLeft");
-    $containerItems.classList.add("bounceInLeft");
-    $containerCheckout.classList.add("d-none");
+    
+    $containerCheckout.classList.remove("bounceInLeft");
+    $containerCheckout.classList.add("bounceOutLeft");
     document.querySelector("#checkoutBtn").innerHTML = "PROCEED TO CHECK OUT";
+
+    setTimeout(() => {
+      $containerCheckout.classList.add("d-none");
+      $containerItems.classList.remove("d-none");
+      $containerItems.classList.remove("bounceOutLeft");
+      $containerItems.classList.add("bounceInLeft");
+    }, 200)
   }
 
   renderItemsInCart() {
@@ -193,29 +202,39 @@ class CartItems extends Component {
   }
 
   render() {
-    return (
-      <div className="cart-item-container mt-3">
-        <div className="row">
-          <div className="col-sm-8 cart-item-summary animated">
-            {this.renderItemsInCart()}
-          </div>
-          <div className="col-sm-4 animated">
-            {this.renderTotal()}
-          </div>
-          <div className="col-sm-8 d-none cart-item-checkout animated">
-            <CartCheckout />
+    if (this.props.isSignInSuccessfully || this.props.isCreatingSuccessfully) {
+      return (
+        <div className="cart-item-container mt-3">
+          <div className="row">
+            <div className="col-sm-8 cart-item-summary animated">
+              {this.renderItemsInCart()}
+            </div>
+            <div className="col-sm-8 d-none cart-item-checkout animated">
+              <CartCheckout />
+            </div>
+            <div className="col-sm-4">
+              {this.renderTotal()}
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <Redirect to="/"/>
+      );
+    }
   }
 }
 
-const mapStateToProps = ({ UserReducers }) => {
+const mapStateToProps = (state) => {
   // Store items in a list
-  const inCart = Object.values(UserReducers.inCart);
+  const inCart = Object.values(state.UserReducers.inCart);
 
-  return { inCart };
+  return {
+    inCart,
+    isSignInSuccessfully: state.AuthReducers.isSignInSuccessfully,
+    isCreatingSuccessfully: state.AuthReducers.isCreatingSuccessfully
+  };
 }
 
 export default connect(mapStateToProps, {
@@ -226,4 +245,3 @@ export default connect(mapStateToProps, {
 //TODO: Show all of same categories shooes
 //TODO: One button to scoll to check out on small screen
 //TODO: Need pano image on cart check out
-//TODO: Block access to /cart if not login

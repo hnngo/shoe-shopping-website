@@ -87,5 +87,3 @@ export const purUpdateCart = (item) => {
 export const purAddToWishlist = (itemTag, qty, size) => {
 
 }
-
-//TODO: Fix adding too much item cannot show

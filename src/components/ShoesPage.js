@@ -54,3 +54,4 @@ const mapStateToProps = ({ FilterReducers }) => {
 export default connect(mapStateToProps)(ShoesPage);
 
 //TODO: Filter boots sneaker chelsea boots
+//TODO: Go to products detail scroll to top

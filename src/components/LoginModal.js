@@ -282,8 +282,7 @@ export default connect(mapStateToProps, {
   authCreateAccountWithEmailAndPassword
 })(LoginModal)
 
-//TODO: After login succesfully change the button sign into name or show the personal information
 //TODO: When fail login first, reopen the modal wont show again notification
-//TODO: Remove outline default of bootstrap
 //TODO: Login information wont save if close the modal
 //TODO: Signout button was hidden in small screen
+//TODO: When being redirected show login modal

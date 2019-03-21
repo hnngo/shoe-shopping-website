@@ -38,15 +38,14 @@ export default class ContactForm extends Component {
               </div>
             </div>
           </fieldset>
-          <button type="submit" className="btn btn-secondary btn-block">Submit</button>
+          <div className="text-center">
+            <button className="btn btn-secondary w-50 btn-block mx-auto">Submit</button>
+          </div>
         </form>
       </div>
     );
   }
 }
 
-//TODO: Submit button small when large screen
 //TODO: Adding sending email to input email
-//TODO: Submit button stop reloading page
-//TODO: Adding background to easily seperate from other parts
 //TODO: Contact show a seperate part only in background otherwise show with footer

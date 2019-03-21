@@ -56,5 +56,3 @@ export default class LandingSampleProducts extends Component {
 }
 
 //TODO: Star preview on each products
-//TODO: Clean up code with reusable components
-//TODO: Finding shoe with white background
