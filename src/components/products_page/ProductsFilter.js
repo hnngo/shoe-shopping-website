@@ -5,7 +5,10 @@ import {
   FILTER_ACCESSORIES,
   FILTER_SHOES,
   FILTER_SHOES_SELECTIONS,
-  FILTER_ACCESSORIES_SELECTIONS
+  FILTER_ACCESSORIES_SELECTIONS,
+  FILTER_SNEAKER,
+  FILTER_BOOTS,
+  FILTER_CHELSEA_BOOTS
 } from '../../constants'
 
 class ProductsFilter extends Component {
@@ -35,11 +38,31 @@ class ProductsFilter extends Component {
   handleClick(filterSelected) {
     if (filterSelected !== this.state.filterSelected) {
       this.setState({ filterSelected });
+      let selectedFilter;
+
+      switch(this.props.filterContent[filterSelected].toLowerCase()) {
+        case "sneaker":
+          selectedFilter = FILTER_SNEAKER;
+          break;
+        case "boots":
+          selectedFilter = FILTER_BOOTS;
+          break;
+        case "chelsea boots":
+          selectedFilter = FILTER_CHELSEA_BOOTS;
+          break;
+        default:
+          selectedFilter = this.state.filterTypeArr[filterSelected];
+      }
 
       this.props.filterProducts({
         type: this.state.filterType,
-        selectedFilter: this.state.filterTypeArr[filterSelected]
+        selectedFilter
       });
+
+      // this.props.filterProducts({
+      //   type: this.state.filterType,
+      //   selectedFilter: this.state.filterTypeArr[filterSelected]
+      // });
     }
   }
 
@@ -50,6 +73,7 @@ class ProductsFilter extends Component {
         if (this.state.filterSelected === i) {
           selectedClass = "products-filter-selected";
         }
+
         return (
           <li key={i} className="mx-1 d-inline-block">
             <button 

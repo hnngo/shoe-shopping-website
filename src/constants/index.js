@@ -23,7 +23,22 @@ export const FILTER_SHOES_SELECTIONS = {
   FILTER_ADIDAS: "adidasShoes",
   FILTER_VANS: "vansShoes",
   FILTER_DR_MARTENS: "drmartens",
-}
+};
+
+export const FILTER_SNEAKER = "sneaker";
+// [
+//   FILTER_SHOES_SELECTIONS.FILTER_NIKE,
+//   FILTER_SHOES_SELECTIONS.FILTER_ADIDAS,
+//   FILTER_SHOES_SELECTIONS.FILTER_VANS,
+//   FILTER_SHOES_SELECTIONS.FILTER_DR_MARTENS,
+// ]
+
+export const FILTER_BOOTS = "boots";
+// [
+//   FILTER_SHOES_SELECTIONS.FILTER_DR_MARTENS,
+// ]
+
+export const FILTER_CHELSEA_BOOTS = "chelseaboots";
 
 export const FILTER_ACCESSORIES_SELECTIONS = {
   FILTER_BAGS: "bags",
