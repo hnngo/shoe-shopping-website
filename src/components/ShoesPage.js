@@ -8,6 +8,11 @@ import ProductsPath from './products_page/ProductsPath';
 import data from '../data.json';
 
 class ShoesPage extends Component {
+  componentDidMount() {
+    // Scroll to products when redirect to detail page
+    window.scrollTo(0, 200);
+  }
+
   render() {
     // Prepare if products is filtered
     let filteredProducts;

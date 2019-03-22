@@ -4,7 +4,7 @@ import ContactForm from './ContactForm';
 export default class Footer extends Component {
   render() {
     return (
-      <div className="mt-5 pt-3">
+      <div className="mt-4 pt-3">
         <ContactForm />
         <div className="footer-container bg-secondary">
           <div className="container d-flex justify-content-between">
@@ -16,5 +16,3 @@ export default class Footer extends Component {
     );
   }
 }
-
-//TODO: stick at top when no more items in cart

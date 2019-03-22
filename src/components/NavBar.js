@@ -71,16 +71,25 @@ class NavBar extends Component {
     // const user = firebase.auth().currentUser;
     if (this.props.isSignInSuccessfully || this.props.isCreatingSuccessfully) {
       return (
-        <div>
+        <div className="d-flex">
           <Link to="/cart">
-            <button
-              type="button"
-              className="btn my-2 my-sm-0"
-            >
-              <i className="fas fa-shopping-cart" />
-            </button>
+            <div className="navbar-cartIcon">
+              <button
+                type="button"
+                className="btn my-2 my-sm-0"
+              >
+                <i className="fas fa-shopping-cart" />
+                <span
+                  className={"badge badge-pill badge-dark" + (
+                    this.props.inCart.length > 0 ? "" : " d-none"
+                  )}
+                >
+                  {this.props.inCart.length}
+                </span>
+              </button>
+            </div>
           </Link>
-          <div className="btn-group">
+          <div className="btn-group navbar-user-btn">
             <button type="button" className="cart-modal-close-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i className="fas fa-user mr-1" />User
             </button>
@@ -88,7 +97,6 @@ class NavBar extends Component {
               <Link to="/orders">
                 <button className="dropdown-item" type="button">Orders</button>
               </Link>
-              <button className="dropdown-item" type="button">Setting</button>
               <div className="dropdown-divider"></div>
               <button
                 className="dropdown-item"
@@ -118,9 +126,9 @@ class NavBar extends Component {
     return (
       <div>
         <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm">
-          <div className="container">
+          <div className="container p-0">
             {/* Logo Brand */}
-            <Link className="navbar-brand" to="/">LOGO</Link>
+            <Link className="navbar-brand lobster" to="/">Shoeniverse </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -167,15 +175,15 @@ class NavBar extends Component {
                 </li> */}
               </ul>
               <form className="form-inline my-2 my-lg-0">
-                <input className="nav-search form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "210px" }} />
+                <input className="nav-search form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for items and brands" aria-label="Search" style={{ width: "180px" }} />
                 {/* <Link to="/cart">
-                  <button
-                    type="button"
-                    className="btn my-2 my-sm-0"
-                  >
-                    <i className="fas fa-shopping-cart" />
-                  </button>
-                </Link> */}
+                    <button
+                      type="button"
+                      className="btn my-2 my-sm-0"
+                    >
+                      <i className="fas fa-shopping-cart" />
+                    </button>
+                  </Link> */}
                 {this.renderUserIcon()}
               </form>
             </div>
@@ -188,10 +196,11 @@ class NavBar extends Component {
   }
 }
 
-const mapStateToProps = ({ AuthReducers }) => {
+const mapStateToProps = (state) => {
   return {
-    isSignInSuccessfully: AuthReducers.isSignInSuccessfully,
-    isCreatingSuccessfully: AuthReducers.isCreatingSuccessfully
+    isSignInSuccessfully: state.AuthReducers.isSignInSuccessfully,
+    isCreatingSuccessfully: state.AuthReducers.isCreatingSuccessfully,
+    inCart: state.UserReducers.inCart
   }
 }
 

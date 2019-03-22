@@ -272,5 +272,3 @@ export default connect(mapStateToProps, {
 })(CartItems);
 
 //TODO: Show all of same categories shooes
-//TODO: One button to scoll to check out on small screen
-//TODO: Need pano image on cart check out

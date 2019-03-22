@@ -36,7 +36,7 @@ class OrderPage extends Component {
     if (this.props.orders[orderId].items.length > 2) {
       return (
         <button
-          className="btn btn-outline-secondary mx-auto rounded-pill"
+          className="btn btn-outline-secondary mx-auto rounded-pill mt-2"
           onClick={() => this.setState({
             btnSee: (this.state.btnSee === "See more" ? "See less" : "See more")
           })}
@@ -67,27 +67,46 @@ class OrderPage extends Component {
           id={i > 1 ? "order" + orderId : ""}
           className={"row " + (i > 1 ? "collapse" : "")}
         >
-          <div className="col-sm-2">
+          <div className="w-100 border-top pb-2 mt-2" />
+          <div className="col-sm-2 col-xs-12 text-center">
             <img
               src={this.state.data[item[0]].imgURL}
-              className="img-fluid my-2"
+              className="img-fluid my-2 order-img"
               alt={this.state.data[item[0]].name.toLowerCase().replace(" ", "-")}
             />
           </div>
-          <div className="col-sm-4 my-auto">
+          <div className="col-sm-4 col-xs-12 my-auto">
             <h5>{this.state.data[item[0]].name}</h5>
             <p className="my-0">Size: {item[2]}</p>
           </div>
-          <div className="col-sm-1 my-auto text-center">
+
+          <div className="d-block d-sm-none col-12 mt-2">
+            <div className="row">
+              <div className="col-sm-1 col-2 my-auto text-center d-block d-sm-none">
+                <p className="my-0 bold">Price</p>
+              </div>
+              <div className="col-sm-1 col-2 my-auto text-center d-block d-sm-none">
+                <p className="my-0 bold">Qty</p>
+              </div>
+              <div className="col-sm-2 col-3 my-auto text-center d-block d-sm-none">
+                <p className="my-0 bold">Total</p>
+              </div>
+              <div className="col-sm-2 col-5 my-auto text-center d-block d-sm-none">
+                <p className="my-0 bold">Status</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-1 col-2 my-auto text-center">
             <p className="my-0">{this.state.data[item[0]].price}$</p>
           </div>
-          <div className="col-sm-1 my-auto text-center">
+          <div className="col-sm-1 col-2 my-auto text-center">
             <p className="my-0">{item[1]}</p>
           </div>
-          <div className="col-sm-2 my-auto text-center">
-            <p className="my-0">{this.state.data[item[0]].price * item[1]}</p>
+          <div className="col-sm-2 col-3 my-auto text-center">
+            <p className="my-0">{this.state.data[item[0]].price * item[1]}$</p>
           </div>
-          <div className="col-sm-2 my-auto text-center">
+          <div className="col-sm-2 col-5 my-auto text-center">
             <span className="badge badge-warning badge-pill">{this.renderDeliverStatus(this.props.orders[orderId])}</span>
           </div>
         </div>
@@ -119,27 +138,29 @@ class OrderPage extends Component {
             <div className="d-flex">
               <h6 className="text-muted">Order time:&nbsp;<span className="text-muted">{this.props.orders[orderId].orderDate}</span></h6>
             </div>
-            <div className="border-top pb-2" />
+            <div className="d-none d-sm-block border-top pb-2" />
+
             <div className="row">
-              <div className="col-sm-2 text-center">
+              <div className="col-sm-2 text-center d-none d-sm-block">
                 <h5>Item</h5>
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-4 d-none d-sm-block">
                 <h5>Name & Size</h5>
               </div>
-              <div className="col-sm-1 text-center">
+              <div className="col-sm-1 text-center d-none d-sm-block">
                 <h5>Price</h5>
               </div>
-              <div className="col-sm-1 text-center">
+              <div className="col-sm-1 text-center d-none d-sm-block">
                 <h5>Qty</h5>
               </div>
-              <div className="col-sm-2 text-center">
+              <div className="col-sm-2 text-center d-none d-sm-block">
                 <h5>Total</h5>
               </div>
-              <div className="col-sm-2 text-center">
+              <div className="col-sm-2 text-center d-none d-sm-block">
                 <h5>Status</h5>
               </div>
             </div>
+
             {this.renderItemsInOrder(orderId)}
             <div className="text-center d-flex">
               {this.renderSeeMore(orderId)}

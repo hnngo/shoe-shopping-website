@@ -49,7 +49,7 @@ No media query for `xs` since this is the default in Bootstrap */
     -o-object-fit: cover;
        object-fit: cover;
     width: 80%;
-    height: 200px;
+    height: 220px;
   }
 
   .products-products-title:active,
@@ -88,6 +88,10 @@ No media query for `xs` since this is the default in Bootstrap */
 
   .cart-checkout-svg {
     width: 40px;
+  }
+  
+  .order-img {
+    max-width: 260px;
   }
 }
 

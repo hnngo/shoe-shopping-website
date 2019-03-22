@@ -2,9 +2,7 @@ import {
   AUTH_SIGN_OUT_SUCCESSFULLY,
   AUTH_GET_INCART_ITEMS,
   AUTH_GET_ORDERS,
-  PUR_ADDING_TO_CART,
   PUR_ADDING_TO_CART_SUCCESSFULLY,
-  PUR_ADDING_TO_CART_UNSUCCESSFULLY,
   PUR_CLOSE_ATC_MODAL,
   PUR_REMOVE_FROM_CART_SUCCESSFULLY,
   PUR_UPDATE_ITEM_IN_CART,
@@ -13,7 +11,6 @@ import {
 
 const INITIAL_STATE = {
   inCart: [],
-  inWishlist: [],
   orders: {},
   newItems: null,
   isSuccessfullyAdded: undefined

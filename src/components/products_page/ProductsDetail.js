@@ -51,9 +51,9 @@ class ProductsDetail extends Component {
     this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize);
   }
 
-  handleClickAddToWishlist() {
-    console.log("add wl");
-  }
+  // handleClickAddToWishlist() {
+  //   console.log("add wl");
+  // }
 
   renderSize() {
     const sizeShoesArr = [8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13];
@@ -180,13 +180,13 @@ class ProductsDetail extends Component {
             >
               <i className="fas fa-cart-plus mr-2"></i>Add to cart
             </button>
-            <button
+            {/* <button
               type="button"
               className="btn btn-outline-dark btn-block"
               onClick={() => this.handleClickAddToWishlist()}
             >
               <i className="far fa-heart mr-2"></i>Add to wishlist
-            </button>
+            </button> */}
           </div>
         </div>
         <CartPopup />

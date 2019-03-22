@@ -78,6 +78,34 @@ html, body {
   font-size: 13px;
 }
 
+.navbar-cartIcon {
+  position: relative;
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 42px;
+  margin-right: 0px;
+}
+
+.navbar-cartIcon span {
+  position: absolute;
+  top: -9px !important;
+  left: -7px;
+}
+
+.navbar-cartIcon button i {
+  padding-top: 10px;
+}
+
+.navbar-cartIcon button {
+  padding: 0;
+}
+
+.navbar-user-btn button {
+  outline: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .navbar-nav li:visited,
 .navbar-nav li:link {
   border-bottom: 2px solid transparent;
@@ -113,6 +141,7 @@ html, body {
 .landing-picture-container {
   position: relative;
   top: 57px;
+  min-height: calc(100vh - 57px - 452px)
 }
 
 .landing-wallpaper {
@@ -203,10 +232,17 @@ html, body {
   border: 1px solid white;
 }
 
+/* ------- CONTACT FORM --------*/
+.contact-form-cotainer {
+  background-color: #35353628;
+  padding: 20px 0;
+  
+}
+
 /* ------- FOOTER --------*/
 .footer-container {
   width: 100vw;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   /* background-color: rgba(0, 0, 0, 0.5) */
 }
 
@@ -379,6 +415,7 @@ html, body {
   border: none;
   background: transparent;
   outline: none;
+  color: #212529;
 }
 
 .cart-modal-price {
