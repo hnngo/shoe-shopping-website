@@ -162,6 +162,22 @@ class LoginModal extends Component {
     }
   }
 
+  componentDidMount() {
+    const $loginModal = document.querySelector('#loginModal')
+    if ($loginModal) {
+      $loginModal.addEventListener('keypress', (e) => {
+        const { isValidinputEmail, isValidinputPassword } = this.props;
+    
+        // Check if signin btn clickable
+        const signInCondition = isValidinputEmail && isValidinputPassword;
+        if (signInCondition && e.key === "Enter") {
+          document.querySelector("#signInBtn").click();
+        }
+      })
+    }
+
+  }
+
   render() {
     const {
       inputEmail,
@@ -174,9 +190,6 @@ class LoginModal extends Component {
       isCreatingSuccessfully
     } = this.props;
 
-    // Check if signin and signup btn clickable
-    // const signInCondition = AuthReducers.isValidinputEmail && AuthReducers.isValidinputPassword;
-    // const signUpCondition = (signInCondition && AuthReducers.isValidinputConfirmPassword) || (!document.querySelector("#backToSignInBtn"));
 
     return (
       <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
