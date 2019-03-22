@@ -303,8 +303,12 @@ html, body {
 }
 
 .products-detail-des-text {
+  background-color: #c9c9c9a1;
+  border-radius: 20px;
+  padding: 10px 15px;
   line-height: 20px;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .product-detail-size-btn {
@@ -441,4 +445,14 @@ html, body {
 
 .cart-checkout-svg {
   width: 40px;
+}
+
+/* ------- CART ITEMS --------*/
+.order-page-container {
+  background-color: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 3px #c0c0c0;
+          box-shadow: 1px 1px 3px #c0c0c0;
+  -webkit-transition: 1s;
+  transition: 1s;
 }

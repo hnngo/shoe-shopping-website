@@ -7,7 +7,7 @@ export default class ProductsBody extends Component {
     return productTypes.map((d) => {
       return Object.keys(d).map((k, i) => {
         return (
-          <div 
+          <div
             className="col-lg-3 col-md-4 col-sm-6 col-xs-12 my-2"
             key={d + i}
           >

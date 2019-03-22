@@ -74,3 +74,5 @@ export default class ProductsPath extends Component {
     );
   }
 }
+
+//TODO: On small screen fix path 

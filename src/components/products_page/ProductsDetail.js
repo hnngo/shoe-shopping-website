@@ -16,6 +16,11 @@ class ProductsDetail extends Component {
     }
   }
 
+  componentDidMount() {
+    // Scroll to products when redirect to detail page
+    window.scrollTo(0, 200);
+  }
+
   handleOnChangeQty(e) {
     switch (e.target.classList[1]) {
       case "fa-arrow-left":
@@ -42,7 +47,7 @@ class ProductsDetail extends Component {
       this.setState({ showAlert: true });
       return;
     }
-    
+
     this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize);
   }
 
@@ -93,7 +98,7 @@ class ProductsDetail extends Component {
     let headerTag = header.replace(/ /g, "-").toLowerCase();
 
     return (
-      <div className="my-2">
+      <div className="my-3">
         <div className="d-flex justify-content-between products-detail-collapse">
           <button
             className="products-detail-collapse-header-text"
@@ -191,7 +196,7 @@ class ProductsDetail extends Component {
 }
 
 const mapStateToProps = ({ AuthReducers }) => {
-  return { 
+  return {
     isSignInSuccessfully: AuthReducers.isSignInSuccessfully,
     isCreatingSuccessfully: AuthReducers.isCreatingSuccessfully,
   };

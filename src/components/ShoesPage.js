@@ -15,7 +15,7 @@ class ShoesPage extends Component {
       filteredProducts = this.props.shoesFilter.map((item) => data.imgURL.products.shoes[item]);
     } else {
       filteredProducts = [data.imgURL.products.shoes[this.props.shoesFilter]];
-    } 
+    }
 
     return (
       <div>

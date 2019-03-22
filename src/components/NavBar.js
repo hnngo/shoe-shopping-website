@@ -85,7 +85,9 @@ class NavBar extends Component {
               <i className="fas fa-user mr-1" />User
             </button>
             <div className="dropdown-menu dropdown-menu-right">
-              <button className="dropdown-item" type="button">Orders</button>
+              <Link to="/orders">
+                <button className="dropdown-item" type="button">Orders</button>
+              </Link>
               <button className="dropdown-item" type="button">Setting</button>
               <div className="dropdown-divider"></div>
               <button
@@ -187,7 +189,7 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = ({ AuthReducers }) => {
-  return { 
+  return {
     isSignInSuccessfully: AuthReducers.isSignInSuccessfully,
     isCreatingSuccessfully: AuthReducers.isCreatingSuccessfully
   }

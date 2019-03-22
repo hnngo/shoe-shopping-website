@@ -48,7 +48,7 @@ No media query for `xs` since this is the default in Bootstrap */
   .products-product-img {
     -o-object-fit: cover;
        object-fit: cover;
-    width: 70%;
+    width: 80%;
     height: 200px;
   }
 
@@ -62,6 +62,11 @@ No media query for `xs` since this is the default in Bootstrap */
   .products-products-title:hover {
     text-decoration: none;
     color: black;
+  }
+  
+  .cart-modal-notification {
+    top: 17%;
+    bottom: 17%;
   }
 
   .cart-modal-item-detail img {

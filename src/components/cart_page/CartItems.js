@@ -31,6 +31,11 @@ class CartItems extends Component {
     };
   }
 
+  componentDidMount() {
+    // Scroll to products when redirect to page
+    window.scrollTo(0, 0);
+  }
+
   handleClickRemove(refID) {
     this.props.purRemoveFromCart(refID);
   }
@@ -269,4 +274,3 @@ export default connect(mapStateToProps, {
 //TODO: Show all of same categories shooes
 //TODO: One button to scoll to check out on small screen
 //TODO: Need pano image on cart check out
-//TODO: On mobile screen scroll to Top when proceed to payment press
