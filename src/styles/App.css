@@ -419,6 +419,10 @@ html, body {
   border-radius: 20px;
 }
 
+.cart-item-detail a {
+  text-decoration: none;
+}
+
 .cart-item-qty {
   width: 12%;
   background: transparent;

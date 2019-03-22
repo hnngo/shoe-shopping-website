@@ -4,7 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { imgURL } from '../../data.json';
 import {
   purRemoveFromCart,
-  purUpdateCart
+  purUpdateCart,
+  purPlaceOrder
 } from '../../actions';
 import CartCheckout from './CartCheckout.js';
 
@@ -68,23 +69,21 @@ class CartItems extends Component {
 
     $containerItems.classList.add("bounceOutLeft");
     $containerCheckout.classList.remove("bounceOutLeft");
-    
+
     setTimeout(() => {
       $containerItems.classList.add("d-none");
       $containerCheckout.classList.remove("d-none");
       $containerCheckout.classList.add("bounceInLeft");
-      document.querySelector("#checkoutBtn").innerHTML = "PLACE ORDER";
     }, 200)
   }
 
-  handleClickBackToOrder() {
+  handleClickBackToCart() {
     this.setState({ showCheckout: false });
     const $containerItems = document.querySelector(".cart-item-summary")
     const $containerCheckout = document.querySelector(".cart-item-checkout")
-    
+
     $containerCheckout.classList.remove("bounceInLeft");
     $containerCheckout.classList.add("bounceOutLeft");
-    document.querySelector("#checkoutBtn").innerHTML = "PROCEED TO CHECK OUT";
 
     setTimeout(() => {
       $containerCheckout.classList.add("d-none");
@@ -92,6 +91,14 @@ class CartItems extends Component {
       $containerItems.classList.remove("bounceOutLeft");
       $containerItems.classList.add("bounceInLeft");
     }, 200)
+  }
+
+  handleClickPlaceOrder() {
+    // Perform place order in firebase here
+    this.props.purPlaceOrder(this.props.inCart);
+
+    // Redirect to order page
+    this.props.history.push('/orders')
   }
 
   renderItemsInCart() {
@@ -152,14 +159,36 @@ class CartItems extends Component {
     }
   }
 
-  renderBackToOrder() {
+  renderPlaceOrderBtn() {
+    return (this.state.showCheckout) ? (
+      // <Link to="/orders">
+        <button
+          id="checkoutBtn"
+          className="btn btn-block btn-secondary mb-3"
+          onClick={() => this.handleClickPlaceOrder()}
+        >
+          PLACE ORDER
+        </button>
+      // </Link>
+    ) : (
+      <button
+        id="checkoutBtn"
+        className="btn btn-block btn-secondary"
+        onClick={() => this.handleClickCheckout()}
+      >
+        PROCEED TO CHECK OUT
+      </button>
+    );
+  }
+
+  renderBackToCart() {
     if (this.state.showCheckout) {
       return (
         <button
           className="btn btn-block btn-outline-secondary animated fadeInUp"
-          onClick={() => this.handleClickBackToOrder()}
+          onClick={() => this.handleClickBackToCart()}
         >
-          BACK TO ORDER
+          BACK TO CART
         </button>
       );
     }
@@ -189,14 +218,8 @@ class CartItems extends Component {
           <p className="h5">Total</p>
           <p className="cart-item-total-money">{totalMoney + (numberOfItems > 0 ? 30 : 0)} SGD</p>
         </div>
-        <button
-          id="checkoutBtn"
-          className="btn btn-block btn-secondary"
-          onClick={() => this.handleClickCheckout()}
-        >
-          PROCEED TO CHECK OUT
-        </button>
-        {this.renderBackToOrder()}
+        {this.renderPlaceOrderBtn()}
+        {this.renderBackToCart()}
       </div>
     );
   }
@@ -220,7 +243,7 @@ class CartItems extends Component {
       );
     } else {
       return (
-        <Redirect to="/"/>
+        <Redirect to="/" />
       );
     }
   }
@@ -239,9 +262,11 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   purRemoveFromCart,
-  purUpdateCart
+  purUpdateCart,
+  purPlaceOrder
 })(CartItems);
 
 //TODO: Show all of same categories shooes
 //TODO: One button to scoll to check out on small screen
 //TODO: Need pano image on cart check out
+//TODO: On mobile screen scroll to Top when proceed to payment press

@@ -7,7 +7,8 @@ import {
   PUR_ADDING_TO_CART_UNSUCCESSFULLY,
   PUR_CLOSE_ATC_MODAL,
   PUR_REMOVE_FROM_CART_SUCCESSFULLY,
-  PUR_UPDATE_ITEM_IN_CART
+  PUR_UPDATE_ITEM_IN_CART,
+  PUR_PLACE_ORDER
 } from '../constants';
 
 export const purCloseAddToCartModal = () => {
@@ -80,6 +81,41 @@ export const purUpdateCart = (item) => {
         // Handle update item unsuccessfully
         console.log(e);
       });
+    }
+  }
+}
+
+export const purPlaceOrder = (inCart) => {
+  return (dispatch) => {
+    const currentUser = firebase.auth().currentUser;
+
+    if (currentUser) {
+      const uid = currentUser.uid;
+
+      const orderDate = new Date()
+      let deliveryDate = new Date();
+      deliveryDate.setDate(orderDate.getDate() + 7)
+      
+      const orderId = Math.floor(Math.random() * 900000000) + 100000000;
+      const newOrder =
+      {
+        items: inCart.map((item) => item.slice(0, 3)),
+        orderDate: orderDate.toDateString(),
+        deliveryDate: deliveryDate.toDateString()
+      }
+
+      // Update to firebase
+      firebase.database().ref(`/users/${uid}/orders/${orderId}`).set(newOrder).then(() => {
+        dispatch({
+          type: PUR_PLACE_ORDER,
+          payload: newOrder
+        })
+
+      }).catch((e) => {
+        // Handle error here
+
+        console.log(e)
+      })
     }
   }
 }

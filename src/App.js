@@ -14,6 +14,7 @@ import AccessoriesPage from './components/AccessoriesPage';
 import Footer from './components/Footer';
 import rootReducer from './reducers';
 import CartItems from './components/cart_page/CartItems';
+import OrderPage from './components/OrderPage';
 
 class App extends Component {
   constructor(props) {
@@ -65,6 +66,7 @@ class App extends Component {
               <Route path="/shoes" component={ShoesPage} />
               <Route path="/accessories" component={AccessoriesPage} />
               <Route path="/cart" component={CartItems} />
+              <Route path="/orders" component={OrderPage} />
             </Switch>
           </div>
           <Footer />

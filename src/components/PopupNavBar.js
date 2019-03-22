@@ -69,3 +69,4 @@ export default class PopupNavBar extends Component {
 //TODO: Dim other part of website when active popup navbar
 //TODO: Random pick up 1 or more products to show on popup nav bar
 //TODO: Popup navbar showing when screen is small
+//TODO: On other device, popup navbar insert new div instend of hovering effect
