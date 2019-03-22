@@ -11,6 +11,7 @@ import {
   AUTH_CREATE_UNSUCCESSFULLY,
   AUTH_SIGN_OUT_SUCCESSFULLY,
   AUTH_GET_INCART_ITEMS,
+  AUTH_GET_ORDERS
 } from '../constants';
 
 export const authStoreLoginInformation = (input, type) => {
@@ -39,10 +40,15 @@ export const authLoginWithEmailAndPassword = (email, password) => {
           type: AUTH_SUCCESSFULLY
         })
 
-        // Get the user's cart items/ order informaiton
+        // Get the user's cart items/ orders informaiton
         const curUserUid = firebase.auth().currentUser.uid;
         firebase.database().ref(`/users/${curUserUid}/inCart`).once('value', snapshot => dispatch({
           type: AUTH_GET_INCART_ITEMS,
+          payload: snapshot.val()
+        }));
+
+        firebase.database().ref(`/users/${curUserUid}/orders`).once('value', snapshot => dispatch({
+          type: AUTH_GET_ORDERS,
           payload: snapshot.val()
         }));
       }).catch(() => {

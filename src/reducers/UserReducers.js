@@ -1,17 +1,20 @@
 import {
   AUTH_SIGN_OUT_SUCCESSFULLY,
   AUTH_GET_INCART_ITEMS,
+  AUTH_GET_ORDERS,
   PUR_ADDING_TO_CART,
   PUR_ADDING_TO_CART_SUCCESSFULLY,
   PUR_ADDING_TO_CART_UNSUCCESSFULLY,
   PUR_CLOSE_ATC_MODAL,
   PUR_REMOVE_FROM_CART_SUCCESSFULLY,
-  PUR_UPDATE_ITEM_IN_CART
+  PUR_UPDATE_ITEM_IN_CART,
+  PUR_PLACE_ORDER
 } from '../constants';
 
 const INITIAL_STATE = {
   inCart: [],
   inWishlist: [],
+  orders: {},
   newItems: null,
   isSuccessfullyAdded: undefined
 }
@@ -31,8 +34,9 @@ export default (state = INITIAL_STATE, action) => {
           })
         }
       }
-
       return { ...state, inCart: newCart };
+    case AUTH_GET_ORDERS:
+      return{ ...state, orders: { ...action.payload } };
     case PUR_ADDING_TO_CART_SUCCESSFULLY:
       newCart = [...state.inCart, action.payload];
       return {
@@ -51,11 +55,15 @@ export default (state = INITIAL_STATE, action) => {
         if (item[3] === action.payload[3]) {
           item = action.payload.slice();
         }
-
         return item;
       })
-
       return { ...state, inCart: newCart }
+    case PUR_PLACE_ORDER:
+      return {
+        ...state,
+        inCart: [],
+        orders: { ...state.orders, ...action.payload  }
+      }
     default:
       return state;
   }

@@ -92,10 +92,11 @@ export const purPlaceOrder = (inCart) => {
     if (currentUser) {
       const uid = currentUser.uid;
 
+      // Prepare order information
       const orderDate = new Date()
       let deliveryDate = new Date();
       deliveryDate.setDate(orderDate.getDate() + 7)
-      
+
       const orderId = Math.floor(Math.random() * 900000000) + 100000000;
       const newOrder =
       {
@@ -106,14 +107,19 @@ export const purPlaceOrder = (inCart) => {
 
       // Update to firebase
       firebase.database().ref(`/users/${uid}/orders/${orderId}`).set(newOrder).then(() => {
-        dispatch({
-          type: PUR_PLACE_ORDER,
-          payload: newOrder
-        })
+        // Remove incarts item on firebase
+        firebase.database().ref(`/users/${uid}/inCart`).remove().then(() => {
+          // Dispatch to local reducer to switch from inCart to order
+          const payload = {}
+          payload[orderId] = newOrder;
 
+          dispatch({
+            type: PUR_PLACE_ORDER,
+            payload
+          });
+        });
       }).catch((e) => {
         // Handle error here
-
         console.log(e)
       })
     }
