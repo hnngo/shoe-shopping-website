@@ -101,7 +101,7 @@ export const purPlaceOrder = (inCart) => {
       const newOrder =
       {
         items: inCart.map((item) => item.slice(0, 3)),
-        orderDate: orderDate.toDateString(),
+        orderDate: orderDate.toLocaleTimeString() + ", " + orderDate.toDateString(),
         deliveryDate: deliveryDate.toDateString()
       }
 

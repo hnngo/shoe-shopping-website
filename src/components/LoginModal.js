@@ -170,8 +170,9 @@ class LoginModal extends Component {
     
         // Check if signin btn clickable
         const signInCondition = isValidinputEmail && isValidinputPassword;
-        if (signInCondition && e.key === "Enter") {
-          document.querySelector("#signInBtn").click();
+        const $singInBtn = document.querySelector("#signInBtn");
+        if (signInCondition && e.key === "Enter" && $singInBtn) {
+          $singInBtn.click();
         }
       })
     }

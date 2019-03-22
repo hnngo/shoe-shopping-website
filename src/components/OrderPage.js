@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { imgURL } from '../data.json';
+import ProductsHeader from './products_page/ProductsHeader.js';
 
 class OrderPage extends Component {
   constructor(props) {
@@ -20,67 +21,129 @@ class OrderPage extends Component {
     }
 
     this.state = {
-      showItem: 1,
+      btnSee: "See more",
       data: dataTag,
       showCheckout: false
     };
   }
 
-  renderTotal() {
-    return <div/>
+  renderTotal(orderId) {
+    return <div />
+  }
+
+  renderSeeMore(orderId) {
+    // Render button see more only when order has more than two items
+    if (this.props.orders[orderId].items.length > 2) {
+      return (
+        <button
+          className="btn btn-outline-secondary mx-auto rounded-pill"
+          onClick={() => this.setState({
+            btnSee: (this.state.btnSee === "See more" ? "See less" : "See more")
+          })}
+          data-toggle="collapse"
+          data-target={"#order" + orderId}
+        >
+          {this.state.btnSee}
+        </button>
+      )
+    }
+  }
+
+  renderDeliverStatus(order) {
+    const today = new Date();
+    const deliveryDate = new Date(order.deliveryDate)
+    if (deliveryDate <= today) {
+      return "Delivered";
+    }
+
+    return "Delivering";
   }
 
   renderItemsInOrder(orderId) {
-    return this.props.orders[orderId].items.map((item, i) => {
-      if (i > this.state.showItem) {
-        return <div />;
-      } else {
-        return (
-          <div className="row">
-            <div className="col-sm-2">
-              <img
-                src={this.state.data[item[0]].imgURL}
-                className="img-fluid my-2"
-                alt={this.state.data[item[0]].name.toLowerCase().replace(" ", "-")}
-              />
-            </div>
-            <div className="col-sm-4 my-auto">
-              <h5>{this.state.data[item[0]].name}</h5>
-              <p>Size: {item[2]}</p>
-            </div>
-            <div className="col-sm-2 my-auto">
-              <p>{this.state.data[item[0]].price}$</p>
-            </div>
-            <div className="col-sm-2 my-auto">
-              <p>Qty: {item[1]}</p>
-            </div>
-            <div className="col-sm-2 my-auto">
-              <span class="badge badge-warning badge-pill">Delivering</span>
-            </div>
+    return this.props.orders[orderId].items.slice(0).reverse().map((item, i) => {
+      return (
+        <div
+          key={orderId + " " + i}
+          id={i > 1 ? "order" + orderId : ""}
+          className={"row " + (i > 1 ? "collapse" : "")}
+        >
+          <div className="col-sm-2">
+            <img
+              src={this.state.data[item[0]].imgURL}
+              className="img-fluid my-2"
+              alt={this.state.data[item[0]].name.toLowerCase().replace(" ", "-")}
+            />
           </div>
-        );
-      }
+          <div className="col-sm-4 my-auto">
+            <h5>{this.state.data[item[0]].name}</h5>
+            <p className="my-0">Size: {item[2]}</p>
+          </div>
+          <div className="col-sm-1 my-auto text-center">
+            <p className="my-0">{this.state.data[item[0]].price}$</p>
+          </div>
+          <div className="col-sm-1 my-auto text-center">
+            <p className="my-0">{item[1]}</p>
+          </div>
+          <div className="col-sm-2 my-auto text-center">
+            <p className="my-0">{this.state.data[item[0]].price * item[1]}</p>
+          </div>
+          <div className="col-sm-2 my-auto text-center">
+            <span className="badge badge-warning badge-pill">{this.renderDeliverStatus(this.props.orders[orderId])}</span>
+          </div>
+        </div>
+      );
     })
   }
 
   renderOrders() {
-    console.log(this.props.orders)
     const renderArr = [];
+
+    if (Object.keys(this.props.orders).length === 0) {
+      return (
+        <div className="order-page-container mb-4">
+          <h4 className="p-3">No recent orders</h4>
+        </div>
+      );
+    }
 
     for (let orderId in this.props.orders) {
       renderArr.push(
-        <div className="order-page-container mb-4">
+        <div
+          key={orderId}
+          className="order-page-container mb-4"
+        >
           <div className="p-3">
             <div className="d-flex">
               <h5>Order Id:&nbsp;<span>{orderId}</span></h5>
             </div>
             <div className="d-flex">
-              <h6 className="text-muted">Order date:&nbsp;<span className="text-muted">{this.props.orders[orderId].orderDate}</span></h6>
-              
+              <h6 className="text-muted">Order time:&nbsp;<span className="text-muted">{this.props.orders[orderId].orderDate}</span></h6>
             </div>
             <div className="border-top pb-2" />
+            <div className="row">
+              <div className="col-sm-2 text-center">
+                <h5>Item</h5>
+              </div>
+              <div className="col-sm-4">
+                <h5>Name & Size</h5>
+              </div>
+              <div className="col-sm-1 text-center">
+                <h5>Price</h5>
+              </div>
+              <div className="col-sm-1 text-center">
+                <h5>Qty</h5>
+              </div>
+              <div className="col-sm-2 text-center">
+                <h5>Total</h5>
+              </div>
+              <div className="col-sm-2 text-center">
+                <h5>Status</h5>
+              </div>
+            </div>
             {this.renderItemsInOrder(orderId)}
-            {this.renderSeeMore()}
+            <div className="text-center d-flex">
+              {this.renderSeeMore(orderId)}
+            </div>
             {this.renderTotal(orderId)}
           </div>
         </div>
@@ -88,17 +151,19 @@ class OrderPage extends Component {
     }
 
     return renderArr;
-    // return this.props.orders.map((order) => {
-    //   console.log(order);
-    //   return <div/>
-    // })
   }
 
   render() {
     if (this.props.isSignInSuccessfully || this.props.isCreatingSuccessfully) {
       return (
-        <div className="container my-5">
-          {this.renderOrders()}
+        <div>
+          <ProductsHeader
+            panoImageURL={imgURL.pages.orderPage.pano.imgURL}
+            categoryName="Orders"
+          />
+          <div className="container my-5">
+            {this.renderOrders()}
+          </div>
         </div>
       );
     } else {
