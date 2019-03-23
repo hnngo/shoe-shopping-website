@@ -140,3 +140,5 @@ const mapStateToProps = ({ UserReducers }) => {
 export default connect(mapStateToProps, {
   purCloseAddToCartModal
 })(CartPopup);
+
+//TODO: fix the error of hard code one item has been added

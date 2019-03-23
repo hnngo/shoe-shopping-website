@@ -24,7 +24,9 @@ class ProductsDetail extends Component {
   handleOnChangeQty(e) {
     switch (e.target.classList[1]) {
       case "fa-arrow-left":
-        this.setState({ qty: this.state.qty - 1 });
+        if (this.state.qty > 1) {
+          this.setState({ qty: this.state.qty - 1 });
+        }
         break;
       case "fa-arrow-right":
         this.setState({ qty: this.state.qty + 1 });
@@ -48,7 +50,7 @@ class ProductsDetail extends Component {
       return;
     }
 
-    this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize);
+    this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize, this.props.inCart);
   }
 
   // handleClickAddToWishlist() {
@@ -195,10 +197,11 @@ class ProductsDetail extends Component {
   }
 }
 
-const mapStateToProps = ({ AuthReducers }) => {
+const mapStateToProps = (state) => {
   return {
-    isSignInSuccessfully: AuthReducers.isSignInSuccessfully,
-    isCreatingSuccessfully: AuthReducers.isCreatingSuccessfully,
+    isSignInSuccessfully: state.AuthReducers.isSignInSuccessfully,
+    isCreatingSuccessfully: state.AuthReducers.isCreatingSuccessfully,
+    inCart: state.UserReducers.inCart
   };
 }
 

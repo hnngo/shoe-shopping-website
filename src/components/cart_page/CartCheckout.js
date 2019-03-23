@@ -30,10 +30,10 @@ export default class CartCheckout extends Component {
               <input type="text" className="form-control" id="inputCVV" placeholder="123" disabled />
             </div>
             <div className="form-group col-md-6">
-              <label htmlFor="inputNameOnCard" className="bold">Expire Date <span className="text-danger h5">*</span></label>
+              <label htmlFor="inputExpireDate" className="bold">Expire Date <span className="text-danger h5">*</span></label>
               <div className="row text-center w-100">
-                <input type="text" className="ml-3 form-control" id="inputNameOnCard" placeholder="08" disabled style={{ width: '43px' }} /><h3> / </h3>
-                <input type="text" className="form-control" id="inputNameOnCard" placeholder="2022" disabled style={{ width: '68px' }} />
+                <input type="text" className="ml-3 form-control" id="inputExpireDate" placeholder="08" disabled style={{ width: '43px' }} /><h3> / </h3>
+                <input type="text" className="form-control" id="inputExpireDate2" placeholder="2022" disabled style={{ width: '68px' }} />
               </div>
             </div>
           </div>

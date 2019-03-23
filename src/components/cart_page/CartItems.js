@@ -232,7 +232,7 @@ class CartItems extends Component {
   render() {
     if (this.props.isSignInSuccessfully || this.props.isCreatingSuccessfully) {
       return (
-        <div className="cart-item-container mt-3">
+        <div className="cart-item-container mt-3 mb-5 pb-3">
           <div className="row">
             <div className="col-sm-8 cart-item-summary animated">
               {this.renderItemsInCart()}

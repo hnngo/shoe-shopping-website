@@ -33,7 +33,7 @@ export default (state = INITIAL_STATE, action) => {
       }
       return { ...state, inCart: newCart };
     case AUTH_GET_ORDERS:
-      return{ ...state, orders: { ...action.payload } };
+      return { ...state, orders: { ...action.payload } };
     case PUR_ADDING_TO_CART_SUCCESSFULLY:
       newCart = [...state.inCart, action.payload];
       return {
@@ -48,18 +48,32 @@ export default (state = INITIAL_STATE, action) => {
       newCart = state.inCart.filter((item) => item[3] !== action.payload);
       return { ...state, inCart: newCart };
     case PUR_UPDATE_ITEM_IN_CART:
+      let oldQty;
       newCart = state.inCart.map((item) => {
         if (item[3] === action.payload[3]) {
-          item = action.payload.slice();
+          oldQty = item[1];
+          item = action.payload.slice(0, 4);
         }
         return item;
-      })
-      return { ...state, inCart: newCart }
+      });
+
+      if (action.payload.length === 5) {
+        // Prepare new items
+        let newItems = action.payload.slice(0, 4);
+        newItems[1] -= oldQty;
+        return {
+          ...state,
+          inCart: newCart, 
+          isSuccessfullyAdded: true,
+          newItems
+        };
+      }
+      return { ...state, inCart: newCart };
     case PUR_PLACE_ORDER:
       return {
         ...state,
         inCart: [],
-        orders: { ...state.orders, ...action.payload  }
+        orders: { ...state.orders, ...action.payload }
       }
     default:
       return state;
