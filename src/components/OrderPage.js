@@ -27,6 +27,11 @@ class OrderPage extends Component {
     };
   }
 
+  componentDidMount() {
+    // Scroll to products when redirect to detail page
+    window.scrollTo(0, 0);
+  }
+
   renderTotal(orderId) {
     return <div />
   }
@@ -117,6 +122,7 @@ class OrderPage extends Component {
   renderOrders() {
     const renderArr = [];
 
+    // Render no orders
     if (Object.keys(this.props.orders).length === 0) {
       return (
         <div className="order-page-container mb-4">
@@ -125,7 +131,11 @@ class OrderPage extends Component {
       );
     }
 
-    for (let orderId in this.props.orders) {
+    // Reverse iterate object
+    const revKeysArr = Object.keys(this.props.orders).reverse();
+
+    // for (let orderId in this.props.orders) {
+    for (let orderId of revKeysArr) {
       renderArr.push(
         <div
           key={orderId}

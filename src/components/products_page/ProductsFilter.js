@@ -108,4 +108,3 @@ class ProductsFilter extends Component {
 }
 
 export default connect(null, { filterProducts })(ProductsFilter);
-//TODO: Add 2 lines for filter section

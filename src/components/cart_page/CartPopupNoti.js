@@ -87,7 +87,7 @@ class CartPopup extends Component {
         <div className="d-flex justify-content-between cart-modal-header">
           <h6 className="open-sans text-success">
             <i className="fas fa-check-circle mr-2" />
-            1 item(s) has been added to your cart
+            {this.props.newItems ? this.props.newItems[1] : 1} item(s) has been added to your cart
           </h6>
           <button
             onClick={() => this.props.purCloseAddToCartModal()}
@@ -140,5 +140,3 @@ const mapStateToProps = ({ UserReducers }) => {
 export default connect(mapStateToProps, {
   purCloseAddToCartModal
 })(CartPopup);
-
-//TODO: fix the error of hard code one item has been added

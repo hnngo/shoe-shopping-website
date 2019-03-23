@@ -79,5 +79,3 @@ function validateEmail(email) {
 
   return re.test(String(email).toLowerCase());
 }
-
-//TODO: Remove info when login successfully

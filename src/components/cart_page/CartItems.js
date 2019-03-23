@@ -270,5 +270,3 @@ export default connect(mapStateToProps, {
   purUpdateCart,
   purPlaceOrder
 })(CartItems);
-
-//TODO: Show all of same categories shooes
