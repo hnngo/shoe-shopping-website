@@ -28,7 +28,7 @@ class ShoesPage extends Component {
           panoImageURL={data.imgURL.pages.shoesPage.pano.imgURL}
           categoryName="Shoes"
         />
-        <ProductsPath fullPathName={this.props.history.location.pathname} />
+        <ProductsPath history={this.props.history} />
         <Switch>
           <Route
             exact path={this.props.match.path}

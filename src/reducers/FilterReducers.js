@@ -12,6 +12,8 @@ import {
 const INITIAL_STATE = {
   shoesFilter: Object.values(FILTER_SHOES_SELECTIONS),
   accessoriesFilter: Object.values(FILTER_ACCESSORIES_SELECTIONS),
+  shoesFilterType: "all",
+  accessoriesFilterType: "all"
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -37,11 +39,11 @@ export default (state = INITIAL_STATE, action) => {
             newFilter = action.payload.selectedFilter;
         }
 
-        return { ...state, shoesFilter: newFilter };
+        return { ...state, shoesFilter: newFilter, shoesFilterType: action.payload.selectedFilter };
       } else if (action.payload.type === FILTER_ACCESSORIES) {
         newFilter = action.payload.selectedFilter === "all" ? INITIAL_STATE.accessoriesFilter : action.payload.selectedFilter;
 
-        return { ...state, accessoriesFilter: newFilter };
+        return { ...state, accessoriesFilter: newFilter, accessoriesFilterType: action.payload.selectedFilter };
       } else {
         return { ...state };
       }

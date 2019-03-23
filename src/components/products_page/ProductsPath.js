@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { imgURL } from '../../data.json';
 
 export default class ProductsPath extends Component {
@@ -24,16 +24,20 @@ export default class ProductsPath extends Component {
   renderPath() {
     // Prepare path name
     let productPath = "";
-    let eachPath = this.props.fullPathName.split('/');
+    let eachPath = this.props.history.location.pathname.split('/');
 
     eachPath[0] = "Home";
     if (eachPath.length >= 3) {
-      productPath = this.state.data[eachPath[2]].tag;
-      eachPath[2] = this.state.data[eachPath[2]].name;
+      try {
+        productPath = this.state.data[eachPath[2]].tag;
+        eachPath[2] = this.state.data[eachPath[2]].name;
+      }
+      catch {
+        return <Redirect to={`/${eachPath[1]}`}/>;
+      }
     }
 
     eachPath = eachPath.map(item => item.charAt(0).toUpperCase() + item.slice(1));
-
     // Prepare string link
     const linksPath = eachPath.map((item) => {
       if (item === "Home") {

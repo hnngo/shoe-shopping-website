@@ -28,7 +28,7 @@ class AccessoriesPage extends Component {
           panoImageURL={data.imgURL.pages.accessoriesPage.pano.imgURL}
           categoryName="Accessories"
         />
-        <ProductsPath fullPathName={this.props.history.location.pathname} />
+        <ProductsPath history={this.props.history} />
         <Switch>
           <Route
             exact path={this.props.match.path}

@@ -15,21 +15,38 @@ class ProductsFilter extends Component {
   constructor(props) {
     super(props);
 
-    // Prepare filter content
+    // Prepare filter content and prepare previous selected filter
     let type;
     let typeArr = [];
+    let prevSelection;
+    let selectionArr = [];
 
     if (this.props.path.slice(1) === "shoes") {
       type = FILTER_SHOES;
       typeArr = Object.values(FILTER_SHOES_SELECTIONS);
+      selectionArr = [
+        "all",
+        ...typeArr,
+        FILTER_SNEAKER,
+        FILTER_BOOTS,
+        FILTER_CHELSEA_BOOTS
+      ];
+
+      prevSelection = selectionArr.indexOf(this.props.shoesFilterType);
     } else {
       type = FILTER_ACCESSORIES;
       typeArr = Object.values(FILTER_ACCESSORIES_SELECTIONS);
+      selectionArr = [
+        "all",
+        ...typeArr
+      ];
+
+      prevSelection = selectionArr.indexOf(this.props.accessoriesFilterType);
     }
     typeArr.unshift("all");
 
     this.state = {
-      filterSelected: 0, // All
+      filterSelected: prevSelection, // All
       filterType: type,
       filterTypeArr: typeArr
     };
@@ -107,4 +124,11 @@ class ProductsFilter extends Component {
   }
 }
 
-export default connect(null, { filterProducts })(ProductsFilter);
+const mapStateToProps = ({ FilterReducers }) => {
+  return {
+    shoesFilterType: FilterReducers.shoesFilterType,
+    accessoriesFilterType: FilterReducers.accessoriesFilterType
+  }
+}
+
+export default connect(mapStateToProps, { filterProducts })(ProductsFilter);
