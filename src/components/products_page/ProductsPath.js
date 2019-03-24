@@ -24,37 +24,47 @@ export default class ProductsPath extends Component {
   renderPath() {
     // Prepare path name
     let productPath = "";
-    let eachPath = this.props.history.location.pathname.split('/');
+    let namePath = this.props.history.location.pathname.split('/');
+    let searchPath = "";
 
-    eachPath[0] = "Home";
-    if (eachPath.length >= 3) {
+    // Check if from search page
+    if (namePath[1] === "search") {
+      searchPath = namePath[1] + this.props.history.location.search;
+      namePath[1] += ` results for '${this.props.history.location.search.slice(2)}'`
+    }
+    
+    namePath[0] = "Home";
+    if (namePath.length >= 3) {
       try {
-        productPath = this.state.data[eachPath[2]].tag;
-        eachPath[2] = this.state.data[eachPath[2]].name;
+        productPath = namePath[2];
+        namePath[2] = this.state.data[namePath[2]].name;
       }
       catch {
-        return <Redirect to={`/${eachPath[1]}`}/>;
+        return <Redirect to={`/${namePath[1]}`}/>;
       }
     }
 
-    eachPath = eachPath.map(item => item.charAt(0).toUpperCase() + item.slice(1));
+    namePath = namePath.map(item => item.charAt(0).toUpperCase() + item.slice(1));
+    
     // Prepare string link
-    const linksPath = eachPath.map((item) => {
+    const linksPath = namePath.map((item) => {
       if (item === "Home") {
         return "/";
       } else if (item === "Shoes" || item === "Accessories") {
         return "/" + item.toLowerCase();
+      } else if (item.startsWith("Search")) {
+        return "/" + searchPath;
       } else {
         return "/" + productPath;
       }
     });
     
-    if (eachPath.length >= 3) {
+    if (namePath.length >= 3) {
       linksPath[2] = linksPath[1] + linksPath[2];
     }
-    
-    return eachPath.map((path, i) => {
-      return (i === eachPath.length - 1) ? (
+
+    return namePath.map((path, i) => {
+      return (i === namePath.length - 1) ? (
         <Link key={i} to={linksPath[i]}>
           <p className="bold">{path}</p>
         </Link>
