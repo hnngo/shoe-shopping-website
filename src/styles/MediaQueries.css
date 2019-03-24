@@ -3,6 +3,10 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
+  .navbar-user-btn {
+    margin: 0 !important;
+  }
+
   .landing-wallpaper {
     -webkit-filter: brightness(40%);
             filter: brightness(40%);

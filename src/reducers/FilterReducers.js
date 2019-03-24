@@ -7,13 +7,15 @@ import {
   FILTER_BOOTS,
   FILTER_SNEAKER,
   FILTER_CHELSEA_BOOTS,
+  FILTER_SEARCH_PRODUCTS
 } from '../constants';
 
 const INITIAL_STATE = {
   shoesFilter: Object.values(FILTER_SHOES_SELECTIONS),
   accessoriesFilter: Object.values(FILTER_ACCESSORIES_SELECTIONS),
   shoesFilterType: "all",
-  accessoriesFilterType: "all"
+  accessoriesFilterType: "all",
+  searchKeys: ""
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -47,6 +49,8 @@ export default (state = INITIAL_STATE, action) => {
       } else {
         return { ...state };
       }
+    case FILTER_SEARCH_PRODUCTS:
+      return { ...state, searchKeys: action.payload };
     default:
       return { ...state };
   }

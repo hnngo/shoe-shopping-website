@@ -48,6 +48,7 @@ export const FILTER_ACCESSORIES_SELECTIONS = {
   FILTER_SUNGLASS: "sunglasses",
   FILTER_PURSES:"purses",
 }
+export const FILTER_SEARCH_PRODUCTS = "FILTER_SEARCH_PRODUCTS";
 
 // --------- SHOPPING --------- //
 export const PUR_ADDING_TO_CART = "PUR_ADDING_TO_CART";

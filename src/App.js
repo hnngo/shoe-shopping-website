@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import rootReducer from './reducers';
 import CartItems from './components/cart_page/CartItems';
 import OrderPage from './components/OrderPage';
+import SearchPage from './components/SearchPage';
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +56,6 @@ class App extends Component {
     const store = createStore(rootReducer, {}, enhancer);
 
     // const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
-
     return (
       <BrowserRouter>
         <Provider store={store}>
@@ -67,6 +67,9 @@ class App extends Component {
               <Route path="/accessories" component={AccessoriesPage} />
               <Route path="/cart" component={CartItems} />
               <Route path="/orders" component={OrderPage} />
+              {/* <Route path="/search" component={SearchPage} /> */}
+              {/* Redirect to home when entering wrong paths */}
+              <Route component={SearchPage}/>
             </Switch>
           </div>
           <Footer />
