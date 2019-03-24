@@ -58,10 +58,14 @@ class OrderPage extends Component {
     const today = new Date();
     const deliveryDate = new Date(order.deliveryDate)
     if (deliveryDate <= today) {
-      return "Delivered";
+      return (
+        <span className="badge badge-success badge-pill">Delivered</span>
+      );
     }
 
-    return "Delivering";
+    return (
+      <span className="badge badge-warning badge-pill">Delivering</span>
+    );;
   }
 
   renderItemsInOrder(orderId) {
@@ -111,8 +115,8 @@ class OrderPage extends Component {
           <div className="col-sm-2 col-3 my-auto text-center">
             <p className="my-0">{this.state.data[item[0]].price * item[1]}$</p>
           </div>
-          <div className="col-sm-2 col-5 my-auto text-center">
-            <span className="badge badge-warning badge-pill">{this.renderDeliverStatus(this.props.orders[orderId])}</span>
+          <div className="col-sm-2 col-5 my-auto text-center">    
+            {this.renderDeliverStatus(this.props.orders[orderId])}
           </div>
         </div>
       );

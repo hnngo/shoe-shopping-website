@@ -36,12 +36,6 @@ class App extends Component {
     firebase.auth().signOut();
   }
 
-  componentDidMount() {
-    // Scroll to products when redirect to detail page
-    window.scrollTo(0, 0);
-  }
-
-
   render() {
     // Initial store for redux, which no initial state and apply middleware Redux Thunk
     //-----DEV-----//

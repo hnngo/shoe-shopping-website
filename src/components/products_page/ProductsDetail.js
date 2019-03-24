@@ -18,7 +18,12 @@ class ProductsDetail extends Component {
 
   componentDidMount() {
     // Scroll to products when redirect to detail page
-    window.scrollTo(0, 200);
+    const y = document.querySelector(".products-path").getBoundingClientRect().top + window.scrollY - 50;
+
+    window.scroll({
+      top: y,
+      behavior: 'smooth'
+    });
   }
 
   handleOnChangeQty(e) {
