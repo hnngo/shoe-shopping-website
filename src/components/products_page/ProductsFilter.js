@@ -57,7 +57,7 @@ class ProductsFilter extends Component {
       this.setState({ filterSelected });
       let selectedFilter;
 
-      switch(this.props.filterContent[filterSelected].toLowerCase()) {
+      switch (this.props.filterContent[filterSelected].toLowerCase()) {
         case "sneaker":
           selectedFilter = FILTER_SNEAKER;
           break;
@@ -75,20 +75,10 @@ class ProductsFilter extends Component {
         type: this.state.filterType,
         selectedFilter
       });
-
-      // this.props.filterProducts({
-      //   type: this.state.filterType,
-      //   selectedFilter: this.state.filterTypeArr[filterSelected]
-      // });
     }
   }
 
   renderFilterBubbles(dataArr) {
-    // Check if page need a filter
-    if (dataArr.length === 0) {
-      return <div/>;
-    }
-
     return (
       dataArr.map((d, i) => {
         let selectedClass;
@@ -98,7 +88,7 @@ class ProductsFilter extends Component {
 
         return (
           <li key={i} className="mx-1 d-inline-block">
-            <button 
+            <button
               className={"products-filter-bubbles " + selectedClass}
               onClick={() => this.handleClick(i)}
             >
@@ -111,6 +101,11 @@ class ProductsFilter extends Component {
   }
 
   render() {
+    // Check if page need a filter
+    if (this.props.filterContent.length === 0) {
+      return <div />;
+    }
+
     return (
       <div className="mt-5">
         <p className="open-sans text-center pb-3 italic px-3 w-75 mx-auto">{this.props.headerSentence}</p>

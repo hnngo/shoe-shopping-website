@@ -196,6 +196,13 @@ No media query for `xs` since this is the default in Bootstrap */
     height: 190px;
   }
 
+  .sample-col:hover .landing-image-simple{
+    -webkit-filter: brightness(85%);
+            filter: brightness(85%);
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+
   .sample-products {
     -o-object-fit: cover;
        object-fit: cover;
@@ -227,12 +234,6 @@ No media query for `xs` since this is the default in Bootstrap */
     height: 400px
   }
 
-  .sample-col:hover .landing-image-simple{
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
-  }
 
   .landing-slogan h3 {
     font-size: 46px;
