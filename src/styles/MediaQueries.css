@@ -100,6 +100,11 @@ No media query for `xs` since this is the default in Bootstrap */
 }
 
 @media (min-width: 576px) {
+  .navbar-nav li:hover,
+  .navbar-nav li:active {
+    border-bottom: 2px solid black;
+  }
+
   .landing-wallpaper {
     -webkit-filter: brightness(40%);
             filter: brightness(40%);
