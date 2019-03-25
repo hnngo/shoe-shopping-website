@@ -66,11 +66,11 @@ export default class ProductsPath extends Component {
     return namePath.map((path, i) => {
       return (i === namePath.length - 1) ? (
         <Link key={i} to={linksPath[i]}>
-          <p className="bold">{path}</p>
+          <p className="bold mb-1">{path}</p>
         </Link>
       ) : (
         <Link  key={i} to={linksPath[i]}>
-          <p className="text-muted">{path} /&nbsp;</p>
+          <p className="text-muted mb-0">{path} /&nbsp;</p>
         </Link>
       );
     });
@@ -80,7 +80,7 @@ export default class ProductsPath extends Component {
     return (
       <div className="products-path">
         <div className="container">
-          <div className="d-flex px-1 pt-3">
+          <div className="row px-1 pt-3 pb-1">
             {this.renderPath()}
           </div>
         </div>
@@ -88,5 +88,3 @@ export default class ProductsPath extends Component {
     );
   }
 }
-
-//TODO: On small screen fix path 

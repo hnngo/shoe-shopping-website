@@ -86,5 +86,3 @@ const mapStateToProps = ({ FilterReducers }) => {
 };
 
 export default connect(mapStateToProps)(SearchPage);
-
-//TODO: Render no items to be found

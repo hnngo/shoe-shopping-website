@@ -19,6 +19,19 @@ class NavBar extends Component {
       prevTarget: undefined,
       searchKey: "",
     }
+
+    // Add feature auto collapse when press orther part
+    window.addEventListener('touchend', (e) => {
+      // Get the navbar height
+      const $navbar = document.querySelector('.navbar');
+      const navbarHeight = $navbar.getClientRects().item(0).height;
+
+      // Check if navbar is open and if user touch outside navbar
+      if (navbarHeight > 200 && e.changedTouches.item(0).clientY > navbarHeight + 150) {
+        document.querySelector(".navbar-toggler").click()
+      }
+      //
+    });
   }
 
   // Handle change the input field of search
@@ -152,7 +165,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm">
+        <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
           <div className="container p-0">
             {/* Logo Brand */}
             <Link className="navbar-brand lobster" to="/">
@@ -235,5 +248,3 @@ const mapStateToProps = (state) => {
 export default withRouter(connect(mapStateToProps, {
   authSignOut
 })(NavBar));
-
-//TODO: Color/Style change when at the right path name

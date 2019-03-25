@@ -213,8 +213,7 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   purAddToCart
 })(ProductsDetail)
-
-//TODO: Size guide
+ 
 //TODO: Add more images on other sides of products
 //TODO: When click collapse change the icon to "-"
 //TODO: Random generate recommendation samples

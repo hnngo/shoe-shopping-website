@@ -84,6 +84,14 @@ html, body {
   font-size: 13px;
 }
 
+.navbar {
+  box-shadow: 1px 0px 3px rgb(150, 150, 150)
+}
+
+.navbar-img {
+
+}
+
 .navbar-cartIcon {
   position: relative;
   padding-right: 0px;
@@ -141,6 +149,10 @@ html, body {
 .popup-nav {
   /* padding-top: 5px; */
   padding-bottom: 5px;
+}
+
+.popup-nav-img {
+  max-height: 220px;
 }
 
 .popup-nav-link {

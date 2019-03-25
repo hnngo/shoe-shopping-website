@@ -29,7 +29,7 @@ class PopupNavBar extends Component {
         <div className="row">
           <div className="col1 col-lg-3">
             <Link to="/shoes">
-              <h1 className="lobster text-right">Shoes</h1>
+              <h1 className="lobster text-right display-4">Shoes</h1>
             </Link>
           </div>
           <div className="col-lg-2 col-md-3">
@@ -46,12 +46,12 @@ class PopupNavBar extends Component {
             <div className="row">
               <div className="col-6">
                 <Link to={"/shoes/" + item1.tag}>
-                  <img src={item1.imgURL} alt="" className="img-fluid" />
+                  <img src={item1.imgURL} alt="" className="img-fluid popup-nav-img" />
                 </Link>
               </div>
               <div className="col-6">
                 <Link to={"/shoes/" + item2.tag}>
-                  <img src={item2.imgURL} alt="" className="img-fluid" />
+                  <img src={item2.imgURL} alt="" className="img-fluid popup-nav-img" />
                 </Link>
               </div>
             </div>
@@ -72,7 +72,7 @@ class PopupNavBar extends Component {
         <div className="row">
           <div className="col1 col-lg-3">
             <Link to="/accessories">
-              <h1 className="lobster text-right">Accessories</h1>
+              <h1 className="lobster text-right display-4">Accessories</h1>
             </Link>
           </div>
           <div className="col-lg-2 col-md-3">
@@ -84,17 +84,17 @@ class PopupNavBar extends Component {
             <div className="row">
               <div className="col-4">
                 <Link to={"/accessories/" + item1.tag}>
-                  <img src={item1.imgURL} alt="" className="img-fluid" />
+                  <img src={item1.imgURL} alt="" className="img-fluid popup-nav-img" />
                 </Link>
               </div>
               <div className="col-4">
                 <Link to={"/accessories/" + item2.tag}>
-                  <img src={item2.imgURL} alt="" className="img-fluid" />
+                  <img src={item2.imgURL} alt="" className="img-fluid popup-nav-img" />
                 </Link>
               </div>
               <div className="col-4">
                 <Link to={"/accessories/" + item3.tag}>
-                  <img src={item3.imgURL} alt="" className="img-fluid" />
+                  <img src={item3.imgURL} alt="" className="img-fluid popup-nav-img" />
                 </Link>
               </div>
             </div>
@@ -140,4 +140,3 @@ class PopupNavBar extends Component {
 export default withRouter(connect(null, { filterProducts })(PopupNavBar));
 
 //TODO: Dim other part of website when active popup navbar
-//TODO: On other device, popup navbar insert new div instend of hovering effect
