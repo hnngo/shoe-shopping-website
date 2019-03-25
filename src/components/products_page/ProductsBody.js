@@ -28,6 +28,7 @@ export default class ProductsBody extends Component {
   }
 
   render() {
+    // console.log(this.props.urlPath)
     return (
       <div>
         <ProductsFilter

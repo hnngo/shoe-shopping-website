@@ -30,7 +30,7 @@ export default class ProductsPath extends Component {
     // Check if from search page
     if (namePath[1] === "search") {
       searchPath = namePath[1] + this.props.history.location.search;
-      namePath[1] += ` results for '${this.props.history.location.search.slice(2)}'`
+      // namePath[1] += ` results for '${this.props.history.location.search.slice(2)}'`;
     }
     
     namePath[0] = "Home";

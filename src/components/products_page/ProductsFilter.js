@@ -84,6 +84,11 @@ class ProductsFilter extends Component {
   }
 
   renderFilterBubbles(dataArr) {
+    // Check if page need a filter
+    if (dataArr.length === 0) {
+      return <div/>;
+    }
+
     return (
       dataArr.map((d, i) => {
         let selectedClass;

@@ -8,8 +8,43 @@ import ProductsBody from './products_page/ProductsBody';
 import ProductsRedirect from './products_page/ProductsRedirect';
 
 class SearchPage extends Component {
+  constructor(props) {
+    super(props);
+
+    // Set up item by tag name
+    const dataTag = {};
+
+    for (let key in imgURL.products) {
+      for (let keyInside in imgURL.products[key]) {
+        for (let keyInsideTag in imgURL.products[key][keyInside]) {
+          const productsTag = imgURL.products[key][keyInside][keyInsideTag].tag;
+          dataTag[productsTag] = imgURL.products[key][keyInside][keyInsideTag];
+        }
+      }
+    }
+
+    this.state = {
+      data: dataTag
+    };
+  }
+  
+  getMatchProducts(searchKeys, data=this.state.data) {
+    let matchSearch = Object.keys(data).filter((item) => {
+      if (item.includes(searchKeys) || data[item].name.toLowerCase().includes(searchKeys)) {
+        return true;
+      }
+
+      return false;
+    });
+
+    return matchSearch.map((item) => data[item]);
+  }
+
   render() {
-    console.log(this.props)
+    let matchProducts = this.getMatchProducts(this.props.location.search.slice(2).toLowerCase(), this.state.data);
+
+    console.log(matchProducts);
+    console.log([imgURL.products.shoes.nikeShoes, imgURL.products.shoes.vansShoes]);
     if (this.props.location.pathname.startsWith("/search") && this.props.location.search.startsWith("?=")) {
       return (
         <div>
@@ -18,23 +53,23 @@ class SearchPage extends Component {
             categoryName="Search Results"
           />
           <ProductsPath history={this.props.history} />
-          <Switch>
+          {/* <Switch>
             <Route
               exact path={this.props.match.path}
-              render={() =>
-                <ProductsBody
-                  urlPath={this.props.match.path}
-                  headerSentence={""}
-                  filterContent={["test", "test"]}
-                  productsTag={[imgURL.products.shoes.nikeShoes]}
-                />
-              }
-            />
-            <ProductsRedirect
+              render={() => */}
+          <ProductsBody
+            urlPath={"/search"}
+            headerSentence={`Search reults for "${this.props.location.search.slice(2)}"`}
+            filterContent={""}
+            productsTag={[matchProducts]}
+          />
+          {/* }
+            /> */}
+          {/* <ProductsRedirect
               productsObj={imgURL.products.shoes}
               pathName={this.props.match.path}
-            />
-          </Switch>
+            /> */}
+          {/* </Switch> */}
         </div>
       );
     } else {
@@ -51,4 +86,4 @@ const mapStateToProps = ({ FilterReducers }) => {
 
 export default connect(mapStateToProps)(SearchPage);
 
-//TODO: correct the path for search
+//TODO: Render no items to be found
