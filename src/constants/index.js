@@ -39,7 +39,7 @@ export const FILTER_BOOTS = "boots";
 //   FILTER_SHOES_SELECTIONS.FILTER_DR_MARTENS,
 // ];
 
-export const FILTER_CHELSEA_BOOTS = "chelseaboots";
+export const FILTER_CHELSEA_BOOTS = "chelsea boots";
 
 export const FILTER_ACCESSORIES_SELECTIONS = {
   FILTER_BAGS: "bags",

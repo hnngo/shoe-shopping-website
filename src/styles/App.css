@@ -131,6 +131,10 @@ html, body {
   padding-bottom: 5px;
 }
 
+.popup-nav-link {
+  cursor: pointer;
+}
+
 /* --------- LOGIN --------- */
 .login-notification-text {
   color: red;

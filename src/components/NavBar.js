@@ -105,11 +105,11 @@ class NavBar extends Component {
               </button>
             </div>
           </Link>
-          <div className="btn-group navbar-user-btn mt-auto">
+          <div className="btn-group navbar-user-btn mt-auto w-100">
             <button type="button" className="cart-modal-close-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i className="fas fa-user mr-1" />User
             </button>
-            <div className="dropdown-menu dropdown-menu-right">
+            <div className="dropdown-menu w-100 dropdown-menu-right dropdown-menu-lg-left">
               <Link to="/orders">
                 <button className="dropdown-item" type="button">Orders</button>
               </Link>
@@ -192,27 +192,17 @@ class NavBar extends Component {
                   </a>
                 </li> */}
               </ul>
-              {/* <form className="form-inline my-2 my-lg-0"> */}
-                <input
-                  className="nav-search form-control mr-sm-2 rounded-pill"
-                  onSubmit={() => false}
-                  // type="search"
-                  placeholder="Search for items and brands"
-                  style={{ width: "180px" }}
-                  value={this.state.searchKey}
-                  onChange={(e) => this.handleOnChangeSearch(e)}
-                  onKeyPress={(e) => this.handleOnPressSearch(e)}
-                />
-                {/* <Link to="/cart">
-                    <button
-                      type="button"
-                      className="btn my-2 my-sm-0"
-                    >
-                      <i className="fas fa-shopping-cart" />
-                    </button>
-                  </Link> */}
-                {this.renderUserIcon()}
-              {/* </form> */}
+              <input
+                className="nav-search form-control mr-sm-2 rounded-pill"
+                onSubmit={() => false}
+                // type="search"
+                placeholder="Search for items and brands"
+                style={{ width: "180px" }}
+                value={this.state.searchKey}
+                onChange={(e) => this.handleOnChangeSearch(e)}
+                onKeyPress={(e) => this.handleOnPressSearch(e)}
+              />
+              {this.renderUserIcon()}
             </div>
           </div>
         </nav>

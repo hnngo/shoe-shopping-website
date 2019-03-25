@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { filterProducts } from '../actions';
 import data from '../data.json';
+import {
+  FILTER_SHOES,
+  FILTER_ACCESSORIES,
+  FILTER_SHOES_SELECTIONS,
+  FILTER_ACCESSORIES_SELECTIONS,
+  FILTER_BOOTS,
+  FILTER_CHELSEA_BOOTS,
+  FILTER_SNEAKER
+} from '../constants';
 
-export default class PopupNavBar extends Component {
+class PopupNavBar extends Component {
+  handleClickNavItems(type, filterContent) {
+    this.props.filterProducts(filterContent);
+    this.props.history.push(`/${type}`);
+  }
+
   renderPopupShoe() {
     return (
       <div className="container-fluid py-3 popup-nav">
         <div className="row">
           <div className="col1 col-lg-3">
-            <h2 className="monteserrat text-right">SHOES</h2> 
+            <h2 className="monteserrat text-right">SHOES</h2>
           </div>
           <div className="col-lg-2 col-md-3 border-left border-secondary">
             <h4>By Brands</h4>
-            {this.renderList(data.navbar.shoes.byBrand)}
+            {this.renderList(data.navbar.shoes.byBrand, ...Object.values(FILTER_SHOES_SELECTIONS))}
           </div>
           <div className="col-lg-2 col-md-3 border-left border-secondary">
             <h4>By Style</h4>
-            {this.renderList(data.navbar.shoes.byStyle)}
+            {this.renderList(data.navbar.shoes.byStyle, FILTER_SNEAKER, FILTER_BOOTS, FILTER_CHELSEA_BOOTS)}
           </div>
           <div className="col-lg-5 col-md-6 border-left border-secondary">
             <h1>Image</h1>
@@ -31,11 +47,11 @@ export default class PopupNavBar extends Component {
       <div className="container-fluid py-3 popup-nav">
         <div className="row">
           <div className="col1 col-lg-3">
-            <h2 className="monteserrat text-right">ACCESSORIES</h2> 
+            <h2 className="monteserrat text-right">ACCESSORIES</h2>
           </div>
           <div className="col-lg-2 col-md-3 border-left border-secondary">
             <h4>By Type</h4>
-            {this.renderList(data.navbar.accessories.byType)}
+            {this.renderList(data.navbar.accessories.byType, ...Object.values(FILTER_ACCESSORIES_SELECTIONS))}
           </div>
           <div className="col-lg-7 col-md-6 border-left border-secondary">
             <h1>Image</h1>
@@ -45,11 +61,23 @@ export default class PopupNavBar extends Component {
     );
   }
 
-  renderList(list) {
+  renderList(list, ...category) {
     return list.map((d, i) => {
-      let path = "/" + d.toLowerCase();
+      let filterType = this.props.popupType === "shoes" ? FILTER_SHOES : FILTER_ACCESSORIES;
 
-      return <li key={i}><Link to={path}>{d}</Link></li>;
+      return (
+        <li
+          key={i}
+          className="popup-nav-link"
+          onClick={() => this.handleClickNavItems(
+            this.props.popupType, {
+            type: filterType,
+            selectedFilter: category[i]
+          })}
+        >
+          {d}
+        </li>
+      );
     });
   }
 
@@ -65,6 +93,8 @@ export default class PopupNavBar extends Component {
     );
   }
 }
+
+export default withRouter(connect(null, { filterProducts })(PopupNavBar));
 
 //TODO: Dim other part of website when active popup navbar
 //TODO: Random pick up 1 or more products to show on popup nav bar

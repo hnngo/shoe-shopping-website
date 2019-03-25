@@ -56,16 +56,12 @@ class ProductsFilter extends Component {
     if (filterSelected !== this.state.filterSelected) {
       this.setState({ filterSelected });
       let selectedFilter;
-
+      
       switch (this.props.filterContent[filterSelected].toLowerCase()) {
-        case "sneaker":
-          selectedFilter = FILTER_SNEAKER;
-          break;
-        case "boots":
-          selectedFilter = FILTER_BOOTS;
-          break;
-        case "chelsea boots":
-          selectedFilter = FILTER_CHELSEA_BOOTS;
+        case FILTER_BOOTS:
+        case FILTER_CHELSEA_BOOTS:
+        case FILTER_SNEAKER:
+          selectedFilter = this.props.filterContent[filterSelected].toLowerCase();
           break;
         default:
           selectedFilter = this.state.filterTypeArr[filterSelected];
