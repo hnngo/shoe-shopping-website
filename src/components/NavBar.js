@@ -12,6 +12,7 @@ class NavBar extends Component {
     super(props);
 
     this.state = {
+      firstLoad: true,
       showPopup: false,
       enterPopup: false,
       curTarget: undefined,
@@ -40,6 +41,7 @@ class NavBar extends Component {
 
     // Show popup and save the current cursor pointing
     this.setState({
+      firstLoad: false,
       showPopup: true,
       curTarget: e.target.innerHTML.toLowerCase()
     });
@@ -59,7 +61,7 @@ class NavBar extends Component {
         this.setState({
           showPopup: false,
           curTarget: undefined,
-          prevTarget: undefined
+          // prevTarget: undefined
         });
       }
     }, 300);
@@ -75,8 +77,17 @@ class NavBar extends Component {
       return (
         <PopupNavBar
           onMouseEnter={() => this.setState({ enterPopup: true })}
-          onMouseOut={() => this.setState({ enterPopup: false, showPopup: false })}
+          onMouseLeave={() => this.setState({ enterPopup: false, showPopup: false })}
           popupType={this.state.curTarget}
+          animatedStyle="fadeInDown"
+        />
+      );
+    } else if (!this.state.showPopup && (window.innerWidth >= 768 && !this.state.firstLoad)) {
+      // Create fade out animation when mouse leave
+      return (
+        <PopupNavBar
+          popupType={this.state.prevTarget}
+          animatedStyle="fadeOutUp"
         />
       );
     }
@@ -109,7 +120,7 @@ class NavBar extends Component {
             <button type="button" className="cart-modal-close-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i className="fas fa-user mr-1" />User
             </button>
-            <div className="dropdown-menu w-100 dropdown-menu-right dropdown-menu-lg-left">
+            <div className="dropdown-menu w-100 dropdown-menu-lg-right">
               <Link to="/orders">
                 <button className="dropdown-item" type="button">Orders</button>
               </Link>
@@ -197,7 +208,7 @@ class NavBar extends Component {
                 onSubmit={() => false}
                 // type="search"
                 placeholder="Search for items and brands"
-                style={{ width: "180px" }}
+                style={{ width: "198px" }}
                 value={this.state.searchKey}
                 onChange={(e) => this.handleOnChangeSearch(e)}
                 onKeyPress={(e) => this.handleOnPressSearch(e)}

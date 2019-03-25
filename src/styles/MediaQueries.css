@@ -15,7 +15,7 @@ No media query for `xs` since this is the default in Bootstrap */
     width: 100vw;
     height: 300px;
   }
-  
+
   .landing-picture-text h2 {
     font-size: 22px;
   }
@@ -67,7 +67,7 @@ No media query for `xs` since this is the default in Bootstrap */
     text-decoration: none;
     color: black;
   }
-  
+
   .cart-modal-notification {
     top: 17%;
     bottom: 17%;
@@ -93,7 +93,7 @@ No media query for `xs` since this is the default in Bootstrap */
   .cart-checkout-svg {
     width: 40px;
   }
-  
+
   .order-img {
     max-width: 260px;
   }
@@ -126,7 +126,7 @@ No media query for `xs` since this is the default in Bootstrap */
     width: 100%;
     height: 380px;
   }
-  
+
   .text-quote {
     text-align: left;
   }

@@ -4,7 +4,6 @@ import data from '../../data.json';
 
 export default class LandingPicture extends Component {
   handleClickLearnMore() {
-    // document.querySelector("#learnMore").scrollIntoView();
     const y = document.querySelector("#learnMore").getBoundingClientRect().top + window.scrollY - 50;
     window.scroll({
       top: y,

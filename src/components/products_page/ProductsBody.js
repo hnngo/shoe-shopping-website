@@ -40,7 +40,7 @@ export default class ProductsBody extends Component {
         return (
           <div key={d} className="w-75 mx-auto">
             <img src={imgURL.pages.searchPage.noItems.imgURL} className="img-fluid animated pulse fast infinite" alt="landing-sample-shoes" />
-            <h4>No item(s) Found</h4>
+            <h4>No "{this.props.searchItem}" item(s) found</h4>
             <p className="text-muted">Sorry but we can't find the item(s) you are looking for</p>
           </div>
         );

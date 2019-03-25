@@ -28,7 +28,7 @@ class OrderPage extends Component {
   }
 
   componentDidMount() {
-    // Scroll to products when redirect to detail page
+    //  products when redirect to detail page
     window.scrollTo(0, 0);
   }
 

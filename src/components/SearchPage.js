@@ -34,6 +34,14 @@ class SearchPage extends Component {
     };
   }
 
+  componentDidUpdate() {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+
   getMatchProducts(searchKeys, data = this.state.data) {
     let matchSearch = Object.keys(data).filter((item) => {
       if (item.includes(searchKeys) || data[item].name.toLowerCase().includes(searchKeys)) {
@@ -58,6 +66,7 @@ class SearchPage extends Component {
           <ProductsPath history={this.props.history} />
           <ProductsBody
             urlPath={"/search"}
+            searchItem={this.props.location.search.slice(2)}
             headerSentence={`${matchProducts.length} search results for "${this.props.location.search.slice(2)}"`}
             filterContent={""}
             productsTag={[matchProducts]}
