@@ -173,6 +173,10 @@ No media query for `xs` since this is the default in Bootstrap */
     height: 190px;
   }
 
+  .feedback-container {
+    height: 100%;
+  }
+
   .cart-modal-item-detail {
     border-right: 1px solid rgb(192, 192, 192)
   }
@@ -214,6 +218,11 @@ No media query for `xs` since this is the default in Bootstrap */
     width: 100%;
     height: 220px;
   }
+
+  .feedback-container {
+    height: 450px;
+  }
+
 
   .cart-item-container{
     margin-left: 5%;
@@ -272,7 +281,7 @@ No media query for `xs` since this is the default in Bootstrap */
   .products-detail-des-text {
     line-height: 20px;
   }
-
+  
   .cart-item-detail img {
     max-width: 190px;
   }

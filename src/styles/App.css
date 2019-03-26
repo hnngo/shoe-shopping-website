@@ -273,7 +273,7 @@ html, body {
 .footer-container {
   width: 100vw;
   /* margin-top: 25px; */
-  background-color: rgba(0, 0, 0, 0.5)
+  background-color: rgb(53, 48, 48)
 }
 
 /* ------- LOGIN MODAL --------*/
