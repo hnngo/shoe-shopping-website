@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import PopupNavBar from './PopupNavBar';
 import LoginModal from './LoginModal';
 import {
-  authSignOut
+  authSignOut,
+  authResetLoginInformation
 } from '../actions';
 
 class NavBar extends Component {
@@ -32,6 +33,17 @@ class NavBar extends Component {
       }
       //
     });
+  }
+
+  componentDidMount() {
+    // Reset personal information at first signin
+    const $userBtnBeforeLogin = document.querySelector('#userBtnBeforeLogin');
+
+    if ($userBtnBeforeLogin) {
+     $userBtnBeforeLogin.addEventListener('click', () => {
+       this.props.authResetLoginInformation();
+     })
+    }
   }
 
   // Handle change the input field of search
@@ -153,6 +165,7 @@ class NavBar extends Component {
       return (
         <button
           type="button"
+          id="userBtnBeforeLogin"
           className="btn my-2 my-sm-0"
           data-toggle="modal"
           data-target="#loginModal">
@@ -246,5 +259,6 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, {
-  authSignOut
+  authSignOut,
+  authResetLoginInformation
 })(NavBar));

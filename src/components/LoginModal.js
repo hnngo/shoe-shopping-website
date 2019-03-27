@@ -22,12 +22,21 @@ class LoginModal extends Component {
       showConfirm: false,
       signingUp: false,
     };
+  }
 
-    // Close login modal and reset if no successful attempt to login
-    //TODO:
-    const $closeLoginModalBtn = document.querySelector("#close-login-btn");
-    if ($closeLoginModalBtn && !this.props.isSignInSuccessfully) {
-      $closeLoginModalBtn.onclick = () => this.props.authResetLoginInformation();
+  componentDidMount() {
+    const $loginModal = document.querySelector('#loginModal')
+    if ($loginModal) {
+      $loginModal.addEventListener('keypress', (e) => {
+        const { isValidinputEmail, isValidinputPassword } = this.props;
+
+        // Check if signin btn clickable
+        const signInCondition = isValidinputEmail && isValidinputPassword;
+        const $singInBtn = document.querySelector("#signInBtn");
+        if (signInCondition && e.key === "Enter" && $singInBtn) {
+          $singInBtn.click();
+        }
+      })
     }
   }
 
@@ -81,7 +90,7 @@ class LoginModal extends Component {
 
     // Check if signin btn clickable
     const signInCondition = isValidinputEmail && isValidinputPassword;
-    
+
     if (!this.state.showConfirm) {
       return signInCondition ? (
         <button
@@ -125,15 +134,15 @@ class LoginModal extends Component {
         Sign Up
       </button>
     ) : (
-      <button
-        type="button"
-        id="signUpBtn"
-        disabled
-        className="btn btn-secondary w-100 rounded-pill mx-0 my-2"
-      >
-        Sign Up
+        <button
+          type="button"
+          id="signUpBtn"
+          disabled
+          className="btn btn-secondary w-100 rounded-pill mx-0 my-2"
+        >
+          Sign Up
       </button>
-    );
+      );
   }
 
   renderBackToSignIn() {
@@ -160,23 +169,6 @@ class LoginModal extends Component {
         </div>
       );
     }
-  }
-
-  componentDidMount() {
-    const $loginModal = document.querySelector('#loginModal')
-    if ($loginModal) {
-      $loginModal.addEventListener('keypress', (e) => {
-        const { isValidinputEmail, isValidinputPassword } = this.props;
-    
-        // Check if signin btn clickable
-        const signInCondition = isValidinputEmail && isValidinputPassword;
-        const $singInBtn = document.querySelector("#signInBtn");
-        if (signInCondition && e.key === "Enter" && $singInBtn) {
-          $singInBtn.click();
-        }
-      })
-    }
-
   }
 
   render() {
@@ -272,6 +264,8 @@ const mapStateToProps = ({ AuthReducers }) => {
   // Close login modal after successfully sign in
   if (AuthReducers.isSignInSuccessfully || AuthReducers.isCreatingSuccessfully) {
     document.querySelector("#close-login-btn").click();
+  } else {
+
   }
 
   // Return state to props
@@ -296,7 +290,4 @@ export default connect(mapStateToProps, {
   authCreateAccountWithEmailAndPassword
 })(LoginModal)
 
-//TODO: When fail login first, reopen the modal wont show again notification
-//TODO: Login information wont save if close the modal
-//TODO: Signout button was hidden in small screen
 //TODO: When being redirected show login modal

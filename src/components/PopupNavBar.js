@@ -75,12 +75,12 @@ class PopupNavBar extends Component {
               <h1 className="lobster text-right display-4">Accessories</h1>
             </Link>
           </div>
-          <div className="col-lg-2 col-md-3">
+          <div className="col-lg-2 col-md-4">
             <h5 className="bold">BY TYPES</h5>
             <div className="w-75 border-top pb-2 mt-2" />
             {this.renderList(data.navbar.accessories.byType, ...Object.values(FILTER_ACCESSORIES_SELECTIONS))}
           </div>
-          <div className="col-lg-7 col-md-6">
+          <div className="col-lg-7 col-md-8">
             <div className="row">
               <div className="col-4">
                 <Link to={"/accessories/" + item1.tag}>

@@ -12,7 +12,8 @@ class ProductsDetail extends Component {
     this.state = {
       chosenSize: this.props.category === "shoes" ? 8.5 : "XS",
       qty: 1,
-      showAlert: false
+      showAlert: false,
+      purchasable: true
     }
   }
 
@@ -55,7 +56,13 @@ class ProductsDetail extends Component {
       return;
     }
 
-    this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize, this.props.inCart);
+    // Prevent from double clicking add to cart
+    this.setState({ purchasable: false }, () => {
+      this.props.purAddToCart(this.props.item.tag, this.state.qty, this.state.chosenSize, this.props.inCart);
+
+      // Turn on if user just dimiss the popup cart noti
+      setTimeout(() => this.setState({ purchasable: true }), 500);
+    });
   }
 
   // handleClickAddToWishlist() {
@@ -181,6 +188,7 @@ class ProductsDetail extends Component {
             )}
             {this.renderAlert()}
             <button
+              disabled={!this.state.purchasable}
               type="button"
               className="btn btn-dark btn-block"
               onClick={() => this.handleClickAddToCart()}
@@ -213,8 +221,7 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   purAddToCart
 })(ProductsDetail)
- 
+
 //TODO: Add more images on other sides of products
 //TODO: When click collapse change the icon to "-"
 //TODO: Random generate recommendation samples
-//TODO: IN adding time, disable add to cart and add to wish list
