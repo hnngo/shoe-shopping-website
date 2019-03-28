@@ -220,7 +220,11 @@ class ProductsDetail extends Component {
             </button> */}
           </div>
         </div>
-        <ProductsRecommend />
+        <ProductsRecommend 
+          itemInfo={this.props.item}
+          category={this.props.category}
+          number={4}
+        />
         <CartPopup />
       </div>
     );
