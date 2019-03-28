@@ -105,7 +105,7 @@ export default () => {
     <div className="feedback-container img-fluid my-4 py-3">
       <div className="container w-100 py-4">
         <p className="lobster h2 pb-3">What our customers think about us?</p>
-        <div className="d-md-none d-lg-block">
+        <div className="d-none d-lg-block">
           <div className="row my-3 justify-content-md-center feedback-img-container">
             {renderAvatar(7)}
           </div>
@@ -114,7 +114,7 @@ export default () => {
           </div>
         </div>
 
-        <div className="d-none d-md-block d-lg-none">
+        <div className="d-lg-none d-xl-none">
           <div className="row my-3">
             <div className="col-sm-3">
               <img src={`https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`} className="feedback-avatar img-fluid" alt="user-1" />

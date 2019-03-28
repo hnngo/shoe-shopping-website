@@ -156,9 +156,11 @@ class ProductsDetail extends Component {
       if (item.includes(this.props.item.tag) && item.includes(this.state.chosenSize)) {
         return (
           <div key={i} className="mt-2">
-            <p className="italic open-sans text-primary">*There {item[1] > 1 ? "have" : "has"}{item[1]} item(s) in your cart</p>
+            <p className="italic open-sans text-primary">*There {item[1] > 1 ? "have" : "has"} {item[1]} item(s) in your cart</p>
           </div>
         );
+      } else {
+        return <div />;
       }
     });
   }

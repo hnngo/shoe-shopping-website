@@ -85,7 +85,8 @@ html, body {
 }
 
 .navbar {
-  box-shadow: 1px 0px 3px rgb(150, 150, 150)
+  -webkit-box-shadow: 1px 0px 3px rgb(150, 150, 150);
+          box-shadow: 1px 0px 3px rgb(150, 150, 150)
 }
 
 .navbar-cartIcon {
@@ -133,7 +134,8 @@ html, body {
   z-index: 100;
   width: 100vw;
   background-color: #ffffff;
-  box-shadow: 0.5px 0.5px 1px #b5b8bd;
+  -webkit-box-shadow: 0.5px 0.5px 1px #b5b8bd;
+          box-shadow: 0.5px 0.5px 1px #b5b8bd;
   /* visibility: hidden; */
 }
 
@@ -237,8 +239,8 @@ html, body {
 
 /* ------- LANDING FEEDBACK --------*/
 .feedback-container {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("https://lh3.googleusercontent.com/mbdypRDPWvhqe4KYzve1BM7PhhDaq-YoZI1ksoejfAFpRdBL74sE7hmKeuThyykmSTKoQczwRQa7lMpL0DrvXSRjXWQz-SzlMOr3BHaYXwzRT2asGIHQlmvuIA6FJl6vJ9vjUknp9zWZF0DmPj7JPzoeCzF-8lU655hy9jn8O8FNPL-vZflhdpBTcXDuN2UMIIFwV8wCsR5p2KPbbo7Uq-vOT_NGO4JaR48I-NjENJpcwu3FurqvbIAmScwx2fRP-R5aGXOXZYMvpL9GHOOtUzED3t4b_omib6lvA-lHmX9PK2r3jws_5-ndRobO5g-RH3CyKn82lO3xJYfWMGvw_01NsR5pKXe5ZLMiK2PRykkesy_-4t11h_xKcmpuJkbIBSYyAEV7HnE9KLYjWiN3lJUmmDxOtu4u0vWUEhfl3I-uYQCHDxjNeiKr_pWF30wzlD2ejNiNTdQYpoPms09MQsdsbxl9BfSuF96JVaCBEK8kmaLqaDoyFY1gZ950wC84ptU9rhmKifNljulC5KVa1jmXNwbnj7jEg258dEYa7sWhkWwLpP5o86DS5cfZZ8uhVvbAvSdJ8VeHl-hjdAbbtSPMFM9fam-nj-HvHv-5VaPUec121SQJe4N07lvgYYuDCKRerDVROZcwBQcr8UsjxwZSea5kpQs=w1874-h1056-no");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/mbdypRDPWvhqe4KYzve1BM7PhhDaq-YoZI1ksoejfAFpRdBL74sE7hmKeuThyykmSTKoQczwRQa7lMpL0DrvXSRjXWQz-SzlMOr3BHaYXwzRT2asGIHQlmvuIA6FJl6vJ9vjUknp9zWZF0DmPj7JPzoeCzF-8lU655hy9jn8O8FNPL-vZflhdpBTcXDuN2UMIIFwV8wCsR5p2KPbbo7Uq-vOT_NGO4JaR48I-NjENJpcwu3FurqvbIAmScwx2fRP-R5aGXOXZYMvpL9GHOOtUzED3t4b_omib6lvA-lHmX9PK2r3jws_5-ndRobO5g-RH3CyKn82lO3xJYfWMGvw_01NsR5pKXe5ZLMiK2PRykkesy_-4t11h_xKcmpuJkbIBSYyAEV7HnE9KLYjWiN3lJUmmDxOtu4u0vWUEhfl3I-uYQCHDxjNeiKr_pWF30wzlD2ejNiNTdQYpoPms09MQsdsbxl9BfSuF96JVaCBEK8kmaLqaDoyFY1gZ950wC84ptU9rhmKifNljulC5KVa1jmXNwbnj7jEg258dEYa7sWhkWwLpP5o86DS5cfZZ8uhVvbAvSdJ8VeHl-hjdAbbtSPMFM9fam-nj-HvHv-5VaPUec121SQJe4N07lvgYYuDCKRerDVROZcwBQcr8UsjxwZSea5kpQs=w1874-h1056-no");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("https://lh3.googleusercontent.com/O4PGPaxclX68EVYix3YLXMbIMRDzGRoS9zXgtNo69XKHc9h9_f3_ayxs3-XKfsnx1358kaOLiwupt4Pu2KjepAOUw1VkPj3QzoegRdMbdS4l5zPGwX-vPuvUP4sCajolN4vhZpd07Hf118gQprLMg3GD5XNDO3undW0UF01RZ4LY1FBzialKebcGtRJpOm5bs84d3UlEFXAgquKe9WpHzvcDjyJZL-VOIStwtV3KWqLG4v_C8jKMLVnV-2sapst-lDNb2WC7aHD712WBTZOTYqL7C4Gjv3MBnEjpZEfbDNFwbv2jLsEVQCwUHy4SEtdPyqwbRDOHm2oRn1VM2OrrGHtQCKU5qw9wqV_EC2i9oh1yMg6-Q1ccCVAL2tF7GYohOXb8aZqJisWw16tFS2tNqngQdk8pd4zbtkABoJmqSHxGLIzsSO5Ogd_vzg5_A6XBFkITwL-gsZ8gexUNU6i6VdEs45DpEDdsb1sxQTZB3ZN1vR-506t10K-_cH7-D_DyvkxBXJ1Q3JKWWEv4Wegb_aEHasDIJaImdmvGEJ-KJbNJ-62j7nnXLu43G6k-ib_u_kxV26EhXG2WiAM9DSaj49kjp_QZLWbRy1gxB73BaR3DoruzPRx3Su_6bjWl7V19jVk2LEoShv4rKAo1pdvYkRe47-7zBT0=w1900-h1070-no");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/O4PGPaxclX68EVYix3YLXMbIMRDzGRoS9zXgtNo69XKHc9h9_f3_ayxs3-XKfsnx1358kaOLiwupt4Pu2KjepAOUw1VkPj3QzoegRdMbdS4l5zPGwX-vPuvUP4sCajolN4vhZpd07Hf118gQprLMg3GD5XNDO3undW0UF01RZ4LY1FBzialKebcGtRJpOm5bs84d3UlEFXAgquKe9WpHzvcDjyJZL-VOIStwtV3KWqLG4v_C8jKMLVnV-2sapst-lDNb2WC7aHD712WBTZOTYqL7C4Gjv3MBnEjpZEfbDNFwbv2jLsEVQCwUHy4SEtdPyqwbRDOHm2oRn1VM2OrrGHtQCKU5qw9wqV_EC2i9oh1yMg6-Q1ccCVAL2tF7GYohOXb8aZqJisWw16tFS2tNqngQdk8pd4zbtkABoJmqSHxGLIzsSO5Ogd_vzg5_A6XBFkITwL-gsZ8gexUNU6i6VdEs45DpEDdsb1sxQTZB3ZN1vR-506t10K-_cH7-D_DyvkxBXJ1Q3JKWWEv4Wegb_aEHasDIJaImdmvGEJ-KJbNJ-62j7nnXLu43G6k-ib_u_kxV26EhXG2WiAM9DSaj49kjp_QZLWbRy1gxB73BaR3DoruzPRx3Su_6bjWl7V19jVk2LEoShv4rKAo1pdvYkRe47-7zBT0=w1900-h1070-no");
 
   background-size: cover;
   background-repeat: none;
@@ -251,6 +253,7 @@ html, body {
 .feedback-avatar {
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.295);
+  -webkit-transition: height 0.6s;
   transition: height 0.6s;
 }
 
