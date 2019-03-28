@@ -151,6 +151,18 @@ class ProductsDetail extends Component {
     }
   }
 
+  renderInCartAlr() {
+    return this.props.inCart.map((item, i) => {
+      if (item.includes(this.props.item.tag) && item.includes(this.state.chosenSize)) {
+        return (
+          <div key={i} className="mt-2">
+            <p className="italic open-sans text-primary">*There {item[1] > 1 ? "have" : "has"}{item[1]} item(s) in your cart</p>
+          </div>
+        );
+      }
+    });
+  }
+
   render() {
     return (
       <div className="container my-5">
@@ -195,6 +207,7 @@ class ProductsDetail extends Component {
             >
               <i className="fas fa-cart-plus mr-2"></i>Add to cart
             </button>
+            {this.renderInCartAlr()}
             {/* <button
               type="button"
               className="btn btn-outline-dark btn-block"
