@@ -4,6 +4,7 @@ import CartPopup from '../cart_page/CartPopupNoti';
 import {
   purAddToCart
 } from '../../actions';
+import ProductsRecommend from './ProductsRecommend';
 
 class ProductsDetail extends Component {
   constructor(props) {
@@ -219,6 +220,7 @@ class ProductsDetail extends Component {
             </button> */}
           </div>
         </div>
+        <ProductsRecommend />
         <CartPopup />
       </div>
     );
@@ -238,5 +240,5 @@ export default connect(mapStateToProps, {
 })(ProductsDetail)
 
 //TODO: Add more images on other sides of products
-//TODO: When click collapse change the icon to "-"
 //TODO: Random generate recommendation samples
+//TODO: Add detail warranty

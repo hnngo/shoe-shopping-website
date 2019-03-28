@@ -6,7 +6,10 @@ import LandingFeedback from './LandingFeedback';
 
 export default class LandingPage extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   render() {

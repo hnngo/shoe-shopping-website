@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import data from '../../data.json';
+import ProductsView from '../products_page/ProductsView.js';
 
 const products = data.imgURL.products;
 
@@ -8,13 +8,26 @@ export default class LandingSampleProducts extends Component {
   renderProduct(type, ...arrProduct) {
     return arrProduct.map((item, i) => {
       return (
-        <div className="col-md-4 col-sm-12" key={i}>
-          <Link className="sample-link" to={`/${type}/${item.tag}`}>
-            <img src={item.imgURL} className="sample-products img-fluid" alt={item.name.toLowerCase().replace(" ", "-")} />
-            <p className="monteserrat bold mb-0 mt-1">{item.name.toUpperCase()}</p>
-            <p className="open-sans">{item.price}$</p>
-          </Link>
-        </div>
+        <ProductsView
+          key={i}
+          optionDivClass={"col-md-4 col-sm-12"}
+          optionLinkClass={"sample-link"}
+          optionImgClass={"sample-products img-fluid"}
+          itemLink={`/${type}/${item.tag}`}
+          itemSrcImg={item.imgURL}
+          itemName={item.name}
+          itemAltImg={item.name.toLowerCase().replace(" ", "-")}
+          itemPrice={item.price}
+        />
+
+
+        // <div className="col-md-4 col-sm-12" key={i}>
+        //   <Link className="sample-link" to={`/${type}/${item.tag}`}>
+        //     <img src={item.imgURL} className="sample-products img-fluid" alt={item.name.toLowerCase().replace(" ", "-")} />
+        //     <p className="monteserrat bold mb-0 mt-1">{item.name.toUpperCase()}</p>
+        //     <p className="open-sans">{item.price}$</p>
+        //   </Link>
+        // </div>
       );
     })
   }

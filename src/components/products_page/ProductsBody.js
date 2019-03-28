@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import ProductsFilter from './ProductsFilter';
 import { imgURL } from '../../data.json';
+import ProductsView from './ProductsView';
 
 export default class ProductsBody extends Component {
   constructor(props) {
@@ -49,16 +49,13 @@ export default class ProductsBody extends Component {
       // Exist items
       return Object.keys(d).map((k, i) => {
         return (
-          <div
-            className="col-lg-3 col-md-4 col-sm-6 col-xs-12 my-2"
+          <ProductsView
             key={d + i}
-          >
-            <Link to={this.renderProductsPath(d[k].tag)}>
-              <img src={d[k].imgURL} className="products-product-img" alt="landing-sample-shoes" /><br />
-              <p className="products-products-title monteserrat mb-1 bold">{d[k].name.toUpperCase()}</p>
-            </Link>
-            <p>{d[k].price}$S</p>
-          </div>
+            itemLink={this.renderProductsPath(d[k].tag)}
+            itemSrcImg={d[k].imgURL}
+            itemName={d[k].name}
+            itemPrice={d[k].price}
+          />
         );
       });
     });
