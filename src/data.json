@@ -18,7 +18,7 @@
         "Bags",
         "Belts",
         "Gloves",
-        "Sun Glasses",
+        "Sunglasses",
         "Purses"
       ]
     }
@@ -60,7 +60,7 @@
     },
     "products": {
       "shoes": {
-        "nikeShoes": {
+        "nike": {
           "shoe1": {
             "name": "Nike Air Jordan Retro 9",
             "description": "The Air Jordan 9 Retro offers durable comfort as it pays tribute to the iconic AJ 9. It features a Japanese-inspired design and a multi-language outsole that spells out Jordan's personality traits.",
@@ -102,7 +102,7 @@
             "star": 5
           }
         },
-        "adidasShoes": {
+        "adidas": {
           "shoe1": {
             "name": "Solar Glide Shoes",
             "description": "A go-to pair for all your runs, these shoes have energised cushioning that works with a flexible outsole to deliver a smooth and comfortable ride. The breathable mesh upper is designed to support and stretch as you move for an optimal fit.",
@@ -144,7 +144,7 @@
             "star": 5
           }
         },
-        "vansShoes": {
+        "vans": {
           "shoe1": {
             "name": "Cheackboard Slip-On",
             "description": "The Classic Slip-On has a low profile, slip-on canvas upper with all-over checker print, elastic side accents, Vans flag label and Vans original Waffle Outsole.",

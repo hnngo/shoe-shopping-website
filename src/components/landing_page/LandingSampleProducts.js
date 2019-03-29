@@ -28,7 +28,7 @@ export default class LandingSampleProducts extends Component {
           <div className="row">
             {this.renderProduct(
               "shoes",
-              products.shoes.nikeShoes.shoe4, products.shoes.nikeShoes.shoe2, products.shoes.nikeShoes.shoe5
+              products.shoes.nike.shoe4, products.shoes.nike.shoe2, products.shoes.nike.shoe5
             )}
           </div>
         </div>

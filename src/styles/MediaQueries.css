@@ -53,6 +53,10 @@ No media query for `xs` since this is the default in Bootstrap */
     display: none;
   }
 
+  .products-path .container {
+    margin-left: 12px;
+  }
+
   .products-product-img {
     -o-object-fit: cover;
        object-fit: cover;

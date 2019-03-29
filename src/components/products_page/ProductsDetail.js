@@ -40,7 +40,7 @@ class ProductsDetail extends Component {
         this.setState({ qty: this.state.qty + 1 });
         break;
       default:
-        this.setState({ qty: e.target.value });
+        return;
     }
   }
 
@@ -101,7 +101,8 @@ class ProductsDetail extends Component {
           <input
             className="w-25 border-0 text-center"
             value={this.state.qty}
-            onChange={(e) => this.handleOnChangeQty(e)}
+            disabled
+            onChange={() => {}}
           />
           <i className="fas fa-arrow-right" onClick={(e) => this.handleOnChangeQty(e)}></i>
         </div>
@@ -115,21 +116,19 @@ class ProductsDetail extends Component {
 
     return (
       <div className="my-3">
-        <div className="d-flex justify-content-between products-detail-collapse">
+        <div 
+          className="d-flex justify-content-between products-detail-collapse"
+          data-toggle="collapse"
+          data-target={"#collapseDetail-" + headerTag}
+        >
           <button
             className="products-detail-collapse-header-text"
             type="button"
-            data-toggle="collapse"
-            data-target={"#collapseDetail-" + headerTag}
           >
             {header}
           </button>
           <div className="d-inline-block">
-            <i
-              className="fas fa-plus align-middle"
-              data-toggle="collapse"
-              data-target={"#collapseDetail-" + headerTag}
-            />
+            <i className="fas fa-plus align-middle" />
           </div>
         </div>
         <div

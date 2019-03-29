@@ -22,7 +22,7 @@ class PopupNavBar extends Component {
   renderPopupShoe() {
     const { shoes } = data.imgURL.products;
     const item1 = shoes.drmartens.boot1;
-    const item2 = shoes.vansShoes.shoe2;
+    const item2 = shoes.vans.shoe2;
 
     return (
       <div className="container-fluid py-3 popup-nav">

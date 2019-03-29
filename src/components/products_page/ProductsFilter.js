@@ -52,11 +52,34 @@ class ProductsFilter extends Component {
     };
   }
 
+  componentWillReceiveProps(newProps) {
+    // Check if filter type has been changed during shorcut link
+    let newFilterIndex = this.state.filterSelected;
+
+    if (newProps.shoesFilterType !== this.props.shoesFilterType) {
+      this.props.filterContent.forEach((item, i) => {
+        if (newProps.shoesFilterType.toLowerCase() === "drmartens") {
+          newFilterIndex = 4;
+        } else if (item.toLowerCase() === newProps.shoesFilterType.toLowerCase()) {
+          newFilterIndex = i
+        }
+      })
+    } else if (newProps.accessoriesFilterType !== this.props.accessoriesFilterType) {
+      this.props.filterContent.forEach((item, i) => {
+        if (item.toLowerCase() === newProps.accessoriesFilterType.toLowerCase()) {
+          newFilterIndex = i
+        }
+      })
+    }
+    
+    this.setState({ filterSelected: newFilterIndex })
+  }
+
   handleClick(filterSelected) {
     if (filterSelected !== this.state.filterSelected) {
       this.setState({ filterSelected });
       let selectedFilter;
-      
+
       switch (this.props.filterContent[filterSelected].toLowerCase()) {
         case FILTER_BOOTS:
         case FILTER_CHELSEA_BOOTS:

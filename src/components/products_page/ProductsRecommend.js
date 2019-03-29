@@ -21,22 +21,18 @@ export default class ProductsRecommend extends Component {
       }
     }
 
-    this.state = { data };
+    this.state = { 
+      data,
+      recommendData: []
+    };
   }
 
-  renderProductsPath = (tag) => {
-    if (this.state.data.shoes.includes(tag)) {
-      return "/shoes/" + tag;
-    } else if (this.state.data.accessories.includes(tag)) {
-      return "/accessories/" + tag;
-    }
-  }
-
-  renderRecommendedItems() {
+  componentDidMount() {
+    // Put this recommender system in Did Mount to advoid re-rendering this component trigger new recommend products
     let number = this.props.number;
     const resRender = [];
     let prevRandom = [];
-    
+
     while (number > 0) {
       let randomIndex = Math.floor(Math.random() * this.state.data[this.props.category].length);
       let item = this.state.data[this.state.data[this.props.category][randomIndex]]
@@ -56,17 +52,26 @@ export default class ProductsRecommend extends Component {
         }
       }
     }
-    console.log(resRender);
-    return resRender;
+
+    this.setState({ recommendData: resRender });
+  }
+
+  renderProductsPath = (tag) => {
+    if (this.state.data.shoes.includes(tag)) {
+      return "/shoes/" + tag;
+    } else if (this.state.data.accessories.includes(tag)) {
+      return "/accessories/" + tag;
+    }
   }
 
   render() {
     return (
       <div className="container my-4">
-        {this.props.lineSeparate ? <div className="w-100 border-top mb-3"></div> : <div/>}
+        {this.props.lineSeparate ? <div className="w-100 border-top mb-3"></div> : <div />}
         <h5 className="monteserrat">People Who Viewed This Item Also Viewed</h5>
         <div className="row">
-          {this.renderRecommendedItems()}
+          {/* {this.renderRecommendedItems()} */}
+          {this.state.recommendData}
         </div>
       </div>
     );

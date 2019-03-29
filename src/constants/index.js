@@ -20,9 +20,9 @@ export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
 export const FILTER_SHOES = "FILTER_SHOES";
 export const FILTER_ACCESSORIES = "FILTER_ACCESSORIES";
 export const FILTER_SHOES_SELECTIONS = {
-  FILTER_NIKE: "nikeShoes",
-  FILTER_ADIDAS: "adidasShoes",
-  FILTER_VANS: "vansShoes",
+  FILTER_NIKE: "nike",
+  FILTER_ADIDAS: "adidas",
+  FILTER_VANS: "vans",
   FILTER_DR_MARTENS: "drmartens",
 };
 
