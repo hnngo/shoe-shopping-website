@@ -138,5 +138,3 @@ class PopupNavBar extends Component {
 }
 
 export default withRouter(connect(null, { filterProducts })(PopupNavBar));
-
-//TODO: Dim other part of website when active popup navbar

@@ -23,7 +23,7 @@ const name = [
 export default () => {
   const mouseEnter = (e) => {
     // e.target.style.transform = "scale(1.25)";
-    e.target.style.height = "150px";
+    e.target.style.height = "170px";
     const id = +e.target.id.slice(e.target.id.length - 1);
 
     for (let x = 1; x < id; x++) {

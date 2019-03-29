@@ -69,5 +69,3 @@ class LandingSample extends Component {
 }
 
 export default connect(null, { filterProducts })(LandingSample);
-
-//TODO: Add hover sample effect

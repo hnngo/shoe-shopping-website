@@ -289,5 +289,3 @@ export default connect(mapStateToProps, {
   authResetLoginInformation,
   authCreateAccountWithEmailAndPassword
 })(LoginModal)
-
-//TODO: When being redirected show login modal

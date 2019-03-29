@@ -197,7 +197,31 @@ class ProductsDetail extends Component {
                 {this.props.item.description}
               </p>, false
             )}
-
+            {/* Render Collapse products Delivery options */}
+            {this.renderCollapse("Delivery", () =>
+              <div>
+                <div className="d-flex">
+                  <i className="fas fa-truck mr-2 orange-text" />
+                  <div>
+                    <h6 className="mb-0">Free Delivery</h6>
+                    <p className="text-muted">5 - 10 days</p>
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <i className="fas fa-history mr-2 orange-text" />
+                  <div>
+                    <h6 className="mb-0">7 days return to seller</h6>
+                    <p className="text-muted">Fully refund</p>
+                  </div>
+                </div>
+                <div className="d-flex">
+                  <i className="fas fa-shield-alt mr-2 orange-text" />
+                  <div>
+                    <h6 className="mb-0">6 Months warranty</h6>
+                  </div>
+                </div>
+              </div>, true
+            )}
             {/* Render Collapse products size selection */}
             {this.renderCollapse("Size", () =>
               <div className="container text-center">
@@ -253,6 +277,3 @@ export default connect(mapStateToProps, {
 })(ProductsDetail)
 
 //TODO: Add more images on other sides of products
-//TODO: Random generate recommendation samples
-//TODO: Add detail warranty
-//TODO: Add star reivew at detail page

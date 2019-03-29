@@ -55,5 +55,3 @@ export default class LandingSampleProducts extends Component {
     );
   }
 }
-
-//TODO: Star preview on each products

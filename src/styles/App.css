@@ -20,6 +20,10 @@ html, body {
   overflow-x: hidden;
 }
 
+.orange-text { 
+  color: rgb(233, 101, 78);
+}
+
 .bold {
   font-weight: bold;
 }
@@ -133,7 +137,7 @@ html, body {
   top: 56px;
   z-index: 100;
   width: 100vw;
-  background-color: #ffffff;
+  background-color: white;
   -webkit-box-shadow: 0.5px 0.5px 1px #b5b8bd;
           box-shadow: 0.5px 0.5px 1px #b5b8bd;
   /* visibility: hidden; */

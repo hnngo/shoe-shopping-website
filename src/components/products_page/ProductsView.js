@@ -14,6 +14,16 @@ export default class ProductsView extends Component {
   handleOnloadImage() {
     this.setState({ onLoadToggle: !this.state.onLoadToggle });
   }
+
+  handleMouseEnterImg(e) {
+    const { classList } = e.target;
+    classList.add("animated","pulse","fast", "infinite");
+  }
+  
+  handleMouseLeaveImg(e) {
+    const { classList } = e.target;
+    classList.remove("animated","pulse","fast", "infinite");
+  }
   
   render() {
     return (
@@ -29,6 +39,8 @@ export default class ProductsView extends Component {
             className={this.props.optionImgClass || "products-product-img"}
             alt={this.props.item.name.toLowerCase().replace(" ", "-")}
             onLoad={() => this.handleOnloadImage()}
+            onMouseEnter={(e) => this.handleMouseEnterImg(e)}
+            onMouseLeave={(e) => this.handleMouseLeaveImg(e)}
           /><br />
           <p className="products-products-title monteserrat mb-1 bold">
             {this.props.item.name.toUpperCase()}
