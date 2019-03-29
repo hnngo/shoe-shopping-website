@@ -49,9 +49,7 @@ export default class ProductsRecommend extends Component {
             <ProductsView
               key={number}
               itemLink={this.renderProductsPath(item.tag)}
-              itemSrcImg={item.imgURL}
-              itemName={item.name}
-              itemPrice={item.price}
+              item={item}
             />
           )
         }

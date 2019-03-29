@@ -52,9 +52,7 @@ export default class ProductsBody extends Component {
           <ProductsView
             key={d + i}
             itemLink={this.renderProductsPath(d[k].tag)}
-            itemSrcImg={d[k].imgURL}
-            itemName={d[k].name}
-            itemPrice={d[k].price}
+            item={d[k]}
           />
         );
       });

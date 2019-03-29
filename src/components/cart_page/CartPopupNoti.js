@@ -81,6 +81,10 @@ class CartPopup extends Component {
     );
   }
 
+  renderRecommendItems() {
+
+  }
+
   renderModal() {
     return (
       <div className="container-fluid mx-2 mt-3">
@@ -107,6 +111,7 @@ class CartPopup extends Component {
         <div className="row cart-modal-recommendation-items">
           <div className="d-none d-sm-block col-sm-12">
             <h4>Recommendation Items</h4>
+            {this.renderRecommendItems()}
           </div>
         </div>
       </div>

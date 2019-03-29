@@ -23,5 +23,3 @@ export default class LandingPage extends Component {
     );
   }
 }
-
-//TODO: fix ipad screen not showing image

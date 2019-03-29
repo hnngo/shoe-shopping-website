@@ -14,20 +14,8 @@ export default class LandingSampleProducts extends Component {
           optionLinkClass={"sample-link"}
           optionImgClass={"sample-products img-fluid"}
           itemLink={`/${type}/${item.tag}`}
-          itemSrcImg={item.imgURL}
-          itemName={item.name}
-          itemAltImg={item.name.toLowerCase().replace(" ", "-")}
-          itemPrice={item.price}
+          item={item}
         />
-
-
-        // <div className="col-md-4 col-sm-12" key={i}>
-        //   <Link className="sample-link" to={`/${type}/${item.tag}`}>
-        //     <img src={item.imgURL} className="sample-products img-fluid" alt={item.name.toLowerCase().replace(" ", "-")} />
-        //     <p className="monteserrat bold mb-0 mt-1">{item.name.toUpperCase()}</p>
-        //     <p className="open-sans">{item.price}$</p>
-        //   </Link>
-        // </div>
       );
     })
   }
