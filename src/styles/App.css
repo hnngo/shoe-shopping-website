@@ -414,16 +414,19 @@ html, body {
   outline:none;
 }
 
+.products-star {
+  color: rgb(233, 101, 78);
+}
+
 /* ------- CART MODAL --------*/
 .cart-modal-notification {
   position: absolute;
-  top: 20%;
-  bottom: 20%;
+  top: 15%;
+  bottom: 15%;
   left: 10%;
   right: 10%;
   background-color: white;
   border-radius: 20px;
-
 }
 
 .cart-modal-notification-overlay {
@@ -433,6 +436,14 @@ html, body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cart-modal-img {
+  max-height: 250px;
+}
+
+.cart-modal-recommend-img {
+  max-height: 120px;
 }
 
 .cart-modal-header {
@@ -459,13 +470,13 @@ html, body {
   letter-spacing: 0.3px;
 }
 
-.cart-modal-shooping-detail span {
+.cart-modal-shopping-detail span {
   font-size: 14px;
   font-weight: 200px;
   font-family: 'Montserrat', sans-serif;
 }
 
-.cart-modal-shooping-detail span {
+.cart-modal-shopping-detail span {
   font-size: 14px;
   font-weight: 200px;
   font-family: 'Montserrat', sans-serif;

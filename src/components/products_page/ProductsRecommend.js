@@ -47,6 +47,7 @@ export default class ProductsRecommend extends Component {
           number -= 1;
           resRender.push(
             <ProductsView
+              optionImgClass={this.props.optionImgClass || ""}
               key={number}
               itemLink={this.renderProductsPath(item.tag)}
               item={item}
@@ -62,7 +63,7 @@ export default class ProductsRecommend extends Component {
   render() {
     return (
       <div className="container my-4">
-        <div className="w-100 border-top mb-3"></div>
+        {this.props.lineSeparate ? <div className="w-100 border-top mb-3"></div> : <div/>}
         <h5 className="monteserrat">People Who Viewed This Item Also Viewed</h5>
         <div className="row">
           {this.renderRecommendedItems()}

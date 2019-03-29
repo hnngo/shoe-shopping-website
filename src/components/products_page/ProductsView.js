@@ -3,10 +3,22 @@ import { Link } from 'react-router-dom';
 import ProductsStarReview from './ProductsStarReview';
 
 export default class ProductsView extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { onLoadToggle: false };
+  }
+
+  // Handle cases when image fail to load at first reloading
+  // Trigger an set state event will re-render after finishing
+  handleOnloadImage() {
+    this.setState({ onLoadToggle: !this.state.onLoadToggle });
+  }
+  
   render() {
     return (
       <div
-        className={this.props.optionDivClass || "col-lg-3 col-md-4 col-sm-6 col-xs-12 my-2"}
+        className={(this.props.optionDivClass || "col-lg-3 col-md-4 col-sm-6 col-xs-12 my-2") + " text-center mb-5"}
       >
         <Link
           className={this.props.optionLinkClass || ""}
@@ -16,6 +28,7 @@ export default class ProductsView extends Component {
             src={this.props.item.imgURL}
             className={this.props.optionImgClass || "products-product-img"}
             alt={this.props.item.name.toLowerCase().replace(" ", "-")}
+            onLoad={() => this.handleOnloadImage()}
           /><br />
           <p className="products-products-title monteserrat mb-1 bold">
             {this.props.item.name.toUpperCase()}
@@ -23,7 +36,7 @@ export default class ProductsView extends Component {
         </Link>
         <p className="m-0">{this.props.item.price}$S</p>
         <ProductsStarReview
-          starNumber={4}
+          starNumber={this.props.item.star}
           keyStar={this.props.item.tag}
         />
       </div>

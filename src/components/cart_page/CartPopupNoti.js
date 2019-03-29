@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { purCloseAddToCartModal } from '../../actions';
 import { imgURL } from '../../data.json';
+import ProductsRecommend from '../products_page/ProductsRecommend';
 
 class CartPopup extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class CartPopup extends Component {
           <div className="col-sm-5 text-center">
             <img
               src={this.state.data[this.props.newItems[0]].imgURL}
-              className="img-fluid"
+              className="img-fluid cart-modal-img"
               alt={this.state.data[this.props.newItems[0]].name.toLowerCase().replace(" ", "-")}
             />
           </div>
@@ -58,7 +59,7 @@ class CartPopup extends Component {
     }
 
     return (
-      <div className="cart-modal-shooping-detail pb-3 px-3 pt-2">
+      <div className="cart-modal-shopping-detail pb-3 px-3 pt-2">
         <h5>Shopping cart <span>({numberOfItems} items)</span></h5>
         <div className="d-flex justify-content-between border-top mt-3 mb-1 pt-1">
           <h5>Total</h5>
@@ -67,13 +68,13 @@ class CartPopup extends Component {
         <div className="text-center">
           <Link to="/cart">
             <button
-              className="btn btn-outline-secondary mr-2 mb-2"
+              className="btn btn-outline-secondary mx-1 mb-2"
               onClick={() => this.props.purCloseAddToCartModal()}
             >
               GO TO CART
             </button>
           </Link>
-          <button className="btn btn-secondary mb-2">
+          <button className="btn btn-secondary mx-1 mb-2">
             CHECK OUT
           </button>
         </div>
@@ -82,7 +83,16 @@ class CartPopup extends Component {
   }
 
   renderRecommendItems() {
-
+    if (this.props.newItems) {
+      return (
+        <ProductsRecommend
+          optionImgClass="cart-modal-recommend-img"
+          itemInfo={this.state.data[this.props.newItems[0]]}
+          number={4}
+          category={this.props.category}
+        />
+      );
+    }
   }
 
   renderModal() {
@@ -108,9 +118,9 @@ class CartPopup extends Component {
             {this.renderCart()}
           </div>
         </div>
+        <div className="border-top w-100" />
         <div className="row cart-modal-recommendation-items">
           <div className="d-none d-sm-block col-sm-12">
-            <h4>Recommendation Items</h4>
             {this.renderRecommendItems()}
           </div>
         </div>

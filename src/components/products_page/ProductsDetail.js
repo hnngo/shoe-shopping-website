@@ -5,6 +5,7 @@ import {
   purAddToCart
 } from '../../actions';
 import ProductsRecommend from './ProductsRecommend';
+import ProductsStarReview from './ProductsStarReview';
 
 class ProductsDetail extends Component {
   constructor(props) {
@@ -181,10 +182,15 @@ class ProductsDetail extends Component {
             <h4 className="monteserrat bold mb-0 mt-1">
               {this.props.item.name}
             </h4>
-            <h5 className="open-sans mt-2 mb-4">
+            <h5 className="open-sans mt-2 mb-2">
               {this.props.item.price}$
             </h5>
-
+            <div className="d-flex mb-4">
+              <ProductsStarReview
+                starNumber={this.props.item.star}
+                keyStar={this.props.item.tag}
+              />
+            </div>
             {/* Render Collapse products description */}
             {this.renderCollapse("Description", () =>
               <p className="products-detail-des-text">
@@ -220,12 +226,15 @@ class ProductsDetail extends Component {
             </button> */}
           </div>
         </div>
-        <ProductsRecommend 
+        <ProductsRecommend
+          lineSeparate={true}
           itemInfo={this.props.item}
           category={this.props.category}
           number={4}
         />
-        <CartPopup />
+        <CartPopup
+          category={this.props.category}
+        />
       </div>
     );
   }
@@ -246,3 +255,4 @@ export default connect(mapStateToProps, {
 //TODO: Add more images on other sides of products
 //TODO: Random generate recommendation samples
 //TODO: Add detail warranty
+//TODO: Add star reivew at detail page
