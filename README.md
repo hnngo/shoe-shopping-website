@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Shoeniverse is the name of this project e-commerce website. A small project using my basic knowledge on Reactjs, Redux, Firebase.
 
-## Available Scripts
+The website URL: https://shoes-shopping-website.firebaseapp.com/
 
-In the project directory, you can run:
+## Description
+Shoeniverse is developed as a website which selling shoes and some other accessories for both men and women. Shoeniverse allows user to create accounts and placing orders which contain their favorite items.
 
-### `npm start`
+## Technology
+The project is initiated by [create-react-app](https://github.com/facebook/create-react-app) and I use Redux as a state univversal state container for my project
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Google Firebase](https://firebase.google.com/) is used in the part of authentication. Both creating account or signing account are processed by using Google Firebase API.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The responsive, mobile-first feature and other css prototype I use for this project is [Bootstrap](https://getbootstrap.com/)
 
-### `npm test`
+## Credits
+All the pictures of shoes, sneakers, boots and other accessories used non-commercialized in the project are from these sources below:
+  [Nike](https://www.nike.com)
+  [Adidas](www.adidas.com.sg)
+  [Vans](https://www.vans.com/)
+  [Dr Martens](https://www.drmartens.com/)
+  [Farfetch](https://www.farfetch.com/)
+  [Warby Parker](https://www.warbyparker.com/)
+  [Coach](https://www.coach.com/)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
+```
+  "firebase": "^5.9.0",
+  "history": "^4.9.0",
+  "react": "^16.8.3",
+  "react-activity": "^1.2.2",
+  "react-dom": "^16.8.3",
+  "react-modal": "^3.8.1",
+  "react-redux": "^6.0.1",
+  "react-router-dom": "^4.3.1",
+  "react-scripts": "2.1.5",
+  "redux": "^4.0.1",
+  "redux-thunk": "^2.3.0"
+```
+## How to use
+Clone the project to your local storage and run script 
+```
+  npm install
+  npm start
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+If the ```npm install``` get error, please delete all the files in node_modules and reinstall by running ```npm install``` again.
