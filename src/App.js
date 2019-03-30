@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
+import { createBrowserHistory } from 'history';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './styles/App.css';
@@ -39,25 +40,36 @@ class App extends Component {
 
   render() {
     // Initial store for redux, which no initial state and apply middleware Redux Thunk
+    let store;
+
     //-----DEV-----//
-    const composeEnhancers =
-      typeof window === 'object' &&
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-          // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-        }) : compose;
+    if (false) {
+      const composeEnhancers =
+        typeof window === 'object' &&
+          window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+          window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+            // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+          }) : compose;
 
-    const enhancer = composeEnhancers(
-      applyMiddleware(ReduxThunk),
-      // other store enhancers if any
-    );
-    //-----DEV-----//
+      const enhancer = composeEnhancers(
+        applyMiddleware(ReduxThunk),
+        // other store enhancers if any
+      );
+      //-----DEV-----//
 
-    const store = createStore(rootReducer, {}, enhancer);
+      store = createStore(rootReducer, {}, enhancer);
+    }
 
-    // const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
+    if (true) {
+      store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
+    }
+
+    const history = createBrowserHistory({
+      basename: process.env.PUBLIC_URL,
+    });
+
     return (
-      <BrowserRouter>
+      <BrowserRouter history={history}>
         <Provider store={store}>
           <NavBar />
           <div className="landing-picture-container">
