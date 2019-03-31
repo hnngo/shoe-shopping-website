@@ -21,12 +21,19 @@ class ProductsDetail extends Component {
 
   componentDidMount() {
     // Scroll to products when redirect to detail page
-    const y = document.querySelector(".products-path").getBoundingClientRect().top + window.scrollY - 50;
+    try {
+      const y = document.querySelector(".products-path").getBoundingClientRect().top + window.scrollY - 50;
 
-    window.scroll({
-      top: y,
-      behavior: 'smooth'
-    });
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+    } catch {
+      window.scroll({
+        top: 300,
+        behavior: 'smooth'
+      });
+    }
   }
 
   handleOnChangeQty(e) {
@@ -153,6 +160,7 @@ class ProductsDetail extends Component {
   }
 
   renderInCartAlr() {
+    // Render if that products existed in cart already
     return this.props.inCart.map((item, i) => {
       if (item.includes(this.props.item.tag) && item.includes(this.state.chosenSize)) {
         return (
@@ -161,7 +169,7 @@ class ProductsDetail extends Component {
           </div>
         );
       } else {
-        return <div />;
+        return <div key={i} />;
       }
     });
   }

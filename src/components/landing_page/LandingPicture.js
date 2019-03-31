@@ -4,11 +4,18 @@ import data from '../../data.json';
 
 export default class LandingPicture extends Component {
   handleClickLearnMore() {
-    const y = document.querySelector("#learnMore").getBoundingClientRect().top + window.scrollY - 50;
-    window.scroll({
-      top: y,
-      behavior: 'smooth'
-    });
+    try {
+      const y = document.querySelector("#learnMore").getBoundingClientRect().top + window.scrollY - 50;
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+    } catch {
+      window.scroll({
+        top: 600,
+        behavior: 'smooth'
+      });
+    }
   }
 
   render() {

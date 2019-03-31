@@ -83,6 +83,9 @@ class CartPopup extends Component {
   }
 
   renderRecommendItems() {
+    // const { height, width } = window.screen;
+    // let numberOfItem = width >= 992 ? 4 : width >= 768 ? 3 : width >= 576 ? 2 : 0; 
+
     if (this.props.newItems) {
       return (
         <ProductsRecommend

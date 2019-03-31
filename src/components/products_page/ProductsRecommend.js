@@ -33,6 +33,15 @@ export default class ProductsRecommend extends Component {
     const resRender = [];
     let prevRandom = [];
 
+    // Prepare for responsive grid
+    const divClassResp = [
+      "d-sm-none d-md-none d-lg-block",
+      "d-sm-none d-md-block",
+      "",
+      "",
+      "col-lg-3 col-md-4 col-sm-6 col-xs-12 my-2"
+    ];
+
     while (number > 0) {
       let randomIndex = Math.floor(Math.random() * this.state.data[this.props.category].length);
       let item = this.state.data[this.state.data[this.props.category][randomIndex]]
@@ -40,15 +49,16 @@ export default class ProductsRecommend extends Component {
       if (this.state.data) {
         if (item.tag !== this.props.itemInfo.tag && !prevRandom.includes(randomIndex)) {
           prevRandom.push(randomIndex);
-          number -= 1;
           resRender.push(
             <ProductsView
+              optionDivClass={`${divClassResp[number - 1]} ${divClassResp[4]}`}
               optionImgClass={this.props.optionImgClass || ""}
               key={number}
               itemLink={this.renderProductsPath(item.tag)}
               item={item}
             />
-          )
+          );
+          number -= 1;
         }
       }
     }

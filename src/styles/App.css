@@ -168,7 +168,7 @@ html, body {
 .landing-picture-container {
   position: relative;
   top: 57px;
-  min-height: calc(100vh - 57px - 452px)
+  min-height: calc(100vh - 386px)
 }
 
 .landing-wallpaper {
@@ -273,6 +273,7 @@ html, body {
 }
 
 .footer-list {
+  cursor: pointer;
   list-style: none;
   font-size: 14px;
 }

@@ -289,3 +289,5 @@ export default connect(mapStateToProps, {
   authResetLoginInformation,
   authCreateAccountWithEmailAndPassword
 })(LoginModal)
+
+//TODO: Enter to sign in automatically

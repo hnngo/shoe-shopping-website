@@ -19,12 +19,19 @@ class Footer extends Component {
     this.props.filterProducts(filterContent);
     this.props.history.push(`/${type}`);
 
-    const y = document.querySelector(".products-path").getBoundingClientRect().top + window.scrollY - 50;
-
-    window.scroll({
-      top: y,
-      behavior: 'smooth'
-    });
+    try {
+      const y = document.querySelector(".products-path").getBoundingClientRect().top + window.scrollY - 50;
+  
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+    } catch {
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 
   renderShorcut(category, type, arrShortcut, ...arrFilter) {
