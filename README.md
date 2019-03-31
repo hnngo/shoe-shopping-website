@@ -3,24 +3,24 @@ Shoeniverse is the name of this project e-commerce website. A small project usin
 The website URL: https://shoes-shopping-website.firebaseapp.com/
 
 ## Description
-Shoeniverse is developed as a website which selling shoes and some other accessories for both men and women. Shoeniverse allows user to create accounts and placing orders which contain their favorite items.
+Shoeniverse is developed as a website which selling shoes and some other accessories for both men and women. Shoeniverse allows user to create accounts and place orders which contain their favorite items.
 
 ## Technology
-The project is initiated by [create-react-app](https://github.com/facebook/create-react-app) and I use Redux as a state univversal state container for my project
+The project is initiated by [create-react-app](https://github.com/facebook/create-react-app) and I used Redux as a state management for my project
 
-[Google Firebase](https://firebase.google.com/) is used in the part of authentication. Both creating account or signing account are processed by using Google Firebase API.
+[Google Firebase](https://firebase.google.com/) is used in the part of authentication. Both creating account or signing in account are processed by using Google Firebase API.
 
-The responsive, mobile-first feature and other css prototype I use for this project is [Bootstrap](https://getbootstrap.com/)
+The responsive, mobile-first feature and other css prototype I used for this project is [Bootstrap](https://getbootstrap.com/)
 
 ## Credits
-All the pictures of shoes, sneakers, boots and other accessories used non-commercialized in the project are from these sources below:
-  [Nike](https://www.nike.com)
-  [Adidas](www.adidas.com.sg)
-  [Vans](https://www.vans.com/)
-  [Dr Martens](https://www.drmartens.com/)
-  [Farfetch](https://www.farfetch.com/)
-  [Warby Parker](https://www.warbyparker.com/)
-  [Coach](https://www.coach.com/)
+All the pictures of shoes, sneakers, boots and other accessories used non-commercialized in the project are from these sources:
+  [Nike](https://www.nike.com),
+  [Adidas](www.adidas.com.sg),
+  [Vans](https://www.vans.com/),
+  [Dr Martens](https://www.drmartens.com/),
+  [Farfetch](https://www.farfetch.com/),
+  [Warby Parker](https://www.warbyparker.com/),
+  [Coach](https://www.coach.com/),
 
 ## Dependencies
 ```
@@ -43,4 +43,4 @@ Clone the project to your local storage and run script
   npm start
 ```
 
-If the ```npm install``` get error, please delete all the files in node_modules and reinstall by running ```npm install``` again.
+If the ```npm install``` get error, please delete all the files in ```node_modules``` and re-install by running ```npm install``` again.

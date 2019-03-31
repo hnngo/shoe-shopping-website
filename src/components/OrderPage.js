@@ -69,7 +69,7 @@ class OrderPage extends Component {
   }
 
   renderItemsInOrder(orderId) {
-    return this.props.orders[orderId].items.slice(0).reverse().map((item, i) => {
+    return this.props.orders[orderId].items.map((item, i) => {
       return (
         <div
           key={orderId + " " + i}
@@ -135,11 +135,7 @@ class OrderPage extends Component {
       );
     }
 
-    // Reverse iterate object
-    const revKeysArr = Object.keys(this.props.orders).reverse();
-
-    // for (let orderId in this.props.orders) {
-    for (let orderId of revKeysArr) {
+    for (let orderId in this.props.orders) {
       renderArr.push(
         <div
           key={orderId}

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProductsStarReview from './ProductsStarReview';
+import { purCloseAddToCartModal } from '../../actions'
 
-export default class ProductsView extends Component {
+class ProductsView extends Component {
   constructor(props) {
     super(props);
 
@@ -24,6 +26,13 @@ export default class ProductsView extends Component {
     const { classList } = e.target;
     classList.remove("animated","pulse","fast", "infinite");
   }
+
+  // Handle close pop up modal
+  handleClickNavigate() {
+    if (this.props.isSuccessfullyAdded) {
+      this.props.purCloseAddToCartModal();
+    }
+  }
   
   render() {
     return (
@@ -33,6 +42,7 @@ export default class ProductsView extends Component {
         <Link
           className={this.props.optionLinkClass || ""}
           to={this.props.itemLink}
+          onClick={() => this.handleClickNavigate()}
         >
           <img
             src={this.props.item.imgURL}
@@ -55,3 +65,11 @@ export default class ProductsView extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ UserReducers }) => {
+  return { isSuccessfullyAdded: UserReducers.isSuccessfullyAdded };
+}
+
+export default connect(mapStateToProps, {
+  purCloseAddToCartModal
+})(ProductsView);

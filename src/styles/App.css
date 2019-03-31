@@ -313,6 +313,7 @@ html, body {
 }
 
 .products-path {
+  padding-bottom: 6px;
   background-color: rgb(241, 241, 241);
   -webkit-box-shadow: 0.5px 0.5px 1px #c0c0c0;
           box-shadow: 0.5px 0.5px 1px #c0c0c0;
@@ -437,6 +438,9 @@ html, body {
   right: 10%;
   background-color: white;
   border-radius: 20px;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .cart-modal-notification-overlay {

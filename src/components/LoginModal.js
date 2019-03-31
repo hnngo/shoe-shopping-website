@@ -25,16 +25,28 @@ class LoginModal extends Component {
   }
 
   componentDidMount() {
+    // Adding pressing enter to quick sign in or sign up
     const $loginModal = document.querySelector('#loginModal')
     if ($loginModal) {
       $loginModal.addEventListener('keypress', (e) => {
-        const { isValidinputEmail, isValidinputPassword } = this.props;
+        const { 
+          isValidinputEmail,
+          isValidinputPassword,
+          isValidinputConfirmPassword
+        } = this.props;
 
         // Check if signin btn clickable
         const signInCondition = isValidinputEmail && isValidinputPassword;
-        const $singInBtn = document.querySelector("#signInBtn");
-        if (signInCondition && e.key === "Enter" && $singInBtn) {
-          $singInBtn.click();
+        const $signInBtn = document.querySelector("#signInBtn");
+        if (signInCondition && e.key === "Enter" && $signInBtn) {
+          $signInBtn.click();
+        }
+
+        // Check if signup btn clickable
+        const signUpCondition = (isValidinputEmail && isValidinputPassword && isValidinputConfirmPassword) || (!this.state.showConfirm);
+        const $signUpBtn = document.querySelector("#signUpBtn");
+        if (signUpCondition && e.key === "Enter" && $signUpBtn && !$signInBtn) {
+          $signUpBtn.click();
         }
       })
     }
