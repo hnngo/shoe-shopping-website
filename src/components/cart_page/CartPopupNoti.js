@@ -74,9 +74,16 @@ class CartPopup extends Component {
               GO TO CART
             </button>
           </Link>
-          <button className="btn btn-secondary mx-1 mb-2">
-            CHECK OUT
+          <Link
+            to={{
+              pathname: "/cart",
+              state: { gotoOrder: true }
+            }}
+          >
+            <button className="btn btn-secondary mx-1 mb-2">
+              CHECK OUT
           </button>
+          </Link>
         </div>
       </div>
     );

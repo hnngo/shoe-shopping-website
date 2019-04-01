@@ -24,7 +24,7 @@ class CartItems extends Component {
         }
       }
     }
-
+    
     this.state = {
       data: dataTag,
       showCheckout: false
@@ -34,6 +34,19 @@ class CartItems extends Component {
   componentDidMount() {
     // Scroll to products when redirect to page
     window.scrollTo(0, 0);
+
+    // If navigate from popup noti, then go to place order after 500ms
+    try {
+      if (this.props.location.state.gotoOrder) {
+        let $placeOrderBtn =  document.querySelector('#checkoutBtn');
+
+        if ($placeOrderBtn && !this.state.showCheckout) {
+          setTimeout(() => $placeOrderBtn.click(), 500);
+        }
+      }
+    } catch {
+      return;
+    }
   }
 
   handleClickRemove(refID) {

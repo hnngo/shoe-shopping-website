@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CartPopup from '../cart_page/CartPopupNoti';
 import {
-  purAddToCart
+  purAddToCart,
+  purCloseAddToCartModal
 } from '../../actions';
 import ProductsRecommend from './ProductsRecommend';
 import ProductsStarReview from './ProductsStarReview';
@@ -20,6 +21,10 @@ class ProductsDetail extends Component {
   }
 
   componentDidMount() {
+    if (this.props.isSuccessfullyAdded) {
+      this.props.purCloseAddToCartModal();
+    }
+
     // Scroll to products when redirect to detail page
     try {
       const y = document.querySelector(".products-path").getBoundingClientRect().top + window.scrollY - 50;
@@ -275,12 +280,14 @@ const mapStateToProps = (state) => {
   return {
     isSignInSuccessfully: state.AuthReducers.isSignInSuccessfully,
     isCreatingSuccessfully: state.AuthReducers.isCreatingSuccessfully,
-    inCart: state.UserReducers.inCart
+    inCart: state.UserReducers.inCart,
+    isSuccessfullyAdded: state.UserReducers.isSuccessfullyAdded
   };
 }
 
 export default connect(mapStateToProps, {
-  purAddToCart
+  purAddToCart,
+  purCloseAddToCartModal
 })(ProductsDetail)
 
 //TODO: Add more images on other sides of products
