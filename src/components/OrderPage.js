@@ -187,7 +187,7 @@ class OrderPage extends Component {
   render() {
     if (this.props.isSignInSuccessfully || this.props.isCreatingSuccessfully) {
       return (
-        <div>
+        <div className="pb-3 mb-3">
           <ProductsHeader
             panoImageURL={imgURL.pages.orderPage.pano.imgURL}
             categoryName="Orders"

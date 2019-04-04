@@ -10,7 +10,19 @@ import data from '../data.json';
 class ShoesPage extends Component {
   componentDidMount() {
     // Scroll to products when redirect to detail page
-    window.scrollTo(0, 200);
+    try {
+      const y = document.querySelector(".products-path").getBoundingClientRect().top + window.scrollY - 50;
+
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+    } catch {
+      window.scroll({
+        top: 300,
+        behavior: 'smooth'
+      });
+    }
   }
 
   render() {
