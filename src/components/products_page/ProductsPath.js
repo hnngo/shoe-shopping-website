@@ -24,13 +24,13 @@ export default class ProductsPath extends Component {
   renderPath() {
     // Prepare path name
     let productPath = "";
-    let namePath = this.props.history.location.pathname.split('/');
     let searchPath = "";
+    let namePath = this.props.history.location.pathname.split('/');
 
     // Check if from search page
     if (namePath[1] === "search") {
       searchPath = namePath[1] + this.props.history.location.search;
-      // namePath[1] += ` results for '${this.props.history.location.search.slice(2)}'`;
+      namePath[1] += ` results for '${this.props.history.location.search.slice(2)}'`;
     }
     
     namePath[0] = "Home";

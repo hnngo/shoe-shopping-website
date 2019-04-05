@@ -55,6 +55,7 @@ class NavBar extends Component {
   handleOnPressSearch(e) {
     if (e.key === "Enter") {
       this.props.history.push(`/search?=${this.state.searchKey}`);
+      this.setState({ searchKey: "" });
     }
   }
 
