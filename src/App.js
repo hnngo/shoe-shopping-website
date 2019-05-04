@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -64,7 +64,7 @@ class App extends Component {
     }
 
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Provider store={store}>
           <NavBar />
           <div className="landing-picture-container">
@@ -81,7 +81,7 @@ class App extends Component {
           </div>
           <Footer />
         </Provider>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
